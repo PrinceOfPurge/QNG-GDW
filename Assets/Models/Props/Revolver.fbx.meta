@@ -3,7 +3,12 @@ guid: 69626628138b7d84aab0a52095f01402
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: RevolverTextures
+    second: {fileID: 2100000, guid: 1230ebebec7db4641a762669c00c3fd6, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
