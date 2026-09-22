@@ -11,15 +11,24 @@ public class PlayerLook : MonoBehaviour
     [SerializeField] private float maxLookAngle = 80f;
     [SerializeField] private float maxLookHorizontal = 90f;
 
-    private InputAction lookAction;
+    private PlayerControls controls;
 
     private float xRotation = 0f;
     private float yRotation = 0f;
 
     private void Awake()
     {
-        lookAction = new InputAction("Look", InputActionType.Value, "<Mouse>/delta");
-        lookAction.Enable();
+        controls = new PlayerControls();
+    }
+
+    //Enable and disable the controls
+    private void OnEnable()
+    {
+        controls.Enable();
+    }
+    private void OnDisable()
+    {
+        controls.Disable();
     }
 
     private void Update()
@@ -27,14 +36,15 @@ public class PlayerLook : MonoBehaviour
         Look();
     }
 
+    //Handle Look movement
     private void Look()
     {
-        Vector2 lookInput = lookAction.ReadValue<Vector2>();
+        Vector2 lookInput = controls.Player.Look.ReadValue<Vector2>();
 
         float mouseX = lookInput.x * mouseSensitivity;
         float mouseY = lookInput.y * mouseSensitivity;
 
-        // Vertical rotation (up and down)
+        // Vertical rotation
         xRotation -= mouseY;
         xRotation = Mathf.Clamp(
             xRotation,
@@ -42,7 +52,7 @@ public class PlayerLook : MonoBehaviour
             maxLookAngle
         );
 
-        // Horizontal rotation (left and right)
+        // Horizontal rotation
         yRotation += mouseX;
         yRotation = Mathf.Clamp(
             yRotation,
@@ -56,10 +66,5 @@ public class PlayerLook : MonoBehaviour
             yRotation,
             0f
         );
-    }
-
-    private void OnDestroy()
-    {
-        lookAction.Disable();
     }
 }
