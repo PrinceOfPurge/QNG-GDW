@@ -1,6 +1,6 @@
 {
     "version": 1,
-    "name": "New Actions",
+    "name": "PlayerControls",
     "maps": [
         {
             "name": "Player",
@@ -28,6 +28,24 @@
                     "name": "SwitchSide",
                     "type": "Button",
                     "id": "589d7cc7-84f6-4d37-a6c5-9e9e85d2d6d8",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Window",
+                    "type": "Button",
+                    "id": "905d4080-d27c-42e7-a125-dcd34105ceb0",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Door",
+                    "type": "Button",
+                    "id": "cd26fc4a-76f3-4c25-bd44-66d3c4013f2c",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -60,11 +78,33 @@
                 {
                     "name": "",
                     "id": "531a37a6-82c9-4d3a-a24c-80c55b6d66ba",
-                    "path": "<Keyboard>/e",
+                    "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "SwitchSide",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c21bfebc-e779-46f8-a3dc-31288c170475",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Window",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "19db23e0-3162-41fa-88b5-f9f8ce89b39d",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Door",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
