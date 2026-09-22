@@ -15029,6 +15029,7 @@ MonoBehaviour:
   currentPosition: 0
   switchDuration: 0.75
   positionTransitionDuration: 0.25
+  playerLook: {fileID: 1819316994}
 --- !u!4 &319320915
 Transform:
   m_ObjectHideFlags: 0
@@ -50398,6 +50399,7 @@ MonoBehaviour:
   mouseSensitivity: 0.2
   maxLookAngle: 80
   maxLookHorizontal: 90
+  sideManager: {fileID: 319320914}
 --- !u!1001 &1889787169
 PrefabInstance:
   m_ObjectHideFlags: 0

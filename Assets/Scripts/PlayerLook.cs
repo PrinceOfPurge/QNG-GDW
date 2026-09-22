@@ -11,6 +11,8 @@ public class PlayerLook : MonoBehaviour
     [SerializeField] private float maxLookAngle = 80f;
     [SerializeField] private float maxLookHorizontal = 90f;
 
+    public SideManager sideManager;
+
     private PlayerControls controls;
 
     private float xRotation = 0f;
@@ -52,15 +54,27 @@ public class PlayerLook : MonoBehaviour
             maxLookAngle
         );
 
-        // Horizontal rotation
+        //horizontal rotation
         yRotation += mouseX;
-        yRotation = Mathf.Clamp(
-            yRotation,
-            -maxLookHorizontal,
-            maxLookHorizontal
-        );
+        if(sideManager.currentPosition == SideManager.PlayerPosition.Door)
+        {
+            if(sideManager.currentSide == SideManager.PlayerSide.Right)
+            {
+                yRotation = Mathf.Clamp(yRotation, (180f + -maxLookHorizontal), (90f + maxLookHorizontal));
+            }
+            if (sideManager.currentSide == SideManager.PlayerSide.Left)
+            {
+                yRotation = Mathf.Clamp(yRotation, (-90f + -maxLookHorizontal), (-180f + maxLookHorizontal));
+            }
 
-        // Apply both rotations
+        }
+        else
+        {
+            yRotation = Mathf.Clamp(yRotation, -maxLookHorizontal, maxLookHorizontal);
+        }
+        
+
+        //both rotations
         transform.localRotation = Quaternion.Euler(
             xRotation,
             yRotation,
