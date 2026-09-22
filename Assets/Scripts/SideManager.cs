@@ -38,6 +38,9 @@ public class SideManager : MonoBehaviour
     public float switchDuration = 0.75f;
     public float positionTransitionDuration = 0.25f;
 
+    //[Header("References")]
+    //public PlayerLook playerLook;
+
     private PlayerControls controls;
     private Coroutine movementCoroutine;
 
