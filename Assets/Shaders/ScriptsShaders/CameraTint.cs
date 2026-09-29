@@ -6,7 +6,7 @@ public class Camera_Scripts : MonoBehaviour
 {
     public Material NormalLUT;
     //shader script goes here
-    public Shader awesomeShader = null;
+    public Shader Shader = null;
 
     void OnRenderImage(RenderTexture source, RenderTexture destination)
     {
