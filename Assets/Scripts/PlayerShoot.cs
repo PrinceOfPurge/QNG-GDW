@@ -54,6 +54,8 @@ public class PlayerShoot : MonoBehaviour
         if (currentAmmo <= 0)
             return;
 
+        Debug.Log("Shoot");
+
         nextTimeToFire = Time.time + fireRate;
 
         currentAmmo--;
