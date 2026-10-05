@@ -21,9 +21,9 @@ public class MainMenuCameraController : MonoBehaviour
 
     private void Start()
     {
-        // 1. Initial State: Overview Cam active, Start Prompt visible
-        overviewCam.Priority = 10;
-        consoleCam.Priority = 5;
+        // Initial State: Start at Overview (Road view), Press Space to go to Console
+        if (overviewCam != null) overviewCam.Priority = 10;
+        if (consoleCam != null) consoleCam.Priority = 5;
 
         if (startPromptCanvasGroup != null)
         {
@@ -32,7 +32,6 @@ public class MainMenuCameraController : MonoBehaviour
             startPromptCanvasGroup.blocksRaycasts = true;
         }
 
-        // 2. Hide Center Console UI initially
         if (consoleUICanvasGroup != null)
         {
             consoleUICanvasGroup.alpha = 0f;
@@ -43,7 +42,6 @@ public class MainMenuCameraController : MonoBehaviour
 
     private void Update()
     {
-        // Listen for Spacebar press before game transition begins
         if (!hasStarted && Input.GetKeyDown(KeyCode.Space))
         {
             StartMenuSequence();
@@ -52,13 +50,13 @@ public class MainMenuCameraController : MonoBehaviour
 
     public void StartMenuSequence()
     {
+        if (hasStarted) return;
         hasStarted = true;
         StartCoroutine(TransitionToConsoleSequence());
     }
 
     private IEnumerator TransitionToConsoleSequence()
     {
-        // Step A: Fade out "Press Space" text
         if (startPromptCanvasGroup != null)
         {
             startPromptCanvasGroup.interactable = false;
@@ -71,14 +69,12 @@ public class MainMenuCameraController : MonoBehaviour
             }
         }
 
-        // Step B: Trigger Cinemachine camera blend
-        overviewCam.Priority = 5;
-        consoleCam.Priority = 10;
+        // Blend camera down to console
+        if (overviewCam != null) overviewCam.Priority = 5;
+        if (consoleCam != null) consoleCam.Priority = 10;
 
-        // Step C: Wait for camera pan to finish before fading in console UI
         yield return new WaitForSeconds(uiFadeDelay);
 
-        // Step D: Fade in diegetic console UI
         if (consoleUICanvasGroup != null)
         {
             while (consoleUICanvasGroup.alpha < 1f)
@@ -89,6 +85,17 @@ public class MainMenuCameraController : MonoBehaviour
 
             consoleUICanvasGroup.interactable = true;
             consoleUICanvasGroup.blocksRaycasts = true;
+        }
+    }
+
+    // Call this when the 3D button is pressed to clean up the console UI
+    public void HideConsoleUI()
+    {
+        if (consoleUICanvasGroup != null)
+        {
+            consoleUICanvasGroup.alpha = 0f;
+            consoleUICanvasGroup.interactable = false;
+            consoleUICanvasGroup.blocksRaycasts = false;
         }
     }
 }

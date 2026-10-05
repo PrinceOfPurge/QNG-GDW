@@ -98,3 +98,7 @@ fmod_editor.log
 
 # Never ignore DLLs or native libraries in the FMOD folder
 !/[Aa]ssets/Plugins/FMOD/**
+
+# Ignore local FMOD Studio Cache asset
+**/FMODStudioCache.asset
+**/FMODStudioCache.asset.meta

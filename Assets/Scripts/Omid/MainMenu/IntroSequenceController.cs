@@ -12,17 +12,18 @@ public class IntroSequenceController : MonoBehaviour
         [TextArea(2, 4)] public string lineText;
         public float displayDuration;
         public float delayBeforeNext;
-        // Public string parameter to easily link FMOD event paths later
         public string fmodEventPath; 
     }
 
-    [Header("Cinemachine Setup")]
-    [SerializeField] private CinemachineVirtualCamera overviewCam;
-    [SerializeField] private Transform signTransform;
+    [Header("Cinemachine Cameras")]
+    [SerializeField] private CinemachineVirtualCamera consoleCam;      // Priority 30 at launch (Main Menu view)
+    [SerializeField] private CinemachineVirtualCamera roadOverviewCam; // Priority 10 at launch (Straight road view, LookAt = None)
+    [SerializeField] private CinemachineVirtualCamera signGlanceCam;   // Priority 10 at launch (LookAt assigned to Sign Transform)
 
-    [Header("Sign Motion Settings")]
+    [Header("Sign & Environment Setup")]
     [SerializeField] private PassingSignController signController;
-    [SerializeField] private float glanceDuration = 2.5f; // Time camera tracks sign before returning to road
+    [SerializeField] private PassingTreeSpawner treeSpawner;
+    [SerializeField] private float glanceDuration = 3.5f;
 
     [Header("UI Subtitles Setup")]
     [SerializeField] private TextMeshProUGUI subtitleTextUI;
@@ -32,69 +33,71 @@ public class IntroSequenceController : MonoBehaviour
     [Header("Walkie-Talkie Dialogue Sequence")]
     [SerializeField] private DialogueLine[] dialogueLines;
 
+    private bool sequenceStarted = false;
+
     private void Start()
     {
+        // Force initial menu state: Camera locked on Console
+        if (consoleCam != null) consoleCam.Priority = 30;
+        if (roadOverviewCam != null) roadOverviewCam.Priority = 10;
+        if (signGlanceCam != null) signGlanceCam.Priority = 10;
+
         // Hide subtitles initially
         if (subtitleCanvasGroup != null)
         {
             subtitleCanvasGroup.alpha = 0f;
         }
 
-        // Default dialogue setup matching your script
         if (dialogueLines == null || dialogueLines.Length == 0)
         {
             SetupDefaultScript();
         }
+    }
 
-        // Start the intro flow
+    // Called strictly when the 3D Play button is clicked
+    public void BeginIntroFromButton()
+    {
+        if (sequenceStarted) return;
+        sequenceStarted = true;
+
         StartCoroutine(PlayIntroSequence());
     }
 
     private IEnumerator PlayIntroSequence()
     {
-        // --- STEP 1: GLANCE AT SIGN & LOOK BACK AT ROAD ---
-        if (signTransform != null && overviewCam != null)
-        {
-            // Direct camera to look at passing sign
-            overviewCam.LookAt = signTransform;
-            
-            if (signController != null)
-            {
-                signController.TriggerSignPass();
-            }
+        // STEP 1: Transition from Console to Road Overview View
+        if (consoleCam != null) consoleCam.Priority = 5;
+        if (roadOverviewCam != null) roadOverviewCam.Priority = 20;
 
-            // Wait while sign approaches and is read
-            yield return new WaitForSeconds(glanceDuration);
+        yield return new WaitForSeconds(1.2f); // Wait for camera blend up to windshield to finish
 
-            // Clear LookAt so camera smoothly resets rotation to look straight down the road
-            overviewCam.LookAt = null;
-        }
+        // STEP 2: Trigger sign & tree movement, switch camera focus to passing sign
+        if (treeSpawner != null) treeSpawner.StartSpawningTrees();
+        if (signController != null) signController.TriggerSignPass();
 
-        yield return new WaitForSeconds(1.5f); // Brief pause before radio kicks in
+        if (signGlanceCam != null) signGlanceCam.Priority = 25; // Take control to track/zoom on sign
 
-        // --- STEP 2: WALKIE-TALKIE SUBTITLE SEQUENCE ---
+        // Hold camera focus on the sign as it approaches and passes
+        yield return new WaitForSeconds(glanceDuration);
+
+        // STEP 3: Transition camera back to Road Overview View
+        if (signGlanceCam != null) signGlanceCam.Priority = 5;
+        if (roadOverviewCam != null) roadOverviewCam.Priority = 30;
+
+        yield return new WaitForSeconds(1.5f); // Pause briefly on road view before dialogue kicks in
+
+        // STEP 4: Walkie-Talkie Dialogue Subtitle Sequence
         foreach (DialogueLine line in dialogueLines)
         {
-            // Format speaker text (e.g., "Cop on Walkie: Officer Morgan, come in.")
             string formattedText = string.IsNullOrEmpty(line.speakerName) 
                 ? line.lineText 
                 : $"<b>{line.speakerName}:</b> {line.lineText}";
 
             subtitleTextUI.text = formattedText;
 
-            // TODO: Play FMOD audio event here when ready
-            // if (!string.IsNullOrEmpty(line.fmodEventPath)) { FMODUnity.RuntimeManager.PlayOneShot(line.fmodEventPath); }
-
-            // Fade Subtitle In
             yield return StartCoroutine(FadeSubtitles(1f));
-
-            // Hold subtitle on screen
             yield return new WaitForSeconds(line.displayDuration);
-
-            // Fade Subtitle Out
             yield return StartCoroutine(FadeSubtitles(0f));
-
-            // Pause between lines
             yield return new WaitForSeconds(line.delayBeforeNext);
         }
     }
