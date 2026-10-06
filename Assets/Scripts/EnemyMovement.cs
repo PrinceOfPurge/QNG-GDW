@@ -14,11 +14,13 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] private float attackCooldown = 1f;
 
     private Transform target;
+    private GameObject player;
     private float nextAttackTime;
 
     private void Start()
     {
         target = GameObject.FindGameObjectWithTag("Truck").transform;
+        player = GameObject.FindGameObjectWithTag("Player");
 
         if (target == null)
         {
@@ -67,6 +69,7 @@ public class EnemyMovement : MonoBehaviour
         nextAttackTime = Time.time + attackCooldown;
 
         Debug.Log(gameObject.name + ". Damage delt: " + attackDamage);
+        player.GetComponent<IDamageable>().TakeDamage(attackDamage);
     }
 
     private void FaceTarget()
