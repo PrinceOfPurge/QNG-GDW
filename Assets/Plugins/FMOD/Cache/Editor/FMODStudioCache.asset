@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: FMOD/Awakened/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639268401229336867
+  lastModified: 639268422873801910
   FileSizes:
   - Name: Desktop
     Value: 2469056
@@ -163,10 +163,10 @@ MonoBehaviour:
   Path: FMOD/Awakened/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 639268400537574764
+  lastModified: 639268422874810984
   FileSizes:
   - Name: Desktop
-    Value: 395488
+    Value: 462656
   Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
@@ -197,12 +197,14 @@ MonoBehaviour:
   - {fileID: -3425195318931576338}
   - {fileID: 1766831406133079973}
   - {fileID: -4665745324410047383}
+  - {fileID: 5016469613640732774}
+  - {fileID: 6796008388534628361}
   EditorParameters: []
   MasterBanks:
   - {fileID: -7543551217142183299}
   StringsBanks:
   - {fileID: 4313901897037473144}
-  cacheTime: 639268401229576950
+  cacheTime: 639268422874810984
   cacheVersion: 131635
 --- !u!114 &1079236871559912573
 MonoBehaviour:
@@ -223,8 +225,8 @@ MonoBehaviour:
     Data3: 129937846
     Data4: 1890204195
   Banks:
-  - {fileID: -7543551217142183299}
   - {fileID: -7030808368792226573}
+  - {fileID: -7543551217142183299}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -328,11 +330,38 @@ MonoBehaviour:
   Path: FMOD/Awakened/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639268401229346935
+  lastModified: 639268422873811912
   FileSizes:
   - Name: Desktop
-    Value: 1416
+    Value: 1514
   Exists: 1
+--- !u!114 &5016469613640732774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/ZombieGrowl1
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/ZombieGrowl1
+  Guid:
+    Data1: 341157054
+    Data2: 1228644811
+    Data3: -110775875
+    Data4: 2031913453
+  Banks:
+  - {fileID: -1889487560091085992}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &5950657385115392423
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -353,6 +382,33 @@ MonoBehaviour:
   - Name: Desktop
     Value: 642976
   Exists: 1
+--- !u!114 &6796008388534628361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/CarCrash
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/CarCrash
+  Guid:
+    Data1: -1670153204
+    Data2: 1272741243
+    Data3: 328087441
+    Data4: -1377218381
+  Banks:
+  - {fileID: -1889487560091085992}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &6798054521904291435
 MonoBehaviour:
   m_ObjectHideFlags: 0

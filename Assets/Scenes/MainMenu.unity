@@ -1339,6 +1339,16 @@ Transform:
   m_Children: []
   m_Father: {fileID: 166541636}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &556528971 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: f174ecdb976e0254182511fcdafab3fa, type: 3}
+  m_PrefabInstance: {fileID: 2017781618}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &556528972 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f174ecdb976e0254182511fcdafab3fa, type: 3}
+  m_PrefabInstance: {fileID: 2017781618}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &587923785
 GameObject:
   m_ObjectHideFlags: 3
@@ -1712,6 +1722,76 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!1 &878289681
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 878289682}
+  - component: {fileID: 878289683}
+  m_Layer: 0
+  m_Name: Zombie
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &878289682
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 878289681}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -23.069796, y: 1.697299, z: -100.32378}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 556528972}
+  m_Father: {fileID: 1536397868}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &878289683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 878289681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c1db6f8821de154ea89b8eb49083286, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zombieObject: {fileID: 556528971}
+  nextSceneName: Prototype
+  impactDelayBeforeSceneLoad: 0.2
+  roadSpeed: 25
+  startX: -12
+  roadCenterX: -2.46
+  spawnZ: 30
+  leapTriggerZ: 20
+  scareImpactZ: 10
+  destroyZ: -10
+  yHeightOffset: 1
+  scareAudioEvent:
+    Guid:
+      Data1: 341157054
+      Data2: 1228644811
+      Data3: -110775875
+      Data4: 2031913453
+    Path: event:/SFX/ZombieGrowl1
+  crashImpactAudioEvent:
+    Guid:
+      Data1: -1670153204
+      Data2: 1272741243
+      Data3: 328087441
+      Data4: -1377218381
+    Path: event:/SFX/CarCrash
 --- !u!1 &916950288
 GameObject:
   m_ObjectHideFlags: 0
@@ -7544,6 +7624,8 @@ MonoBehaviour:
   signController: {fileID: 1167562012}
   treeSpawner: {fileID: 997849976}
   glanceDuration: 2.5
+  zombieJumpScare: {fileID: 878289683}
+  delayBeforeJumpScare: 1
   subtitleTextUI: {fileID: 1004047079}
   subtitleCanvasGroup: {fileID: 452319694}
   textFadeSpeed: 3
@@ -7673,6 +7755,7 @@ Transform:
   - {fileID: 2564615031195620660}
   - {fileID: 8983369894844313589}
   - {fileID: 5709750179262852552}
+  - {fileID: 878289682}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1624500400
@@ -13478,6 +13561,67 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.018928748, y: 0.014104416, z: 0.018692013}
   m_Center: {x: 0.0001359242, y: -0.002898684, z: 0.00021550385}
+--- !u!1001 &2017781618
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 878289682}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: f174ecdb976e0254182511fcdafab3fa, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.9912472
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f174ecdb976e0254182511fcdafab3fa, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.6055517
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f174ecdb976e0254182511fcdafab3fa, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 14.710342
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f174ecdb976e0254182511fcdafab3fa, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f174ecdb976e0254182511fcdafab3fa, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f174ecdb976e0254182511fcdafab3fa, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f174ecdb976e0254182511fcdafab3fa, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f174ecdb976e0254182511fcdafab3fa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f174ecdb976e0254182511fcdafab3fa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f174ecdb976e0254182511fcdafab3fa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f174ecdb976e0254182511fcdafab3fa, type: 3}
+      propertyPath: m_Name
+      value: Male5
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f174ecdb976e0254182511fcdafab3fa, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f174ecdb976e0254182511fcdafab3fa, type: 3}
 --- !u!4 &306870067771697618
 Transform:
   m_ObjectHideFlags: 0

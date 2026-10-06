@@ -13,20 +13,22 @@ public class IntroSequenceController : MonoBehaviour
         [TextArea(2, 4)] public string lineText;
         public float displayDuration;
         public float delayBeforeNext;
-        
-        [Tooltip("Select the scene-specific FMOD event directly from your FMOD project tree")]
         public EventReference audioEvent; 
     }
 
     [Header("Cinemachine Cameras")]
-    [SerializeField] private CinemachineVirtualCamera consoleCam;      // Priority 30 at launch (Main Menu view)
-    [SerializeField] private CinemachineVirtualCamera roadOverviewCam; // Priority 10 at launch (Straight road view, LookAt = None)
-    [SerializeField] private CinemachineVirtualCamera signGlanceCam;   // Priority 10 at launch (LookAt assigned to Sign Transform)
+    [SerializeField] private CinemachineVirtualCamera consoleCam;      
+    [SerializeField] private CinemachineVirtualCamera roadOverviewCam; 
+    [SerializeField] private CinemachineVirtualCamera signGlanceCam;   
 
     [Header("Sign & Environment Setup")]
     [SerializeField] private PassingSignController signController;
     [SerializeField] private PassingTreeSpawner treeSpawner;
     [SerializeField] private float glanceDuration = 3.5f;
+
+    [Header("Jump Scare Setup")]
+    [SerializeField] private ZombieJumpScare zombieJumpScare;
+    [SerializeField] private float delayBeforeJumpScare = 1.0f;
 
     [Header("UI Subtitles Setup")]
     [SerializeField] private TextMeshProUGUI subtitleTextUI;
@@ -37,15 +39,14 @@ public class IntroSequenceController : MonoBehaviour
     [SerializeField] private DialogueLine[] dialogueLines;
 
     private bool sequenceStarted = false;
+    private Coroutine introCoroutine;
 
     private void Start()
     {
-        // Force initial menu state: Camera locked on Console
         if (consoleCam != null) consoleCam.Priority = 30;
         if (roadOverviewCam != null) roadOverviewCam.Priority = 10;
         if (signGlanceCam != null) signGlanceCam.Priority = 10;
 
-        // Hide subtitles initially
         if (subtitleCanvasGroup != null)
         {
             subtitleCanvasGroup.alpha = 0f;
@@ -57,60 +58,87 @@ public class IntroSequenceController : MonoBehaviour
         }
     }
 
-    // Called strictly when the 3D Play button is clicked
+    private void Update()
+    {
+        // DEBUG HOTKEY: Press 'J' in Play Mode to force the jump scare immediately
+        if (Input.GetKeyDown(KeyCode.J))
+        {
+            Debug.Log("[DEBUG] 'J' pressed: Skipping dialogue to trigger Jump Scare!");
+            
+            if (introCoroutine != null)
+            {
+                StopCoroutine(introCoroutine);
+            }
+
+            // Ensure cameras and environment are moving
+            if (consoleCam != null) consoleCam.Priority = 5;
+            if (roadOverviewCam != null) roadOverviewCam.Priority = 30;
+            if (treeSpawner != null) treeSpawner.StartSpawningTrees();
+            if (subtitleCanvasGroup != null) subtitleCanvasGroup.alpha = 0f;
+
+            if (zombieJumpScare != null)
+            {
+                zombieJumpScare.TriggerJumpScare();
+            }
+            else
+            {
+                Debug.LogError("ZombieJumpScare component is NOT assigned in the Inspector!");
+            }
+        }
+    }
+
     public void BeginIntroFromButton()
     {
         if (sequenceStarted) return;
         sequenceStarted = true;
 
-        StartCoroutine(PlayIntroSequence());
+        introCoroutine = StartCoroutine(PlayIntroSequence());
     }
 
     private IEnumerator PlayIntroSequence()
     {
-        // STEP 1: Transition from Console to Road Overview View
         if (consoleCam != null) consoleCam.Priority = 5;
         if (roadOverviewCam != null) roadOverviewCam.Priority = 20;
 
-        yield return new WaitForSeconds(1.2f); // Wait for camera blend up to windshield to finish
+        yield return new WaitForSeconds(1.2f); 
 
-        // STEP 2: Trigger sign & tree movement, switch camera focus to passing sign
         if (treeSpawner != null) treeSpawner.StartSpawningTrees();
         if (signController != null) signController.TriggerSignPass();
+        if (signGlanceCam != null) signGlanceCam.Priority = 25; 
 
-        if (signGlanceCam != null) signGlanceCam.Priority = 25; // Take control to track/zoom on sign
-
-        // Hold camera focus on the sign as it approaches and passes
         yield return new WaitForSeconds(glanceDuration);
 
-        // STEP 3: Transition camera back to Road Overview View
         if (signGlanceCam != null) signGlanceCam.Priority = 5;
         if (roadOverviewCam != null) roadOverviewCam.Priority = 30;
 
-        yield return new WaitForSeconds(1.5f); // Pause briefly on road view before dialogue kicks in
+        yield return new WaitForSeconds(1.5f); 
 
-        // STEP 4: Walkie-Talkie Dialogue Subtitle & Audio Sequence
         foreach (DialogueLine line in dialogueLines)
         {
-            // Trigger dialogue audio if an event is assigned
             PlayDialogueAudio(line.audioEvent);
 
             string formattedText = string.IsNullOrEmpty(line.speakerName) 
                 ? line.lineText 
                 : $"<b>{line.speakerName}:</b> {line.lineText}";
 
-            subtitleTextUI.text = formattedText;
+            if (subtitleTextUI != null) subtitleTextUI.text = formattedText;
 
             yield return StartCoroutine(FadeSubtitles(1f));
             yield return new WaitForSeconds(line.displayDuration);
             yield return StartCoroutine(FadeSubtitles(0f));
             yield return new WaitForSeconds(line.delayBeforeNext);
         }
+
+        yield return new WaitForSeconds(delayBeforeJumpScare);
+
+        if (zombieJumpScare != null)
+        {
+            zombieJumpScare.TriggerJumpScare();
+        }
     }
 
     private void PlayDialogueAudio(EventReference eventRef)
     {
-        // Play one-shot dialogue audio if assigned in the Inspector
         if (!eventRef.IsNull)
         {
             RuntimeManager.PlayOneShot(eventRef);
