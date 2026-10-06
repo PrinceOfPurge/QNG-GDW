@@ -6,14 +6,21 @@
   <component name="ChangeListManager">
     <list default="true" id="c71e8065-9e1e-411c-be29-80b3034969a6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.QNG-GDW/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.QNG-GDW/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/AudioManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Audio/AudioManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/FMODEvents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Audio/FMODEvents.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/trees/tree.001 1.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/trees/tree.001 1.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/trees/tree.001.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/trees/tree.001.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/trees/tree.002.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/trees/tree.002.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/trees/tree.003.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/trees/tree.003.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Omid/Audio/RadioVolumeKnob3D.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Omid/Audio/RadioVolumeKnob3D.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Omid/MainMenu/IntroSequenceController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Omid/MainMenu/IntroSequenceController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FMOD/Awakened/.cache/buildrecords/Desktop/Master.br" beforeDir="false" afterPath="$PROJECT_DIR$/FMOD/Awakened/.cache/buildrecords/Desktop/Master.br" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FMOD/Awakened/.cache/buildrecords/Desktop/Music.br" beforeDir="false" afterPath="$PROJECT_DIR$/FMOD/Awakened/.cache/buildrecords/Desktop/Music.br" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FMOD/Awakened/.cache/buildrecords/Desktop/SFX.br" beforeDir="false" afterPath="$PROJECT_DIR$/FMOD/Awakened/.cache/buildrecords/Desktop/SFX.br" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FMOD/Awakened/.unsaved/Metadata/Event/{3a9a3faa-402f-4ab3-86fa-3c6cd3e74208}.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FMOD/Awakened/.unsaved/metadataFileMapping.data" beforeDir="false" afterPath="$PROJECT_DIR$/FMOD/Awakened/.unsaved/metadataFileMapping.data" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FMOD/Awakened/Build/Desktop/Master.bank" beforeDir="false" afterPath="$PROJECT_DIR$/FMOD/Awakened/Build/Desktop/Master.bank" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FMOD/Awakened/Build/Desktop/Master.strings.bank" beforeDir="false" afterPath="$PROJECT_DIR$/FMOD/Awakened/Build/Desktop/Master.strings.bank" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FMOD/Awakened/Build/Desktop/Music.bank" beforeDir="false" afterPath="$PROJECT_DIR$/FMOD/Awakened/Build/Desktop/Music.bank" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FMOD/Awakened/Build/Desktop/SFX.bank" beforeDir="false" afterPath="$PROJECT_DIR$/FMOD/Awakened/Build/Desktop/SFX.bank" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FMOD/Awakened/Metadata/Event/{03029de2-27df-4b4e-b6b1-be07233aaa70}.xml" beforeDir="false" afterPath="$PROJECT_DIR$/FMOD/Awakened/Metadata/Event/{03029de2-27df-4b4e-b6b1-be07233aaa70}.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FMOD/Awakened/Metadata/Event/{3a9a3faa-402f-4ab3-86fa-3c6cd3e74208}.xml" beforeDir="false" afterPath="$PROJECT_DIR$/FMOD/Awakened/Metadata/Event/{3a9a3faa-402f-4ab3-86fa-3c6cd3e74208}.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +108,7 @@
       <workItem from="1790965554856" duration="1267000" />
       <workItem from="1790966904006" duration="150000" />
       <workItem from="1791214464624" duration="5370000" />
-      <workItem from="1791248910743" duration="2001000" />
+      <workItem from="1791248910743" duration="7505000" />
     </task>
     <servers />
   </component>

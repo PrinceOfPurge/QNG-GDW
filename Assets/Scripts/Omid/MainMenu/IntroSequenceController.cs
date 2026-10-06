@@ -2,6 +2,7 @@ using UnityEngine;
 using Cinemachine;
 using TMPro;
 using System.Collections;
+using FMODUnity;
 
 public class IntroSequenceController : MonoBehaviour
 {
@@ -12,7 +13,9 @@ public class IntroSequenceController : MonoBehaviour
         [TextArea(2, 4)] public string lineText;
         public float displayDuration;
         public float delayBeforeNext;
-        public string fmodEventPath; 
+        
+        [Tooltip("Select the scene-specific FMOD event directly from your FMOD project tree")]
+        public EventReference audioEvent; 
     }
 
     [Header("Cinemachine Cameras")]
@@ -86,9 +89,12 @@ public class IntroSequenceController : MonoBehaviour
 
         yield return new WaitForSeconds(1.5f); // Pause briefly on road view before dialogue kicks in
 
-        // STEP 4: Walkie-Talkie Dialogue Subtitle Sequence
+        // STEP 4: Walkie-Talkie Dialogue Subtitle & Audio Sequence
         foreach (DialogueLine line in dialogueLines)
         {
+            // Trigger dialogue audio if an event is assigned
+            PlayDialogueAudio(line.audioEvent);
+
             string formattedText = string.IsNullOrEmpty(line.speakerName) 
                 ? line.lineText 
                 : $"<b>{line.speakerName}:</b> {line.lineText}";
@@ -99,6 +105,15 @@ public class IntroSequenceController : MonoBehaviour
             yield return new WaitForSeconds(line.displayDuration);
             yield return StartCoroutine(FadeSubtitles(0f));
             yield return new WaitForSeconds(line.delayBeforeNext);
+        }
+    }
+
+    private void PlayDialogueAudio(EventReference eventRef)
+    {
+        // Play one-shot dialogue audio if assigned in the Inspector
+        if (!eventRef.IsNull)
+        {
+            RuntimeManager.PlayOneShot(eventRef);
         }
     }
 
@@ -117,13 +132,14 @@ public class IntroSequenceController : MonoBehaviour
     {
         dialogueLines = new DialogueLine[]
         {
-            new DialogueLine { speakerName = "Officer Jackson", lineText = "Officer Morgan, come in.", displayDuration = 2.0f, delayBeforeNext = 0.5f },
-            new DialogueLine { speakerName = "Bailey Morgan", lineText = "Copy.", displayDuration = 1.2f, delayBeforeNext = 0.5f },
-            new DialogueLine { speakerName = "Officer Jackson", lineText = "There’s reporting of a strange fog taking over the city and some citizens have gone missing, we need back up in the city square.", displayDuration = 5.0f, delayBeforeNext = 0.5f },
-            new DialogueLine { speakerName = "Bailey Morgan", lineText = "A fog? Give me a break.", displayDuration = 2.2f, delayBeforeNext = 0.5f },
-            new DialogueLine { speakerName = "Officer Jackson", lineText = "I know but things are hectic here, we need you out here… HOLY MOTHER OF GOD SHOTS FIRED!", displayDuration = 4.5f, delayBeforeNext = 0.2f },
-            new DialogueLine { speakerName = "Bailey Morgan", lineText = "Cop 1, come in! Cop 1, come in!", displayDuration = 2.5f, delayBeforeNext = 0.3f },
-            new DialogueLine { speakerName = "Officer Jackson", lineText = "*Monster sounds* HELP!!!", displayDuration = 2.5f, delayBeforeNext = 1.0f }
+            new DialogueLine { speakerName = "Officer Jackson", lineText = "Unit 2-Alpha to Control, or any unit near the square.", displayDuration = 3.0f, delayBeforeNext = 0.5f },
+            new DialogueLine { speakerName = "Bailey Morgan", lineText = "This is 3-Bravo, go ahead 2-Alpha.", displayDuration = 2.0f, delayBeforeNext = 0.5f },
+            new DialogueLine { speakerName = "Officer Jackson", lineText = "3-Bravo, we have a code 10-54 out here. Heavy localized fog, citizens unaccounted for. Requesting immediate backup at the city square.", displayDuration = 6.0f, delayBeforeNext = 0.5f },
+            new DialogueLine { speakerName = "Bailey Morgan", lineText = "Copy that... did you say fog? Give me a break, Alpha.", displayDuration = 3.0f, delayBeforeNext = 0.5f },
+            new DialogueLine { speakerName = "Officer Jackson", lineText = "It's real. We need boots on the groun—", displayDuration = 3.0f, delayBeforeNext = 0.2f },
+            new DialogueLine { speakerName = "Officer Jackson", lineText = "[Radio Static]SHOTS FIRED! SHOTS FIRED!", displayDuration = 2.5f, delayBeforeNext = 0.3f },
+            new DialogueLine { speakerName = "Bailey Morgan", lineText = "2-Alpha, status! 2-Alpha, come in!", displayDuration = 2.5f, delayBeforeNext = 0.3f },
+            new DialogueLine { speakerName = "Officer Jackson", lineText = "*Growls* [Radio Static]... HELP!!!", displayDuration = 2.5f, delayBeforeNext = 1.0f }
         };
     }
 }

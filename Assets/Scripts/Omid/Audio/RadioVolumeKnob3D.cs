@@ -4,8 +4,8 @@ public class RadioVolumeKnob3D : MonoBehaviour
 {
     public enum InteractionType
     {
-        RadialSpin,     // Orbit mouse clockwise/counter-clockwise around dial center
-        LinearDrag      // Drag mouse Up/Right (Volume Up) or Down/Left (Volume Down)
+        RadialSpin,     // Orbit mouse around dial center
+        LinearDrag      // Drag mouse Up/Right or Down/Left
     }
 
     [Header("Interaction & Direction")]
@@ -38,8 +38,7 @@ public class RadioVolumeKnob3D : MonoBehaviour
 
     private float targetZAngle;
     private float displayedZAngle;
-    private float initialMouseAngle;
-    private float initialKnobZAngle;
+    private float previousMouseAngle;
     private Vector3 previousMousePos;
     private Vector3 baseLocalEuler;
     private bool isDragging = false;
@@ -70,8 +69,7 @@ public class RadioVolumeKnob3D : MonoBehaviour
     {
         isDragging = true;
         previousMousePos = Input.mousePosition;
-        initialMouseAngle = GetMouseAngleOnScreen();
-        initialKnobZAngle = targetZAngle;
+        previousMouseAngle = GetMouseAngleOnScreen();
     }
 
     private void OnMouseDrag()
@@ -82,12 +80,13 @@ public class RadioVolumeKnob3D : MonoBehaviour
         {
             float currentMouseAngle = GetMouseAngleOnScreen();
 
-            // Reversed subtraction (initial - current) converts clockwise cursor motion into positive delta
-            float angleDelta = Mathf.DeltaAngle(currentMouseAngle, initialMouseAngle);
+            // Calculate incremental frame-to-frame delta (eliminates 180-degree wrap jump)
+            float frameDelta = Mathf.DeltaAngle(previousMouseAngle, currentMouseAngle);
+            previousMouseAngle = currentMouseAngle;
 
-            if (invertDirection) angleDelta = -angleDelta;
+            if (invertDirection) frameDelta = -frameDelta;
 
-            targetZAngle = Mathf.Clamp(initialKnobZAngle + angleDelta, minZAngle, maxZAngle);
+            targetZAngle = Mathf.Clamp(targetZAngle + frameDelta, minZAngle, maxZAngle);
         }
         else // Linear Drag
         {
@@ -100,7 +99,7 @@ public class RadioVolumeKnob3D : MonoBehaviour
             targetZAngle = Mathf.Clamp(targetZAngle + dragAmount, minZAngle, maxZAngle);
         }
 
-        // Calculate 0.0 to 1.0 volume ratio
+        // Normalize 0.0 to 1.0 volume ratio
         currentVolume = Mathf.InverseLerp(minZAngle, maxZAngle, targetZAngle);
 
         if (AudioManager.instance != null)
@@ -116,7 +115,7 @@ public class RadioVolumeKnob3D : MonoBehaviour
 
     private void Update()
     {
-        // Interpolate displayed rotation towards target rotation for physical weight feel
+        // Smoothly interpolate displayed rotation towards target rotation for physical weight feel
         if (Mathf.Abs(displayedZAngle - targetZAngle) > 0.001f)
         {
             displayedZAngle = Mathf.Lerp(displayedZAngle, targetZAngle, Time.deltaTime * smoothingSpeed);
