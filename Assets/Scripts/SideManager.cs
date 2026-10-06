@@ -20,15 +20,6 @@ public class SideManager : MonoBehaviour
         Door
     }
 
-    [Header("Left Positions")]
-    public Transform leftSeatPosition;
-    public Transform leftWindowPosition;
-    public Transform leftDoorPosition;
-
-    [Header("Right Positions")]
-    public Transform rightSeatPosition;
-    public Transform rightWindowPosition;
-    public Transform rightDoorPosition;
 
     [Header("States")]
     public PlayerSide currentSide = PlayerSide.Left;
@@ -38,11 +29,18 @@ public class SideManager : MonoBehaviour
     public float switchDuration = 0.75f;
     public float positionTransitionDuration = 0.25f;
 
-    //[Header("References")]
-    //public PlayerLook playerLook;
+    //Truck Movement Positions
+    private Transform leftSeatPosition;
+    private Transform leftWindowPosition;
+    private Transform leftDoorPosition;
+    private Transform rightSeatPosition;
+    private Transform rightWindowPosition;
+    private Transform rightDoorPosition;
 
     private PlayerControls controls;
     private Coroutine movementCoroutine;
+
+    private GameObject truck;
 
     private void Awake()
     {
@@ -58,6 +56,18 @@ public class SideManager : MonoBehaviour
     private void OnDisable()
     {
         controls.Disable();
+    }
+
+    private void Start()
+    {
+        //Finding the truck movement positions through code
+        truck = GameObject.FindGameObjectWithTag("Truck");
+        leftSeatPosition = truck.transform.Find("SeatPosLeft");
+        leftDoorPosition = truck.transform.Find("DoorPosLeft");
+        leftWindowPosition = truck.transform.Find("WindowPosLeft");
+        rightSeatPosition = truck.transform.Find("SeatPosRight");
+        rightDoorPosition = truck.transform.Find("DoorPosRight");
+        rightWindowPosition = truck.transform.Find("WindowPosRight");
     }
 
     private void Update()
