@@ -14,8 +14,10 @@ public class PlayerShoot : MonoBehaviour
     [SerializeField] private float fireRate = 0.5f;
 
     [Header("Ammo")]
-    [SerializeField] private int maxAmmo = 6;
+    //[SerializeField] private int maxAmmo = 6;
     [SerializeField] private int currentAmmo = 6;
+    [SerializeField] private int magSize = 6;
+    [SerializeField] private int currentMagAmmo = 6;
 
     private PlayerControls controls;
 
@@ -42,6 +44,31 @@ public class PlayerShoot : MonoBehaviour
         {
             Shoot();
         }
+        if (controls.Player.Reload.WasPressedThisFrame())
+        {
+            Reload();
+        }
+    }
+
+    private void Reload()
+    {
+        int bulletsToReload;
+
+        if (currentAmmo <= 0)
+        {
+            Debug.Log("Out of ammo");
+            return;
+        }
+
+        bulletsToReload = magSize - currentMagAmmo;
+
+        if (currentAmmo < bulletsToReload)
+            bulletsToReload = currentAmmo;
+
+        currentMagAmmo += bulletsToReload;
+        currentAmmo -= bulletsToReload;
+
+        Debug.Log("Bullets in mag: " + currentMagAmmo + ". Bullets left: " + currentAmmo);
     }
 
     private void Shoot()
@@ -51,14 +78,14 @@ public class PlayerShoot : MonoBehaviour
             return;
 
         // if out of ammo
-        if (currentAmmo <= 0)
+        if (currentMagAmmo <= 0)
             return;
 
         Debug.Log("Shoot");
 
         nextTimeToFire = Time.time + fireRate;
 
-        currentAmmo--;
+        currentMagAmmo--;
 
         // shoot from the center of camera
         Ray ray = playerCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
