@@ -225,6 +225,7 @@ GameObject:
   - component: {fileID: 4985953140368700055}
   - component: {fileID: 4554521081555997037}
   - component: {fileID: 4366846801397422793}
+  - component: {fileID: 4553621335918302894}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -289,6 +290,18 @@ MonoBehaviour:
   fireRate: 0.5
   maxAmmo: 6
   currentAmmo: 6
+--- !u!114 &4553621335918302894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7567736295711972796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4684f901ada3c9a429aa703a818ab7f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7812900059449914820
 GameObject:
   m_ObjectHideFlags: 0
