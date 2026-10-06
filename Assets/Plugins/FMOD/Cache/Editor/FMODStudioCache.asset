@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: FMOD/Awakened/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639265491028217607
+  lastModified: 639268335544814322
   FileSizes:
   - Name: Desktop
     Value: 2024
@@ -80,12 +80,13 @@ MonoBehaviour:
   - {fileID: -1889487560091085992}
   EditorEvents:
   - {fileID: 6324804318278348453}
+  - {fileID: 6798054521904291435}
   EditorParameters: []
   MasterBanks:
   - {fileID: -7543551217142183299}
   StringsBanks:
   - {fileID: 4313901897037473144}
-  cacheTime: 639265491028292889
+  cacheTime: 639268336653585003
   cacheVersion: 131635
 --- !u!114 &4313901897037473144
 MonoBehaviour:
@@ -102,10 +103,10 @@ MonoBehaviour:
   Path: FMOD/Awakened/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639265491028242642
+  lastModified: 639268335544819361
   FileSizes:
   - Name: Desktop
-    Value: 998
+    Value: 1058
   Exists: 1
 --- !u!114 &5950657385115392423
 MonoBehaviour:
@@ -122,10 +123,10 @@ MonoBehaviour:
   Path: FMOD/Awakened/Build/Desktop/Ambience.bank
   Name: Ambience
   StudioPath: bank:/Ambience
-  lastModified: 639265487434735484
+  lastModified: 639268336653585003
   FileSizes:
   - Name: Desktop
-    Value: 494
+    Value: 642976
   Exists: 1
 --- !u!114 &6324804318278348453
 MonoBehaviour:
@@ -146,8 +147,8 @@ MonoBehaviour:
     Data3: 129937846
     Data4: 1890204195
   Banks:
-  - {fileID: -7543551217142183299}
   - {fileID: -7030808368792226573}
+  - {fileID: -7543551217142183299}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -155,3 +156,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &6798054521904291435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambience/Rainfall
+  m_EditorClassIdentifier: 
+  Path: event:/Ambience/Rainfall
+  Guid:
+    Data1: 983187370
+    Data2: 1253261359
+    Data3: 1815935622
+    Data4: 138602451
+  Banks:
+  - {fileID: 5950657385115392423}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 48457
