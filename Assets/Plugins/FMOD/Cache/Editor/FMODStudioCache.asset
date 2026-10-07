@@ -1,127 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-7543551217142183299
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
-  m_EditorClassIdentifier: 
-  Path: FMOD/Awakened/Build/Desktop/Master.bank
-  Name: Master
-  StudioPath: bank:/Master
-  lastModified: 639268731993671540
-  FileSizes:
-  - Name: Desktop
-    Value: 2469056
-  Exists: 1
---- !u!114 &-7030808368792226573
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Music.bank
-  m_EditorClassIdentifier: 
-  Path: FMOD/Awakened/Build/Desktop/Music.bank
-  Name: Music
-  StudioPath: bank:/Music
-  lastModified: 639268731993671540
-  FileSizes:
-  - Name: Desktop
-    Value: 2468064
-  Exists: 1
---- !u!114 &-5421298704307278964
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Dialogue/Morgan/Morgan 2
-  m_EditorClassIdentifier: 
-  Path: event:/Dialogue/Morgan/Morgan 2
-  Guid:
-    Data1: -20227747
-    Data2: 1321582523
-    Data3: -9984883
-    Data4: -970641470
-  Banks:
-  - {fileID: -1889487560091085992}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-4665745324410047383
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Dialogue/Jackson/Jackson
-  m_EditorClassIdentifier: 
-  Path: event:/Dialogue/Jackson/Jackson
-  Guid:
-    Data1: 2097094115
-    Data2: 1269240438
-    Data3: 1652605110
-    Data4: 713081632
-  Banks:
-  - {fileID: -1889487560091085992}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-3425195318931576338
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Dialogue/Jackson/Jackson 4
-  m_EditorClassIdentifier: 
-  Path: event:/Dialogue/Jackson/Jackson 4
-  Guid:
-    Data1: -778491226
-    Data2: 1330329616
-    Data3: 243744150
-    Data4: 948085206
-  Banks:
-  - {fileID: -1889487560091085992}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-2947247087916354098
+--- !u!114 &-4528098439518157962
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -140,7 +19,7 @@ MonoBehaviour:
     Data3: 785610911
     Data4: 97909291
   Banks:
-  - {fileID: -1889487560091085992}
+  - {fileID: 3560614716412183380}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -148,295 +27,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &-1889487560091085992
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/SFX.bank
-  m_EditorClassIdentifier: 
-  Path: FMOD/Awakened/Build/Desktop/SFX.bank
-  Name: SFX
-  StudioPath: bank:/SFX
-  lastModified: 639268731993671540
-  FileSizes:
-  - Name: Desktop
-    Value: 462656
-  Exists: 1
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
-  m_Name: FMODStudioCache
-  m_EditorClassIdentifier: 
-  EditorBanks:
-  - {fileID: 4313901897037473144}
-  - {fileID: -7543551217142183299}
-  - {fileID: 5950657385115392423}
-  - {fileID: -7030808368792226573}
-  - {fileID: -1889487560091085992}
-  EditorEvents:
-  - {fileID: 6798054521904291435}
-  - {fileID: 1079236871559912573}
-  - {fileID: -2947247087916354098}
-  - {fileID: 3444187223383216122}
-  - {fileID: -5421298704307278964}
-  - {fileID: 9102399842442808387}
-  - {fileID: 1765561255879823444}
-  - {fileID: -3425195318931576338}
-  - {fileID: 1766831406133079973}
-  - {fileID: -4665745324410047383}
-  - {fileID: 5016469613640732774}
-  - {fileID: 6796008388534628361}
-  EditorParameters: []
-  MasterBanks:
-  - {fileID: -7543551217142183299}
-  StringsBanks:
-  - {fileID: 4313901897037473144}
-  cacheTime: 639268731993671540
-  cacheVersion: 131635
---- !u!114 &1079236871559912573
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/MainMenu
-  m_EditorClassIdentifier: 
-  Path: event:/Music/MainMenu
-  Guid:
-    Data1: 50503138
-    Data2: 1263413215
-    Data3: 129937846
-    Data4: 1890204195
-  Banks:
-  - {fileID: -7543551217142183299}
-  - {fileID: -7030808368792226573}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 196824
---- !u!114 &1765561255879823444
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Dialogue/Jackson/Jackson 5
-  m_EditorClassIdentifier: 
-  Path: event:/Dialogue/Jackson/Jackson 5
-  Guid:
-    Data1: 1253350005
-    Data2: 1300585067
-    Data3: -1354293334
-    Data4: -1413699056
-  Banks:
-  - {fileID: -1889487560091085992}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &1766831406133079973
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Dialogue/Morgan/Morgan 3
-  m_EditorClassIdentifier: 
-  Path: event:/Dialogue/Morgan/Morgan 3
-  Guid:
-    Data1: 624379330
-    Data2: 1140485501
-    Data3: -1961789559
-    Data4: -2059671373
-  Banks:
-  - {fileID: -1889487560091085992}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &3444187223383216122
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Dialogue/Morgan/Morgan
-  m_EditorClassIdentifier: 
-  Path: event:/Dialogue/Morgan/Morgan
-  Guid:
-    Data1: -926084787
-    Data2: 1209322946
-    Data3: -850918528
-    Data4: 1030053675
-  Banks:
-  - {fileID: -1889487560091085992}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &4313901897037473144
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.strings.bank
-  m_EditorClassIdentifier: 
-  Path: FMOD/Awakened/Build/Desktop/Master.strings.bank
-  Name: Master.strings
-  StudioPath: bank:/Master.strings
-  lastModified: 639268731993671540
-  FileSizes:
-  - Name: Desktop
-    Value: 1514
-  Exists: 1
---- !u!114 &5016469613640732774
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/ZombieGrowl1
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/ZombieGrowl1
-  Guid:
-    Data1: 341157054
-    Data2: 1228644811
-    Data3: -110775875
-    Data4: 2031913453
-  Banks:
-  - {fileID: -1889487560091085992}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &5950657385115392423
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Ambience.bank
-  m_EditorClassIdentifier: 
-  Path: FMOD/Awakened/Build/Desktop/Ambience.bank
-  Name: Ambience
-  StudioPath: bank:/Ambience
-  lastModified: 639268731993508623
-  FileSizes:
-  - Name: Desktop
-    Value: 642976
-  Exists: 1
---- !u!114 &6796008388534628361
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/CarCrash
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/CarCrash
-  Guid:
-    Data1: -1670153204
-    Data2: 1272741243
-    Data3: 328087441
-    Data4: -1377218381
-  Banks:
-  - {fileID: -1889487560091085992}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &6798054521904291435
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Ambience/Rainfall
-  m_EditorClassIdentifier: 
-  Path: event:/Ambience/Rainfall
-  Guid:
-    Data1: 983187370
-    Data2: 1253261359
-    Data3: 1815935622
-    Data4: 138602451
-  Banks:
-  - {fileID: 5950657385115392423}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 48457
---- !u!114 &9102399842442808387
+--- !u!114 &-3071936843679252548
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -455,7 +46,416 @@ MonoBehaviour:
     Data3: -569013868
     Data4: -504553111
   Banks:
-  - {fileID: -1889487560091085992}
+  - {fileID: 3560614716412183380}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-1499442790837186830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue/Jackson/Jackson
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue/Jackson/Jackson
+  Guid:
+    Data1: 2097094115
+    Data2: 1269240438
+    Data3: 1652605110
+    Data4: 713081632
+  Banks:
+  - {fileID: 3560614716412183380}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-1176135113484559321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue/Morgan/Morgan 3
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue/Morgan/Morgan 3
+  Guid:
+    Data1: 624379330
+    Data2: 1140485501
+    Data3: -1961789559
+    Data4: -2059671373
+  Banks:
+  - {fileID: 3560614716412183380}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-102578272445014494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/MainMenu
+  m_EditorClassIdentifier: 
+  Path: event:/Music/MainMenu
+  Guid:
+    Data1: 50503138
+    Data2: 1263413215
+    Data3: 129937846
+    Data4: 1890204195
+  Banks:
+  - {fileID: 6766960810165034733}
+  - {fileID: 4619890377971013013}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 196824
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
+  m_Name: FMODStudioCache
+  m_EditorClassIdentifier: 
+  EditorBanks:
+  - {fileID: 8353654140918682885}
+  - {fileID: 3775196418228271991}
+  - {fileID: 6766960810165034733}
+  - {fileID: 4619890377971013013}
+  - {fileID: 3560614716412183380}
+  EditorEvents:
+  - {fileID: 6350918442738059819}
+  - {fileID: -102578272445014494}
+  - {fileID: -4528098439518157962}
+  - {fileID: 4513387360875236314}
+  - {fileID: 3548613740135979258}
+  - {fileID: 2025567656503438694}
+  - {fileID: -3071936843679252548}
+  - {fileID: 6048698871406194663}
+  - {fileID: 8996335615033991207}
+  - {fileID: 3742993491488549316}
+  - {fileID: -1176135113484559321}
+  - {fileID: -1499442790837186830}
+  EditorParameters: []
+  MasterBanks:
+  - {fileID: 6766960810165034733}
+  StringsBanks:
+  - {fileID: 8353654140918682885}
+  cacheTime: 639268824780954221
+  cacheVersion: 131635
+--- !u!114 &2025567656503438694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue/Morgan/Morgan 2
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue/Morgan/Morgan 2
+  Guid:
+    Data1: -20227747
+    Data2: 1321582523
+    Data3: -9984883
+    Data4: -970641470
+  Banks:
+  - {fileID: 3560614716412183380}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &3548613740135979258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue/Morgan/Morgan
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue/Morgan/Morgan
+  Guid:
+    Data1: -926084787
+    Data2: 1209322946
+    Data3: -850918528
+    Data4: 1030053675
+  Banks:
+  - {fileID: 3560614716412183380}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &3560614716412183380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/SFX.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD/Awakened/Build/Desktop/SFX.bank
+  Name: SFX
+  StudioPath: bank:/SFX
+  lastModified: 639268824780954221
+  FileSizes:
+  - Name: Desktop
+    Value: 462656
+  Exists: 1
+--- !u!114 &3742993491488549316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/ZombieGrowl1
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/ZombieGrowl1
+  Guid:
+    Data1: 341157054
+    Data2: 1228644811
+    Data3: -110775875
+    Data4: 2031913453
+  Banks:
+  - {fileID: 3560614716412183380}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &3775196418228271991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Ambience.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD/Awakened/Build/Desktop/Ambience.bank
+  Name: Ambience
+  StudioPath: bank:/Ambience
+  lastModified: 639268824780768565
+  FileSizes:
+  - Name: Desktop
+    Value: 642976
+  Exists: 1
+--- !u!114 &4513387360875236314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/CarCrash
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/CarCrash
+  Guid:
+    Data1: -1670153204
+    Data2: 1272741243
+    Data3: 328087441
+    Data4: -1377218381
+  Banks:
+  - {fileID: 3560614716412183380}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &4619890377971013013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Music.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD/Awakened/Build/Desktop/Music.bank
+  Name: Music
+  StudioPath: bank:/Music
+  lastModified: 639268824780933971
+  FileSizes:
+  - Name: Desktop
+    Value: 2468064
+  Exists: 1
+--- !u!114 &6048698871406194663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue/Jackson/Jackson 5
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue/Jackson/Jackson 5
+  Guid:
+    Data1: 1253350005
+    Data2: 1300585067
+    Data3: -1354293334
+    Data4: -1413699056
+  Banks:
+  - {fileID: 3560614716412183380}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &6350918442738059819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambience/Rainfall
+  m_EditorClassIdentifier: 
+  Path: event:/Ambience/Rainfall
+  Guid:
+    Data1: 983187370
+    Data2: 1253261359
+    Data3: 1815935622
+    Data4: 138602451
+  Banks:
+  - {fileID: 3775196418228271991}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 48457
+--- !u!114 &6766960810165034733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD/Awakened/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 639268824780873972
+  FileSizes:
+  - Name: Desktop
+    Value: 2469056
+  Exists: 1
+--- !u!114 &8353654140918682885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD/Awakened/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 639268824780883988
+  FileSizes:
+  - Name: Desktop
+    Value: 1514
+  Exists: 1
+--- !u!114 &8996335615033991207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue/Jackson/Jackson 4
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue/Jackson/Jackson 4
+  Guid:
+    Data1: -778491226
+    Data2: 1330329616
+    Data3: 243744150
+    Data4: 948085206
+  Banks:
+  - {fileID: 3560614716412183380}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
