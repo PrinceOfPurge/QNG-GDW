@@ -102,3 +102,11 @@ fmod_editor.log
 # Ignore local FMOD Studio Cache asset
 **/FMODStudioCache.asset
 **/FMODStudioCache.asset.meta
+Assets/Shaders/MirrorMaterials/Materials/LeftMirror.mat
+Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset
+Assets/Shaders/MirrorMaterials/Materials/RearViewMirror.mat
+Assets/Shaders/MirrorMaterials/Materials/RightMirror.mat
+Assets/Textures.meta
+Assets/Textures/textures props.meta
+Assets/Textures/textures props/trashcan.spp.meta
+ProjectSettings/ShaderGraphSettings.asset
