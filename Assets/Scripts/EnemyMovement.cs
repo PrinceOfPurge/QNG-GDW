@@ -26,6 +26,10 @@ public class EnemyMovement : MonoBehaviour
         {
             Debug.LogError("Truck tag not found");
         }
+        if (player == null)
+        {
+            Debug.Log("Player not found");
+        }
     }
 
     private void Update()
