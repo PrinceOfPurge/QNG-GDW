@@ -1,87 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-4528098439518157962
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Dialogue/Jackson/Jackson 2
-  m_EditorClassIdentifier: 
-  Path: event:/Dialogue/Jackson/Jackson 2
-  Guid:
-    Data1: 1380835077
-    Data2: 1110775144
-    Data3: 785610911
-    Data4: 97909291
-  Banks:
-  - {fileID: 3560614716412183380}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-3071936843679252548
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Dialogue/Jackson/Jackson 3
-  m_EditorClassIdentifier: 
-  Path: event:/Dialogue/Jackson/Jackson 3
-  Guid:
-    Data1: -781344915
-    Data2: 1317348200
-    Data3: -569013868
-    Data4: -504553111
-  Banks:
-  - {fileID: 3560614716412183380}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-1499442790837186830
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Dialogue/Jackson/Jackson
-  m_EditorClassIdentifier: 
-  Path: event:/Dialogue/Jackson/Jackson
-  Guid:
-    Data1: 2097094115
-    Data2: 1269240438
-    Data3: 1652605110
-    Data4: 713081632
-  Banks:
-  - {fileID: 3560614716412183380}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-1176135113484559321
+--- !u!114 &-8531718210017966971
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -100,7 +19,7 @@ MonoBehaviour:
     Data3: -1961789559
     Data4: -2059671373
   Banks:
-  - {fileID: 3560614716412183380}
+  - {fileID: -8530785228203913213}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -108,131 +27,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &-102578272445014494
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/MainMenu
-  m_EditorClassIdentifier: 
-  Path: event:/Music/MainMenu
-  Guid:
-    Data1: 50503138
-    Data2: 1263413215
-    Data3: 129937846
-    Data4: 1890204195
-  Banks:
-  - {fileID: 6766960810165034733}
-  - {fileID: 4619890377971013013}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 196824
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
-  m_Name: FMODStudioCache
-  m_EditorClassIdentifier: 
-  EditorBanks:
-  - {fileID: 8353654140918682885}
-  - {fileID: 3775196418228271991}
-  - {fileID: 6766960810165034733}
-  - {fileID: 4619890377971013013}
-  - {fileID: 3560614716412183380}
-  EditorEvents:
-  - {fileID: 6350918442738059819}
-  - {fileID: -102578272445014494}
-  - {fileID: -4528098439518157962}
-  - {fileID: 4513387360875236314}
-  - {fileID: 3548613740135979258}
-  - {fileID: 2025567656503438694}
-  - {fileID: -3071936843679252548}
-  - {fileID: 6048698871406194663}
-  - {fileID: 8996335615033991207}
-  - {fileID: 3742993491488549316}
-  - {fileID: -1176135113484559321}
-  - {fileID: -1499442790837186830}
-  EditorParameters: []
-  MasterBanks:
-  - {fileID: 6766960810165034733}
-  StringsBanks:
-  - {fileID: 8353654140918682885}
-<<<<<<< Updated upstream
-  cacheTime: 639280410213930433
-=======
-  cacheTime: 639277732537030900
->>>>>>> Stashed changes
-  cacheVersion: 131635
---- !u!114 &2025567656503438694
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Dialogue/Morgan/Morgan 2
-  m_EditorClassIdentifier: 
-  Path: event:/Dialogue/Morgan/Morgan 2
-  Guid:
-    Data1: -20227747
-    Data2: 1321582523
-    Data3: -9984883
-    Data4: -970641470
-  Banks:
-  - {fileID: 3560614716412183380}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &3548613740135979258
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Dialogue/Morgan/Morgan
-  m_EditorClassIdentifier: 
-  Path: event:/Dialogue/Morgan/Morgan
-  Guid:
-    Data1: -926084787
-    Data2: 1209322946
-    Data3: -850918528
-    Data4: 1030053675
-  Banks:
-  - {fileID: 3560614716412183380}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &3560614716412183380
+--- !u!114 &-8530785228203913213
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -247,43 +42,12 @@ MonoBehaviour:
   Path: FMOD/Awakened/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-<<<<<<< Updated upstream
   lastModified: 639280410213930433
-=======
-  lastModified: 639277732537030900
->>>>>>> Stashed changes
   FileSizes:
   - Name: Desktop
     Value: 462656
   Exists: 1
---- !u!114 &3742993491488549316
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/ZombieGrowl1
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/ZombieGrowl1
-  Guid:
-    Data1: 341157054
-    Data2: 1228644811
-    Data3: -110775875
-    Data4: 2031913453
-  Banks:
-  - {fileID: 3560614716412183380}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &3775196418228271991
+--- !u!114 &-8124382026942744437
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -293,99 +57,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Ambience.bank
+  m_Name: bank:/Master.bank
   m_EditorClassIdentifier: 
-  Path: FMOD/Awakened/Build/Desktop/Ambience.bank
-  Name: Ambience
-  StudioPath: bank:/Ambience
-<<<<<<< Updated upstream
-  lastModified: 639280410213718819
-=======
-  lastModified: 639277732536781143
->>>>>>> Stashed changes
+  Path: FMOD/Awakened/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 639280410213840269
   FileSizes:
   - Name: Desktop
-    Value: 642976
+    Value: 2469056
   Exists: 1
---- !u!114 &4513387360875236314
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/CarCrash
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/CarCrash
-  Guid:
-    Data1: -1670153204
-    Data2: 1272741243
-    Data3: 328087441
-    Data4: -1377218381
-  Banks:
-  - {fileID: 3560614716412183380}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &4619890377971013013
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Music.bank
-  m_EditorClassIdentifier: 
-  Path: FMOD/Awakened/Build/Desktop/Music.bank
-  Name: Music
-  StudioPath: bank:/Music
-<<<<<<< Updated upstream
-  lastModified: 639280410213910261
-=======
-  lastModified: 639277732537000396
->>>>>>> Stashed changes
-  FileSizes:
-  - Name: Desktop
-    Value: 2468064
-  Exists: 1
---- !u!114 &6048698871406194663
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Dialogue/Jackson/Jackson 5
-  m_EditorClassIdentifier: 
-  Path: event:/Dialogue/Jackson/Jackson 5
-  Guid:
-    Data1: 1253350005
-    Data2: 1300585067
-    Data3: -1354293334
-    Data4: -1413699056
-  Banks:
-  - {fileID: 3560614716412183380}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &6350918442738059819
+--- !u!114 &-2834562534456615796
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -404,7 +86,7 @@ MonoBehaviour:
     Data3: 1815935622
     Data4: 138602451
   Banks:
-  - {fileID: 3775196418228271991}
+  - {fileID: 9117910364055383374}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -412,7 +94,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 48457
---- !u!114 &6766960810165034733
+--- !u!114 &-2122817187913250140
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -421,22 +103,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue/Jackson/Jackson 2
   m_EditorClassIdentifier: 
-  Path: FMOD/Awakened/Build/Desktop/Master.bank
-  Name: Master
-  StudioPath: bank:/Master
-<<<<<<< Updated upstream
-  lastModified: 639280410213840269
-=======
-  lastModified: 639277732536928754
->>>>>>> Stashed changes
-  FileSizes:
-  - Name: Desktop
-    Value: 2469056
-  Exists: 1
---- !u!114 &8353654140918682885
+  Path: event:/Dialogue/Jackson/Jackson 2
+  Guid:
+    Data1: 1380835077
+    Data2: 1110775144
+    Data3: 785610911
+    Data4: 97909291
+  Banks:
+  - {fileID: -8530785228203913213}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-1890631176005427989
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -445,22 +130,52 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.strings.bank
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue/Jackson/Jackson 5
   m_EditorClassIdentifier: 
-  Path: FMOD/Awakened/Build/Desktop/Master.strings.bank
-  Name: Master.strings
-  StudioPath: bank:/Master.strings
-<<<<<<< Updated upstream
-  lastModified: 639280410213850398
-=======
-  lastModified: 639277732536928754
->>>>>>> Stashed changes
-  FileSizes:
-  - Name: Desktop
-    Value: 1514
-  Exists: 1
---- !u!114 &8996335615033991207
+  Path: event:/Dialogue/Jackson/Jackson 5
+  Guid:
+    Data1: 1253350005
+    Data2: 1300585067
+    Data3: -1354293334
+    Data4: -1413699056
+  Banks:
+  - {fileID: -8530785228203913213}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-169020352377739841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue/Jackson/Jackson 3
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue/Jackson/Jackson 3
+  Guid:
+    Data1: -781344915
+    Data2: 1317348200
+    Data3: -569013868
+    Data4: -504553111
+  Banks:
+  - {fileID: -8530785228203913213}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-136056835905375541
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -479,7 +194,7 @@ MonoBehaviour:
     Data3: 243744150
     Data4: 948085206
   Banks:
-  - {fileID: 3560614716412183380}
+  - {fileID: -8530785228203913213}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -487,3 +202,264 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
+  m_Name: FMODStudioCache
+  m_EditorClassIdentifier: 
+  EditorBanks:
+  - {fileID: 2931301845318078087}
+  - {fileID: 9117910364055383374}
+  - {fileID: -8124382026942744437}
+  - {fileID: 3836384672801691522}
+  - {fileID: -8530785228203913213}
+  EditorEvents:
+  - {fileID: -2834562534456615796}
+  - {fileID: 7549705952763478879}
+  - {fileID: -2122817187913250140}
+  - {fileID: 3769081286738020108}
+  - {fileID: 7692875170580290417}
+  - {fileID: 6531267078213391755}
+  - {fileID: -169020352377739841}
+  - {fileID: -1890631176005427989}
+  - {fileID: -136056835905375541}
+  - {fileID: 1902335169577953847}
+  - {fileID: -8531718210017966971}
+  - {fileID: 1740007585497536359}
+  EditorParameters: []
+  MasterBanks:
+  - {fileID: -8124382026942744437}
+  StringsBanks:
+  - {fileID: 2931301845318078087}
+  cacheTime: 639280410213930433
+  cacheVersion: 131635
+--- !u!114 &1740007585497536359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue/Jackson/Jackson
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue/Jackson/Jackson
+  Guid:
+    Data1: 2097094115
+    Data2: 1269240438
+    Data3: 1652605110
+    Data4: 713081632
+  Banks:
+  - {fileID: -8530785228203913213}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &1902335169577953847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/ZombieGrowl1
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/ZombieGrowl1
+  Guid:
+    Data1: 341157054
+    Data2: 1228644811
+    Data3: -110775875
+    Data4: 2031913453
+  Banks:
+  - {fileID: -8530785228203913213}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &2931301845318078087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD/Awakened/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 639280410213850398
+  FileSizes:
+  - Name: Desktop
+    Value: 1514
+  Exists: 1
+--- !u!114 &3769081286738020108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/CarCrash
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/CarCrash
+  Guid:
+    Data1: -1670153204
+    Data2: 1272741243
+    Data3: 328087441
+    Data4: -1377218381
+  Banks:
+  - {fileID: -8530785228203913213}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &3836384672801691522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Music.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD/Awakened/Build/Desktop/Music.bank
+  Name: Music
+  StudioPath: bank:/Music
+  lastModified: 639280410213910261
+  FileSizes:
+  - Name: Desktop
+    Value: 2468064
+  Exists: 1
+--- !u!114 &6531267078213391755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue/Morgan/Morgan 2
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue/Morgan/Morgan 2
+  Guid:
+    Data1: -20227747
+    Data2: 1321582523
+    Data3: -9984883
+    Data4: -970641470
+  Banks:
+  - {fileID: -8530785228203913213}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &7549705952763478879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/MainMenu
+  m_EditorClassIdentifier: 
+  Path: event:/Music/MainMenu
+  Guid:
+    Data1: 50503138
+    Data2: 1263413215
+    Data3: 129937846
+    Data4: 1890204195
+  Banks:
+  - {fileID: -8124382026942744437}
+  - {fileID: 3836384672801691522}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 196824
+--- !u!114 &7692875170580290417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue/Morgan/Morgan
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue/Morgan/Morgan
+  Guid:
+    Data1: -926084787
+    Data2: 1209322946
+    Data3: -850918528
+    Data4: 1030053675
+  Banks:
+  - {fileID: -8530785228203913213}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &9117910364055383374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Ambience.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD/Awakened/Build/Desktop/Ambience.bank
+  Name: Ambience
+  StudioPath: bank:/Ambience
+  lastModified: 639280410213718819
+  FileSizes:
+  - Name: Desktop
+    Value: 642976
+  Exists: 1

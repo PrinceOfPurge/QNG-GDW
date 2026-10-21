@@ -1440,6 +1440,67 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9525171a40519cb488121d17619b2886, type: 3}
   m_PrefabInstance: {fileID: 653604836}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &717346317
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3055925924615545059, guid: 9da2559def8ca504380cc44b2cbfa706, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -11.6792345
+      objectReference: {fileID: 0}
+    - target: {fileID: 3055925924615545059, guid: 9da2559def8ca504380cc44b2cbfa706, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 53.00291
+      objectReference: {fileID: 0}
+    - target: {fileID: 3055925924615545059, guid: 9da2559def8ca504380cc44b2cbfa706, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3055925924615545059, guid: 9da2559def8ca504380cc44b2cbfa706, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 3055925924615545059, guid: 9da2559def8ca504380cc44b2cbfa706, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 3055925924615545059, guid: 9da2559def8ca504380cc44b2cbfa706, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3055925924615545059, guid: 9da2559def8ca504380cc44b2cbfa706, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3055925924615545059, guid: 9da2559def8ca504380cc44b2cbfa706, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 3055925924615545059, guid: 9da2559def8ca504380cc44b2cbfa706, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3055925924615545059, guid: 9da2559def8ca504380cc44b2cbfa706, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3575978155076452062, guid: 9da2559def8ca504380cc44b2cbfa706, type: 3}
+      propertyPath: CollisionModule.type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4729213082294466091, guid: 9da2559def8ca504380cc44b2cbfa706, type: 3}
+      propertyPath: m_Name
+      value: Rain
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9da2559def8ca504380cc44b2cbfa706, type: 3}
 --- !u!1 &749114898
 GameObject:
   m_ObjectHideFlags: 0
@@ -10855,3 +10916,4 @@ SceneRoots:
   - {fileID: 543450651605846629}
   - {fileID: 278000586}
   - {fileID: 662144323654037242}
+  - {fileID: 717346317}
