@@ -172,7 +172,11 @@ MonoBehaviour:
   - {fileID: 6766960810165034733}
   StringsBanks:
   - {fileID: 8353654140918682885}
+<<<<<<< Updated upstream
   cacheTime: 639280410213930433
+=======
+  cacheTime: 639277732537030900
+>>>>>>> Stashed changes
   cacheVersion: 131635
 --- !u!114 &2025567656503438694
 MonoBehaviour:
@@ -243,7 +247,11 @@ MonoBehaviour:
   Path: FMOD/Awakened/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
+<<<<<<< Updated upstream
   lastModified: 639280410213930433
+=======
+  lastModified: 639277732537030900
+>>>>>>> Stashed changes
   FileSizes:
   - Name: Desktop
     Value: 462656
@@ -290,7 +298,11 @@ MonoBehaviour:
   Path: FMOD/Awakened/Build/Desktop/Ambience.bank
   Name: Ambience
   StudioPath: bank:/Ambience
+<<<<<<< Updated upstream
   lastModified: 639280410213718819
+=======
+  lastModified: 639277732536781143
+>>>>>>> Stashed changes
   FileSizes:
   - Name: Desktop
     Value: 642976
@@ -337,7 +349,11 @@ MonoBehaviour:
   Path: FMOD/Awakened/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
+<<<<<<< Updated upstream
   lastModified: 639280410213910261
+=======
+  lastModified: 639277732537000396
+>>>>>>> Stashed changes
   FileSizes:
   - Name: Desktop
     Value: 2468064
@@ -411,7 +427,11 @@ MonoBehaviour:
   Path: FMOD/Awakened/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
+<<<<<<< Updated upstream
   lastModified: 639280410213840269
+=======
+  lastModified: 639277732536928754
+>>>>>>> Stashed changes
   FileSizes:
   - Name: Desktop
     Value: 2469056
@@ -431,7 +451,11 @@ MonoBehaviour:
   Path: FMOD/Awakened/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
+<<<<<<< Updated upstream
   lastModified: 639280410213850398
+=======
+  lastModified: 639277732536928754
+>>>>>>> Stashed changes
   FileSizes:
   - Name: Desktop
     Value: 1514
