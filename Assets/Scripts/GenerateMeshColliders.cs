@@ -19,7 +19,7 @@ public class GenerateMeshColliders : MonoBehaviour
 
         foreach (MeshFilter meshFilter in meshFilters)
         {
-            // Only use objects that have a real mesh
+            
             if (meshFilter.sharedMesh == null ||
                 meshFilter.GetComponent<Collider>() != null)
             {
