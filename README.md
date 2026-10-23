@@ -1,19 +1,24 @@
 Group Members: 
 
   Christopher Shin:
-    Wave Manager/Game Manager Singleton
-    Zombie Spawning Factory design 
-    Custom button mapping command pattern design
+    - Wave Manager/Game Manager Singleton
+    - Zombie Spawning Factory design 
+    - Custom button mapping command pattern design
     
   Bilal Rehman:
-    Audio Manager Singleton
-    Character Customization command
-    Trees factory
+    - Audio Manager Singleton
+    - Character Customization command
+    - Trees factory
 
   Gomagan Prabagar:
-    Resource Manager
-    World Editing
-    Ill add third later
+    - Resource Manager
+    - World Editing
+    - Ill add third later
+
+
+The way we created this group is by seeing who in the class is someone that we have worked with in the past. We also decided based on the projects we are working on, such as a GDW game. 
+
+
 
 
 What was Done: 
