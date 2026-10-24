@@ -20,6 +20,17 @@ namespace Command
             if (customizer == null) customizer = FindAnyObjectByType<CharecterCustomizer>();
             _invoker = new CustomizationInvoker(maxHistory: 100, mergeWindow: 0.5f);
         }
+        private void Update()
+        {
+            bool ctrl = Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl);
+            bool shift = Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift);
+            if (Input.GetKeyDown(KeyCode.Z))
+            {
+                if(shift) _invoker.Redo();
+                else if(Input.GetKeyDown(KeyCode.Y)) _invoker.Undo();
+            }
+         
+        }
     }
 }
 
