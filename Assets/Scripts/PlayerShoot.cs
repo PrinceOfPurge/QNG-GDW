@@ -23,6 +23,8 @@ public class PlayerShoot : MonoBehaviour
 
     private float nextTimeToFire;
 
+    [SerializeField] private FMODUnity.EventReference shootSfx;
+
     private void Awake()
     {
         controls = new PlayerControls();
@@ -107,5 +109,6 @@ public class PlayerShoot : MonoBehaviour
                 damageable.TakeDamage(damage);
             }
         }
+        AudioManager.instance.PlayOneShot(shootSfx, transform.position);
     }
 }
