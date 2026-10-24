@@ -1,6 +1,7 @@
 using UnityEngine;
 namespace Chapter.Singleton
 {
+
     public class Singleton<T> :
     MonoBehaviour where T : Component
     {

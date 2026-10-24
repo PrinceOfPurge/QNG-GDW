@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Zombie : MonoBehaviour, IDamageable
+public class Zombie : BaseEnemy, IDamageable
 {
     [SerializeField] private float health = 25f;
 
@@ -18,5 +18,10 @@ public class Zombie : MonoBehaviour, IDamageable
     private void Die()
     {
         Destroy(gameObject);
+    }
+
+    public override void attack()
+    {
+        Debug.Log("zombie attacks");
     }
 }

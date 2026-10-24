@@ -6,7 +6,7 @@ using FMODUnity;
 using Unity.VisualScripting;
 using UnityEngine.Android;
 
-public class AudioManagerSingleton : Singleton<AudioManagerSingleton>
+public class AudioManagerSingleton: MonoBehaviour
 {
     [Header("FMOD Bus Paths")]
     [SerializeField] private string masterBusPath = "bus:/";
@@ -31,15 +31,15 @@ public class AudioManagerSingleton : Singleton<AudioManagerSingleton>
 
     private float _master, _music, _sfx;
 
-    public override void Awake()
-    {
-        base.Awake();
-        if (Instance != this) return;
-    }
+    //public override void Awake()
+    //{
+    //    base.Awake();
+    //    if (Instance != this) return;
+    //}
 
     private IEnumerator Start()
     {
-        if(Instance != this) yield break;
+       // if(Instance != this) yield break;
         yield return new WaitUntil(() => RuntimeManager.HaveAllBanksLoaded);
         _masterBus = RuntimeManager.GetBus(masterBusPath);
         _musicBus = RuntimeManager.GetBus(musicBusPath);
@@ -50,11 +50,11 @@ public class AudioManagerSingleton : Singleton<AudioManagerSingleton>
         _sfx = PlayerPrefs.GetFloat(PrefSfx,defaultSfx);
         ApplyVolumes();
     }
-    private void OnDestroy()
-    {
-        if (_instanceIsThis()) ReleaseMusic(FMOD.Studio.STOP_MODE.IMMEDIATE);
-    }
-    private bool _instanceIsThis() => Instance == this;
+    //private void OnDestroy()
+    //{
+    //    if (_instanceIsThis()) ReleaseMusic(FMOD.Studio.STOP_MODE.IMMEDIATE);
+    //}
+   // private bool _instanceIsThis() => Instance == this;
     public void PlayOneShot(EventReference sound, Vector3 position = default)
     {
         if (sound.IsNull) return;
