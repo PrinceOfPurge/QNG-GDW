@@ -262,12 +262,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03347b31636f1524d913f3fc77273c6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftSeatPosition: {fileID: 0}
-  leftWindowPosition: {fileID: 0}
-  leftDoorPosition: {fileID: 0}
-  rightSeatPosition: {fileID: 0}
-  rightWindowPosition: {fileID: 0}
-  rightDoorPosition: {fileID: 0}
   currentSide: 0
   currentPosition: 0
   switchDuration: 0.75
@@ -284,12 +278,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0ec654156f68d24781cacf7a1d2f20d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playershoot: {fileID: 4366846801397422793}
   playerCamera: {fileID: 1308382404380273380}
   shootRange: 100
   damage: 25
   fireRate: 0.5
-  maxAmmo: 6
   currentAmmo: 6
+  magSize: 6
+  currentMagAmmo: 6
+  shootSfx:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
 --- !u!114 &4553621335918302894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -302,6 +305,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4684f901ada3c9a429aa703a818ab7f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 100
 --- !u!1 &7812900059449914820
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,6 +5,9 @@ using UnityEngine.InputSystem;
 
 public class PlayerShoot : MonoBehaviour
 {
+    public PlayerShoot _playershoot;
+    InputInvoker _inputInvoker;
+
     [Header("References")]
     [SerializeField] private Camera playerCamera;
 
@@ -25,9 +28,19 @@ public class PlayerShoot : MonoBehaviour
 
     [SerializeField] private FMODUnity.EventReference shootSfx;
 
+    
+
+
     private void Awake()
     {
         controls = new PlayerControls();
+    }
+
+    private void Start()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        _inputInvoker = new InputInvoker();
+
     }
 
     private void OnEnable()
@@ -44,7 +57,10 @@ public class PlayerShoot : MonoBehaviour
     {
         if (controls.Player.Shoot.WasPressedThisFrame())
         {
-            Shoot();
+
+            Command shoot = new ShootCommand(_playershoot);
+            _inputInvoker.AddCommand(shoot);
+
         }
         if (controls.Player.Reload.WasPressedThisFrame())
         {
@@ -73,7 +89,7 @@ public class PlayerShoot : MonoBehaviour
         Debug.Log("Bullets in mag: " + currentMagAmmo + ". Bullets left: " + currentAmmo);
     }
 
-    private void Shoot()
+    public void Shoot()
     {
         // Cooldown for shots
         if (Time.time < nextTimeToFire)
@@ -109,6 +125,7 @@ public class PlayerShoot : MonoBehaviour
                 damageable.TakeDamage(damage);
             }
         }
-        AudioManager.instance.PlayOneShot(shootSfx, transform.position);
+
+       // AudioManager.instance.PlayOneShot(shootSfx, transform.position);
     }
 }
