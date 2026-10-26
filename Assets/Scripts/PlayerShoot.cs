@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -21,6 +22,7 @@ public class PlayerShoot : MonoBehaviour
     [SerializeField] private int currentAmmo = 6;
     [SerializeField] private int magSize = 6;
     [SerializeField] private int currentMagAmmo = 6;
+    [SerializeField] private TextMeshProUGUI ammoText;
 
     private PlayerControls controls;
 
@@ -55,17 +57,22 @@ public class PlayerShoot : MonoBehaviour
 
     private void Update()
     {
+
         if (controls.Player.Shoot.WasPressedThisFrame())
         {
 
+
             Command shoot = new ShootCommand(_playershoot);
             _inputInvoker.AddCommand(shoot);
+            
 
         }
         if (controls.Player.Reload.WasPressedThisFrame())
         {
             Reload();
         }
+
+        ammoText.text = currentMagAmmo.ToString();
     }
 
     private void Reload()

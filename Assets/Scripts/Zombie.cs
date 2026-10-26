@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Zombie : BaseEnemy, IDamageable
 {
-    [SerializeField] private float health = 25f;
+
 
     public void TakeDamage(float damage)
     {
