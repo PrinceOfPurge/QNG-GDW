@@ -18,24 +18,22 @@ public class AudioManagerSingleton: MonoBehaviour
     [Range(0f, 1f)][SerializeField] private float defaultMusic = 0.9f;
     [Range(0f, 1f)][SerializeField] private float defaultSfx = 1f;
 
+    public static AudioManagerSingleton Instance { get; private set; }
+
     private const string PrefMaster = "Audio_Master";
     private const string PrefMusic = "Audio_Music";
     private const string PrefSfx = "Audio_Sfx";
-
     private Bus _masterBus, _musicBus, _sfxBus;
     private bool _busesReady;
-
     private EventInstance _musicInstance;
     private EventReference _currentMusic;
     private bool _haveMusic;
-
     private float _master, _music, _sfx;
 
-    //public override void Awake()
-    //{
-    //    base.Awake();
-    //    if (Instance != this) return;
-    //}
+    public void Awake()
+    {
+       if (Instance != this) return;
+    }
 
     private IEnumerator Start()
     {
@@ -50,11 +48,11 @@ public class AudioManagerSingleton: MonoBehaviour
         _sfx = PlayerPrefs.GetFloat(PrefSfx,defaultSfx);
         ApplyVolumes();
     }
-    //private void OnDestroy()
-    //{
-    //    if (_instanceIsThis()) ReleaseMusic(FMOD.Studio.STOP_MODE.IMMEDIATE);
-    //}
-   // private bool _instanceIsThis() => Instance == this;
+    private void OnDestroy()
+    {
+       if (_instanceIsThis()) ReleaseMusic(FMOD.Studio.STOP_MODE.IMMEDIATE);
+    }
+    private bool _instanceIsThis() => Instance == this;
     public void PlayOneShot(EventReference sound, Vector3 position = default)
     {
         if (sound.IsNull) return;
