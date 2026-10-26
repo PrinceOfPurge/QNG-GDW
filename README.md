@@ -56,7 +56,7 @@ When this script first runs, it will call the SpawnRandomResource 5 times in a f
 #### Resource:
 This script is attached to all the resources and has an Init function that sets it's position to a random position on the platform. It also has a public method called Add() which the CollectCommand script calls so that the item can be collected. The Add method also calls the AddResource method in the ResourceManager singleton and if that returns true, it will subtracts 1 from currentResourceCount in the ResourceManager singleton so that the ResourceSpawner script can spawn one more resource to fill the 5 max resource on the platform thing, and also destroy itself from the platform. 
 
-Bilal;
+###Bilal;
 
 Singleton:
 The original game uses fmod so I thought that using a audio manager that uses fmod would be perfect for this project. and because fmod creates lots of changes regarding banks and whatnot using the singleton pattern is perfect for this specific use case. This audio manager plays the ambient rainfall sounds and can be used to add even more sounds and other music.  It has the framework to be further expanded on based on the needs of the game. It has different functions and methods to mess around with the audio. 
