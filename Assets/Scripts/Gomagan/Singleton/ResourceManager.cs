@@ -12,6 +12,8 @@ public class ResourceManager : Singleton<ResourceManager>
     private int bullets = 6;
     private int grenades = 1;
     private int medPacks = 0;
+    
+    public int currentResourceCount = 0;
 
     public bool AddResource(string resource)
     {
@@ -56,6 +58,7 @@ public class ResourceManager : Singleton<ResourceManager>
             case "Bullet":
                 if (bullets > 0)
                 {
+                    bullets--;
                     print("Used Bullet");
                     return true;
                 }
@@ -64,6 +67,7 @@ public class ResourceManager : Singleton<ResourceManager>
             case "Grenade":
                 if (grenades > 0)
                 {
+                    grenades--;
                     print("Used Grenade");
                     return true;
                 }
@@ -72,6 +76,7 @@ public class ResourceManager : Singleton<ResourceManager>
             case "MedPack":
                 if (medPacks > 0)
                 {
+                    medPacks--;
                     print("Used MedPack");
                     return true;
                 }

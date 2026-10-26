@@ -11,12 +11,17 @@ public class Resource : MonoBehaviour
         float randomX = UnityEngine.Random.Range(-2f, 2f);
         float randomZ = UnityEngine.Random.Range(-2f, 2f);
         transform.position = new Vector3(randomX, .5f, randomZ);
-        
+    }
+    
+    public void Add()
+    {
         bool added = ResourceManager.Instance.AddResource(nam);
 
         if (added)
         {
             print(nam + "Added");
+            ResourceManager.Instance.currentResourceCount--;
+            Destroy(gameObject);
         }
         else
         {

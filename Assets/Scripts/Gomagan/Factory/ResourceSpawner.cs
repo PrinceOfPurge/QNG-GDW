@@ -10,8 +10,8 @@ public class ResourceSpawner : MonoBehaviour
     [SerializeField] private GameObject medpackPrefab;
 
     private int MAXRESOURCE = 5;
-    private int MAXTIMER = 3;
-    private int currentResourceCount = 0;
+    private int MAXTIMER = 1;
+    
     private float timer = 0;
 
     private void Start()
@@ -24,7 +24,7 @@ public class ResourceSpawner : MonoBehaviour
 
     private void Update()
     {
-        if (currentResourceCount >= MAXRESOURCE) return;
+        if (ResourceManager.Instance.currentResourceCount >= MAXRESOURCE) return;
         
         timer += Time.deltaTime;
         if (timer >= MAXTIMER)
@@ -43,7 +43,7 @@ public class ResourceSpawner : MonoBehaviour
         GameObject spawnedResource = Instantiate(GetResourcePrefab(chosenType), Vector3.zero, Quaternion.identity);
         var resourceComponent = spawnedResource.GetComponent<Resource>();
         resourceComponent.Init();
-        currentResourceCount++;
+        ResourceManager.Instance.currentResourceCount++;
     }
     
     private GameObject GetResourcePrefab(string resourceType)
