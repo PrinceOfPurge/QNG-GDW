@@ -11,12 +11,15 @@ public class AudioManagerSingleton: MonoBehaviour
     [Header("FMOD Bus Paths")]
     [SerializeField] private string masterBusPath = "bus:/";
     [SerializeField] private string musicBusPath = "bus:/Music";
-    [SerializeField] private string sfxBusPath = "bus:/Sfx";
+    [SerializeField] private string sfxBusPath = "bus:/SFX";
 
     [Header("Default Volumes")]
     [Range(0f, 1f)][SerializeField] private float defaultMaster = 1f;
     [Range(0f, 1f)][SerializeField] private float defaultMusic = 0.9f;
     [Range(0f, 1f)][SerializeField] private float defaultSfx = 1f;
+
+    [SerializeField] public EventReference rainfall;
+
 
     public static AudioManagerSingleton Instance { get; private set; }
 
@@ -30,14 +33,22 @@ public class AudioManagerSingleton: MonoBehaviour
     private bool _haveMusic;
     private float _master, _music, _sfx;
 
+
     public void Awake()
     {
-       if (Instance != this) return;
+        if (Instance != this && Instance != null) 
+        { 
+            Destroy(gameObject);
+            return; 
+        }
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
     }
 
     private IEnumerator Start()
     {
-       // if(Instance != this) yield break;
+
+        if(Instance != this) yield break;
         yield return new WaitUntil(() => RuntimeManager.HaveAllBanksLoaded);
         _masterBus = RuntimeManager.GetBus(masterBusPath);
         _musicBus = RuntimeManager.GetBus(musicBusPath);
@@ -47,6 +58,7 @@ public class AudioManagerSingleton: MonoBehaviour
         _music = PlayerPrefs.GetFloat(PrefMusic,defaultMusic);
         _sfx = PlayerPrefs.GetFloat(PrefSfx,defaultSfx);
         ApplyVolumes();
+        RuntimeManager.CreateInstance(rainfall).start();
     }
     private void OnDestroy()
     {
@@ -61,7 +73,7 @@ public class AudioManagerSingleton: MonoBehaviour
     public EventInstance CreateInstance(EventReference sound, GameObject attachTo = null)
     {
         EventInstance instance = RuntimeManager.CreateInstance(sound);
-        if (attachTo == null) 
+        if (attachTo != null) 
             RuntimeManager.AttachInstanceToGameObject(instance, attachTo);
         return instance;
     }
@@ -130,4 +142,6 @@ public class AudioManagerSingleton: MonoBehaviour
     {
         if (_busesReady) _masterBus.setPaused(pause);
     }
+
+
 }
