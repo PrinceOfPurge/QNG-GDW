@@ -11,9 +11,9 @@ Group Members:
     - Trees factory
 
   Gomagan Prabagar:
-    - Resource Manager
-    - World Editing
-    - Ill add third later
+    - Resource Manager Singleton
+    - Use / Drop Resource Command
+    - Resource Drop Factory
 
 
 The way we created this group is by seeing who in the class is someone that we have worked with in the past. We also decided based on the projects we are working on, such as a GDW game. 
