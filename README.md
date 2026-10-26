@@ -12,7 +12,7 @@ Group Members:
 
   Gomagan Prabagar:
     - Resource Manager Singleton
-    - Use / Drop Resource Command
+    - Collect / Use Resource Command
     - Resource Drop Factory
 
 
