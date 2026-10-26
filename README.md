@@ -1,16 +1,20 @@
-Group Members: 
 
-  Christopher Shin:
+#### About the Game:
+Awakened is a monster shooter where the player is stuck in a car. The storyline will start with Sheriff going to investigate a missing persons report when they hear some breaking news on their radio. This broadcast will be about how monsters have taken over their town and to hide and take shelter. Hearing that the protagonist crashes into a barricade. The player has a basic pistol and has limited ammo to start. The player must open the door to get a better view and shoot the zombies. The added layer of difficulty is that the player can only look in one direction, left or right. Switching between sides has a short delay. 
+
+#### Group Members: 
+
+  ### Christopher Shin:
     - Wave Manager/Game Manager Singleton
     - Zombie Spawning Factory design 
     - Custom button mapping command pattern design
     
-  Bilal Rehman:
+  ### Bilal Rehman:
     - Audio Manager Singleton
     - Character Customization command
     - Trees factory
 
-  Gomagan Prabagar:
+  ### Gomagan Prabagar:
     - Resource Manager Singleton
     - Collect / Use Resource Command
     - Resource Drop Factory
@@ -21,7 +25,7 @@ The way we created this group is by seeing who in the class is someone that we h
 
 
 
-What was Done: 
+#### What was Done: 
 
 Christopher:
 
@@ -36,6 +40,3 @@ Factory:
 I built a factory that can spawn different types of zombies or enemies. I first made a base Enemyspawner and a base enemy script, both are abstract, so the child has to inherit their functions. The base enemy has public and protected variables and functions that the child can inherit. The base EnemySpawner has an abstract spawn method that the child has to override to write their own implementation. I did it this way so that you can spawn entities without knowing what class they are, and it makes spawning enemies easier. This is great for this game as it is all about clearing hordes of enemies and fighting many different ones. 
 
 
-About the Game:
-
-  Awakened is a monster shooter where the player is stuck in a car. The storyline will start with Sheriff going to investigate a missing persons report when they hear some breaking news on their radio. This broadcast will be about how monsters have taken over their town and to hide and take shelter. Hearing that the protagonist crashes into a barricade. The player has a basic pistol and has limited ammo to start. The player must open the door to get a better view and shoot the zombies. The added layer of difficulty is that the player can only look in one direction, left or right. Switching between sides has a short delay. 
