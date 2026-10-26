@@ -49,7 +49,7 @@ public class ResourceManager : Singleton<ResourceManager>
         return false;
     }
 
-    private bool UseResource(string resource)
+    public bool UseResource(string resource)
     {
         switch (resource)
         {
@@ -59,7 +59,7 @@ public class ResourceManager : Singleton<ResourceManager>
                     print("Used Bullet");
                     return true;
                 }
-                print("Error no Bullets");
+                print("No Bullets left");
                 return false;
             case "Grenade":
                 if (grenades > 0)
@@ -67,7 +67,7 @@ public class ResourceManager : Singleton<ResourceManager>
                     print("Used Grenade");
                     return true;
                 }
-                print("Error no Grenades");
+                print("No Grenades left");
                 return false;
             case "MedPack":
                 if (medPacks > 0)
@@ -75,7 +75,7 @@ public class ResourceManager : Singleton<ResourceManager>
                     print("Used MedPack");
                     return true;
                 }
-                print("Error no MedPacks");
+                print("No MedPacks left");
                 return false;
         }
     
