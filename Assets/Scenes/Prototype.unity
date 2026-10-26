@@ -4675,6 +4675,79 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1507587767}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &1522041931
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 9c002df609186fe458d8fc23f22e07f5, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 18.56
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9c002df609186fe458d8fc23f22e07f5, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 18.56
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9c002df609186fe458d8fc23f22e07f5, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 18.56
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9c002df609186fe458d8fc23f22e07f5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.356
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9c002df609186fe458d8fc23f22e07f5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.029
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9c002df609186fe458d8fc23f22e07f5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.8502343
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9c002df609186fe458d8fc23f22e07f5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.22064504
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9c002df609186fe458d8fc23f22e07f5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.24718532
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9c002df609186fe458d8fc23f22e07f5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.6280593
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9c002df609186fe458d8fc23f22e07f5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.7040999
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9c002df609186fe458d8fc23f22e07f5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -83.471
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9c002df609186fe458d8fc23f22e07f5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 38.591
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9c002df609186fe458d8fc23f22e07f5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -179.89
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9c002df609186fe458d8fc23f22e07f5, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9c002df609186fe458d8fc23f22e07f5, type: 3}
+      propertyPath: m_Name
+      value: WalkieTalkie
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9c002df609186fe458d8fc23f22e07f5, type: 3}
 --- !u!1 &1531870828
 GameObject:
   m_ObjectHideFlags: 0
@@ -11821,3 +11894,4 @@ SceneRoots:
   - {fileID: 662144323654037242}
   - {fileID: 717346317}
   - {fileID: 1565015883}
+  - {fileID: 1522041931}
