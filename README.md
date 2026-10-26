@@ -4,7 +4,7 @@ Awakened is a monster shooter where the player is stuck in a car. The storyline 
 
 ## Group Members and tasks: 
 
-  ### Christopher Shin:
+  ### Christopher Shin (100974007):
     - Wave Manager Singleton
     - Custom button mapping command pattern design
     - Zombie Spawning Factory design 
