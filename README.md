@@ -5,9 +5,10 @@ Awakened is a monster shooter where the player is stuck in a car. The storyline 
 ## Group Members and tasks: 
 
   ### Christopher Shin:
-    - Wave Manager/Game Manager Singleton
-    - Zombie Spawning Factory design 
+    - Wave Manager Singleton
     - Custom button mapping command pattern design
+    - Zombie Spawning Factory design 
+
     
   ### Bilal Rehman:
     - Audio Manager Singleton
@@ -29,7 +30,7 @@ The way we created this group was by seeing who in the class is someone that we 
 ### Christopher Shin:
 
 #### Singleton:
-I built a GameManager singleton where only one exists in the scene and manages waves of enemies. This is done by creating a base singleton script that the GameManager would inherit from. The base singleton checks if there are others like it and deletes them, and runs the Don't Destroy On Load function to make it persistent. The reason I made it this way is so that it's easier to manage enemy spawning. This would benefit the game, as there would be a lot of zombie enemies, and it would require a wave system. I think it would also be useful so that other scripts can access the function in the GameManager. 
+I built a WaveManager singleton where only one exists in the scene and manages and creates waves of enemies. This is done by creating a base singleton script that the WaveManager would inherit from. The base singleton checks if there are others like it and deletes them, and runs the Don't Destroy On Load function to make it persistent. The reason I made it this way is so that it's easier to manage enemy spawning. This would benefit the game, as there would be a lot of zombie enemies, and it would require a wave system. I think it would also be useful so that other scripts can access the function in the WaveManager. 
 
 #### Command Design Pattern:
 I followed this video https://www.youtube.com/watch?v=oLRINAn0cuw to go into more depth on how command design patterns work and are used in Unity. First, I created an abstract command class that has the abstract method Execute. Then I made a shootCommand script that inherits from it. This script executes the shoot function in playerShoot. The reason I implemented it this way is so you can track which shooting action the player has done. This is useful for this project as there could be different ways to shoot and guns that use different ammo. 
