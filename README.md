@@ -10,7 +10,7 @@ Awakened is a monster shooter where the player is stuck in a car. The storyline 
     - Zombie Spawning Factory design 
 
     
-  ### Bilal Rehman:
+  ### Bilal Rehman (100921929):
     - Audio Manager Singleton
     - Character Customization command
     - Trees factory
@@ -56,9 +56,23 @@ When this script first runs, it will call the SpawnRandomResource 5 times in a f
 #### Resource:
 This script is attached to all the resources and has an Init function that sets it's position to a random position on the platform. It also has a public method called Add() which the CollectCommand script calls so that the item can be collected. The Add method also calls the AddResource method in the ResourceManager singleton and if that returns true, it will subtracts 1 from currentResourceCount in the ResourceManager singleton so that the ResourceSpawner script can spawn one more resource to fill the 5 max resource on the platform thing, and also destroy itself from the platform. 
 
+###Bilal;
+
+Singleton:
+The original game uses fmod so I thought that using a audio manager that uses fmod would be perfect for this project. and because fmod creates lots of changes regarding banks and whatnot using the singleton pattern is perfect for this specific use case. This audio manager plays the ambient rainfall sounds and can be used to add even more sounds and other music.  It has the framework to be further expanded on based on the needs of the game. It has different functions and methods to mess around with the audio. 
+
+Command:
+for the command design pattern I thought that it would be nice if the player could have a chance to customize the characters skin as it was just red before. And this fits in perfectly for command because the system doesn't need to know what colour they pick the system just has to change it. So the scripts show 5 options 3 skin tones, undo and redo buttons. the player simply clicks on the button and then that in return changes the mesh of the character to said colour. the player can then click redo or undo to compare colours. 
+
+Factory:
+The game scene is very boring and dry and not very plain so to add to the vibe of the game I had created a factory design to mass produce trees in the game. so there's two types of trees and what the code does is that it spawns in trees at random sizes around the spawn points. and this gives the effect of looking like a real forest and doesn't look like a cardboard cutout. and more trees can be spawned in by pressing the "t" key. This adds a level of realism because the trees are different and random just like in real life. 
+
 ## AI use disclosure
 
 ### Gomagan Prabagar
 I've used AI, along with youtube videos and lecture slides for better help with understanding what the patterns are and ideas on what kind of what kind of systems I can build with the patterns, though I wrote all the code and architecture for these patterns myself without relying on AI. I also used AI to help me remember how to do Raycasting on unity for the collect feature. This was faster than searching up a video to remind me how to raycast on unity and raycasting wasn't a requirement that I had to do for the project so I believe this is fine. 
 
 I did have a second accidental AI use where copilot automatically added the name to the README updates. I only realized its doing that to the README name after updating it for a few times. This wasn't Intentional and everything I wrote in the README itself was without any AI help. 
+
+### Bilal Rehman 
+I had a few issues with fmod not properly loading the audio assets so I have used AI to help me remove the errors and debug my code since I am not familiar with fmod. AI was used for fixing errors pertaining mismatching the naming of some functions as well as the GUI layout showing errors. I also made some logic errors in my code so AI was used to help with that. AI was only used to help me with the errors. 
