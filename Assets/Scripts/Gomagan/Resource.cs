@@ -4,28 +4,14 @@ using UnityEngine;
 
 public class Resource : MonoBehaviour
 {
-    private string nam = "null";
+    [SerializeField] private string nam;
     
-    public void Init(string resource)
+    public void Init()
     {
-        nam = resource;
-    }
-    
-    public void Add()
-    {
-        bool used = ResourceManager.Instance.UseResource(nam);
-        if (used)
-        {
-            print(nam + "Used");
-        }
-        else
-        {
-            print("No " + nam +" Left");
-        }
-    }
-
-    public void Use()
-    {
+        float randomX = UnityEngine.Random.Range(-2f, 2f);
+        float randomZ = UnityEngine.Random.Range(-2f, 2f);
+        transform.position = new Vector3(randomX, .5f, randomZ);
+        
         bool added = ResourceManager.Instance.AddResource(nam);
 
         if (added)
@@ -35,6 +21,19 @@ public class Resource : MonoBehaviour
         else
         {
             print("Max" + nam + " Reached");
+        }
+    }
+
+    public void Use()
+    {
+        bool used = ResourceManager.Instance.UseResource(nam);
+        if (used)
+        {
+            print(nam + "Used");
+        }
+        else
+        {
+            print("No " + nam +" Left");
         }
     }
 }
