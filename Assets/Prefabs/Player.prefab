@@ -567,6 +567,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playershoot: {fileID: 4366846801397422793}
+  mousePress: 273
   playerCamera: {fileID: 1308382404380273380}
   shootRange: 100
   damage: 25
