@@ -51,6 +51,9 @@ I built an Inventory Manager and named it "ResourceManager". How this works is t
 #### Command Design Pattern:
 I also followed the video shared by Christopher Shin to see how exactly to implement the command design pattern in unity. I then created an interface called ICommand which has a barebones method called Execute(). I then made another script called CollectCommand and made it inherit from ICommand and has a public method called Execute which basically calls upon the spawned resource and calls .Add() which will add it to the inventory if you have space.
 
+<img width="1050" height="622" alt="image" src="https://github.com/user-attachments/assets/8d7efbcc-e4fa-4d21-87f8-3ad5538abc20" />
+
+
 #### Factory:
 I created a resource spawner factory called ResourceSpawner. It keeps track of 3 gameobject prefabs (bullet, grenade, and medpack) and all these prefabs also have the Resource script. The ResourceSpawner has a private method called SpawnRandomResource() which uses UnityEngine.Random to pick out of the 3 gameobjects and then Instantiate it. It also has another helper method that returns the right prefab when given in the string.
 
