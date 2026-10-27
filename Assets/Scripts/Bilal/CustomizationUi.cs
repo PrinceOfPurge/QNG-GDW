@@ -18,7 +18,7 @@ using UnityEngine;
     private void OnGUI()
     {
         GUILayout.BeginArea(new Rect(300, 10, 220, 200));
-        GUILayout.Label("Choose Charecter Skin Colour >");
+        GUILayout.Label("Press M to unlock cursor");
         Color oldbackground = GUI.backgroundColor;
         foreach (Color color in skinColors) {
             GUI.backgroundColor = color;
