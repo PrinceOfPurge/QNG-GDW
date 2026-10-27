@@ -31,16 +31,19 @@ The way we created this group was by seeing who in the class is someone that we 
 
 #### Singleton:
 I built a WaveManager singleton where only one exists in the scene and manages and creates waves of enemies. This is done by creating a base singleton script that the WaveManager would inherit from. The base singleton checks if there are others like it and deletes them, and runs the Don't Destroy On Load function to make it persistent. The reason I made it this way is so that it's easier to manage enemy spawning. This would benefit the game, as there would be a lot of zombie enemies, and it would require a wave system. I think it would also be useful so that other scripts can access the function in the WaveManager. 
-<img width="122" height="190" alt="image" src="https://github.com/user-attachments/assets/e383c8bf-cd4d-48a4-b1b3-3529647f1de3" />
+
+<img width="200" height="270" alt="image" src="https://github.com/user-attachments/assets/e383c8bf-cd4d-48a4-b1b3-3529647f1de3" />
 
 
 #### Command Design Pattern:
 I followed this video (https://www.youtube.com/watch?v=vX8ewYpbIGk) as well as this one (https://www.youtube.com/watch?v=oLRINAn0cuw) to go into more depth on how command design patterns work and are used in Unity. First, I created an abstract command class that has the abstract method Execute. Then I made a shootCommand script that inherits from it. This script executes the shoot function in playerShoot. The reason I implemented it this way is so you can track which shooting action the player has done. This is useful for this project as there could be different ways to shoot and guns that use different ammo. 
+
 <img width="373" height="260" alt="image" src="https://github.com/user-attachments/assets/b4536f0e-1ad9-4117-bc76-3c81abdd775d" />
 
 
 #### Factory:
 I built a factory that can spawn different types of zombies or enemies. I first made a base Enemyspawner and a base enemy script, both are abstract, so the child has to inherit their functions. The base enemy has public and protected variables and functions that the child can inherit. The base EnemySpawner has an abstract spawn method that the child has to override to write their own implementation. I did it this way so that you can spawn entities without knowing what class they are, and it makes spawning enemies easier. This is great for this game as it is all about clearing hordes of enemies and fighting many different ones. 
+
 <img width="352" height="176" alt="image" src="https://github.com/user-attachments/assets/1803bc56-9e24-488f-9305-c56e5c7466b3" />
 
 
