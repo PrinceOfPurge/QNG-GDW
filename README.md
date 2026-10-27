@@ -93,7 +93,7 @@ I also put [MenuItem("Tools/Resource Creator")] on top of ShowWindow so that the
 
 Plugin Demonstration Link: https://youtu.be/6GrSQrZl0dc
 
-<img width="1059" height="865" alt="image" src="https://github.com/user-attachments/assets/5ea0fb4e-d58b-495f-be1f-a24931c95e5b" />
+<img width="300" height="245.0425" alt="image" src="https://github.com/user-attachments/assets/5ea0fb4e-d58b-495f-be1f-a24931c95e5b" />
 
 
 ## AI use disclosure
