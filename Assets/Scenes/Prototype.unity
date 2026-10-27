@@ -1325,6 +1325,55 @@ MonoBehaviour:
   attackRange: 5.5
   attackDamage: 10
   attackCooldown: 2
+--- !u!1 &645274668
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 645274670}
+  - component: {fileID: 645274669}
+  m_Layer: 0
+  m_Name: UImanager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &645274669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 645274668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d1da86182eba56418c749411bd0851f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  customizer: {fileID: 1845174349}
+  skinColors:
+  - {r: 1.01, g: 0.89, b: 0.74, a: 1}
+  - {r: 0.95, g: 0.77, b: 0.59, a: 1}
+  - {r: 0.79, g: 0.58, b: 0.39, a: 1}
+--- !u!4 &645274670
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 645274668}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -66.07051, y: 14.802444, z: -4.616478}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &653604836
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5303,6 +5352,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 9185440382539360765, guid: 43e079c4327172049bb78fa3595103a0, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3aff1126cc28d574388e417c34bde9a7, type: 2}
     m_RemovedComponents:
     - {fileID: 0}
     m_RemovedGameObjects: []
@@ -19417,3 +19470,4 @@ SceneRoots:
   - {fileID: 431882874}
   - {fileID: 934731142}
   - {fileID: 331312653}
+  - {fileID: 645274670}

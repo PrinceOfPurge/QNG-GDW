@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+
 public class PlayerShoot : MonoBehaviour
 {
     public PlayerShoot _playershoot;
@@ -17,77 +18,67 @@ public class PlayerShoot : MonoBehaviour
     [SerializeField] private float fireRate = 0.5f;
 
     [Header("Ammo")]
-    //[SerializeField] private int maxAmmo = 6;
     [SerializeField] private int currentAmmo = 6;
     [SerializeField] private int magSize = 6;
     [SerializeField] private int currentMagAmmo = 6;
     [SerializeField] private TextMeshProUGUI ammoText;
 
     private PlayerControls controls;
-
     private float nextTimeToFire;
 
     [SerializeField] private FMODUnity.EventReference shootSfx;
+
     private void Awake()
     {
         controls = new PlayerControls();
     }
+
     private void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
+        LockCursor();
         _inputInvoker = new InputInvoker();
     }
+
     private void OnEnable()
     {
         controls.Enable();
     }
+
     private void OnDisable()
     {
         controls.Disable();
     }
+
     private void Update()
     {
-
-
-        if (controls.Player.Shoot.WasPressedThisFrame())
+        // 1. Always check M key to toggle UI/Cursor (Outside of shooting check)
+        if (Input.GetKeyUp(KeyCode.M))
         {
+            CursorToggle();
+        }
 
-
-
-            if (Input.GetKeyUp(KeyCode.M)) //unlocks cursor for ui
+        // 2. Only allow gameplay shooting/reloading when cursor is locked
+        if (Cursor.lockState == CursorLockMode.Locked)
+        {
+            if (Input.GetMouseButtonDown(0) || controls.Player.Shoot.WasPressedThisFrame())
             {
-                CursorToggle(); // toggles cursor on/off
-            }
-            if (Cursor.lockState == CursorLockMode.Locked) //in game shooting
-            {
-                if (Input.GetMouseButtonDown(0))
-                {
-                    Command shoot = new ShootCommand(_playershoot);
-                }
-                if (controls.Player.Reload.WasPressedThisFrame())
-                {
-                    Reload();
-                }
-            }
-            if (ammoText != null)
-            {
-                ammoText.text = currentMagAmmo.ToString();
-            }
-            //if (controls.Player.Shoot.WasPressedThisFrame())
-            //{
-            if (Input.GetMouseButtonDown(0))
-            {
-
                 Command shoot = new ShootCommand(_playershoot);
                 _inputInvoker.AddCommand(shoot);
             }
+
             if (controls.Player.Reload.WasPressedThisFrame())
             {
                 Reload();
             }
+        }
+
+        // 3. UI Updates
+        if (ammoText != null)
+        {
             ammoText.text = currentMagAmmo.ToString();
         }
     }
+
     private void Reload()
     {
         int bulletsToReload;
@@ -103,37 +94,37 @@ public class PlayerShoot : MonoBehaviour
         currentAmmo -= bulletsToReload;
         Debug.Log("Bullets in mag: " + currentMagAmmo + ". Bullets left: " + currentAmmo);
     }
+
     public void Shoot()
     {
-        // Cooldown for shots
         if (Time.time < nextTimeToFire)
             return;
-        // if out of ammo
+
         if (currentMagAmmo <= 0)
             return;
+
         Debug.Log("Shoot");
         nextTimeToFire = Time.time + fireRate;
         currentMagAmmo--;
-        // shoot from the center of camera
+
         Ray ray = playerCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
         RaycastHit[] hits = Physics.RaycastAll(ray, shootRange);
-        // Hit in order of distance
+
         System.Array.Sort(hits, (hit1, hit2) => hit1.distance.CompareTo(hit2.distance));
         foreach (RaycastHit hit in hits)
         {
             Debug.Log("Shot hit: " + hit.collider.name);
-            // lkook for something that uses IDamageable
             IDamageable damageable = hit.collider.GetComponent<IDamageable>();
             if (damageable != null)
             {
                 damageable.TakeDamage(damage);
             }
         }
-        // AudioManager.instance.PlayOneShot(shootSfx, transform.position);
     }
-    private void CursorToggle() // function to toggle cursor on/off
+
+    private void CursorToggle()
     {
-        if(Cursor.lockState == CursorLockMode.Locked)
+        if (Cursor.lockState == CursorLockMode.Locked)
         {
             UnlockCursor();
         }
@@ -142,12 +133,14 @@ public class PlayerShoot : MonoBehaviour
             LockCursor();
         }
     }
-    private void UnlockCursor() //unlocks cursor
+
+    private void UnlockCursor()
     {
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }
-    private void LockCursor() //locks cursor
+
+    private void LockCursor()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
