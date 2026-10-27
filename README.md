@@ -78,7 +78,14 @@ The game scene is very boring and dry and not very plain so to add to the vibe o
 ## Plugin
 The plugin is supposed to make it easier to create resources in the future. In the current implementation, it would take a prefab and then a name and then create a new prefab inside the resources location that can be easily accessed. Right now, it just creates a prefab and names it, but in the future, we plan to add more features that makes modifying and accessing the resources much easier. I've also used this video to help me make the plugin: https://www.youtube.com/watch?v=34736DHWzaI
 
-Demonstration Link: https://youtu.be/6GrSQrZl0dc
+The plugin inherits from the EditorWindow class which is a native unity class. It then calls upon OnGUI, which is an event of EditorWindow that tells unity what to render. Inside this, I put the resource name input and the gameobject prefab reference and also a button that when clicked, creates the new resource prefab and places it inside the ResourcePrefabs folder. 
+
+I also put [MenuItem("Tools/Resource Creator")] on top of ShowWindow so that there would be a new tab in unity called Tools and under it you can see the Resource Creator plugin. 
+
+Plugin Demonstration Link: https://youtu.be/6GrSQrZl0dc
+
+<img width="1059" height="865" alt="image" src="https://github.com/user-attachments/assets/5ea0fb4e-d58b-495f-be1f-a24931c95e5b" />
+
 
 ## AI use disclosure
 
