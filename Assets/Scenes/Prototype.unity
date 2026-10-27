@@ -3664,7 +3664,7 @@ GameObject:
   - component: {fileID: 1339930570}
   - component: {fileID: 1339930571}
   m_Layer: 0
-  m_Name: Singleton
+  m_Name: SingletonAudioManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3703,6 +3703,13 @@ MonoBehaviour:
   defaultMaster: 1
   defaultMusic: 0.9
   defaultSfx: 1
+  rainfall:
+    Guid:
+      Data1: 983187370
+      Data2: 1253261359
+      Data3: 1815935622
+      Data4: 138602451
+    Path: event:/Ambience/Rainfall
 --- !u!1 &1372598020
 GameObject:
   m_ObjectHideFlags: 0
@@ -5296,7 +5303,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
