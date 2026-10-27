@@ -7,7 +7,6 @@ using UnityEngine.InputSystem;
 public class PlayerShoot : MonoBehaviour
 {
     public PlayerShoot _playershoot;
-    public int mousePress;
     InputInvoker _inputInvoker;
 
     [Header("References")]
@@ -59,10 +58,9 @@ public class PlayerShoot : MonoBehaviour
     private void Update()
     {
 
-        //if (controls.Player.Shoot.WasPressedThisFrame())
-        //{
-        if( Input.GetMouseButtonDown(0))
-        { 
+        if (controls.Player.Shoot.WasPressedThisFrame())
+        {
+
 
             Command shoot = new ShootCommand(_playershoot);
             _inputInvoker.AddCommand(shoot);

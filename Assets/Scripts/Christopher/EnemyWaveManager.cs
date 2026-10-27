@@ -6,9 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class EnemyWaveManager : Singleton<EnemyWaveManager>
 {
-    // Start is called before the first frame update
-    Scene currentScene;
-    private string sceneName = "Prototype";
 
     private List<GameObject> EnemyList;
     public int maxEnemyCount = 5;
@@ -51,28 +48,24 @@ public class EnemyWaveManager : Singleton<EnemyWaveManager>
     {
         zombietimer -= Time.deltaTime;
 
-        currentScene = SceneManager.GetActiveScene();
+        basicZombieSP.transform.position = player.transform.position + new Vector3(15,0,10);
+        largeZombieSP.transform.position = player.transform.position + new Vector3(-15, 0, 10);
 
-        if(currentScene.name == sceneName)
+        if (zombietimer <= 0)
         {
-            basicZombieSP.transform.position = player.transform.position + new Vector3(15,0,10);
-            largeZombieSP.transform.position = player.transform.position + new Vector3(-15, 0, 10);
-
-            if (zombietimer <= 0)
-            {
-                BaseEnemy enemy = basicZombieSP.GetComponent<EnemySpawner>().SpawnEnemy();
-                BaseEnemy largeEnemy = largeZombieSP.GetComponent<EnemySpawner>().SpawnEnemy();
-                enemy.attack();
-                largeEnemy.attack();
+            BaseEnemy enemy = basicZombieSP.GetComponent<EnemySpawner>().SpawnEnemy();
+            BaseEnemy largeEnemy = largeZombieSP.GetComponent<EnemySpawner>().SpawnEnemy();
+            enemy.attack();
+            largeEnemy.attack();
 
                 
 
 
-                zombietimer = MaxZombieTimer;
-            }
-
-            
+            zombietimer = MaxZombieTimer;
         }
 
+            
     }
+
+    
 }

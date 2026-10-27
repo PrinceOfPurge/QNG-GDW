@@ -44,7 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b50cbee0346d25408c5fe3606c17f4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxZombieTimer: 5
+  maxEnemyCount: 5
+  MaxZombieTimer: 7
   player: {fileID: 0}
   basicZombieSpawnerPrefab: {fileID: 1583189628613411823, guid: 0e2b5901dfb0eaf4f849a85be54c20b4, type: 3}
   largeZombieSpawnerPrefab: {fileID: 6873938200309898357, guid: 37623309014f4bd4e9cf00065d9158da, type: 3}
