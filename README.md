@@ -54,13 +54,13 @@ I built a factory that can spawn different types of zombies or enemies. I first 
 #### Singleton:
 I built an Inventory Manager and named it "ResourceManager". How this works is that it tracks the three resources (Bullets, Grenades, MedPacks) and it sees how much of each the player is holding. It also has a Max value for each so you can only hold a limited amount of each resource. This script has two public methods. AddResource takes in a string value and checks if the resource hit its limit, and if to it refuses to take the item but if it didn't hit the limit, it adds one to the amount of that resource you have and returns true so that the script that calls this can delete the resource from the scene. The second method is called UseResource which also takes in a string value and sees if you have atleast 1 of this resource. If so, it will return true and then subtract 1 from its count. This singleton also features a public int called currentResourceCount which tracks the amount of resources in the scene that haven't been collected yet and is used by two different scripts to add and remove the resources from the scene.
 
-<img width="973" height="1018" alt="image" src="https://github.com/user-attachments/assets/49d5bb8f-269f-4e9f-8f2f-c83656d1b05e" />
+<img width="300" height="313.87" alt="image" src="https://github.com/user-attachments/assets/49d5bb8f-269f-4e9f-8f2f-c83656d1b05e" />
 
 
 #### Command Design Pattern:
 I also followed the video shared by Christopher Shin to see how exactly to implement the command design pattern in unity. I then created an interface called ICommand which has a barebones method called Execute(). I then made another script called CollectCommand and made it inherit from ICommand and has a public method called Execute which basically calls upon the spawned resource and calls .Add() which will add it to the inventory if you have space.
 
-<img width="1050" height="622" alt="image" src="https://github.com/user-attachments/assets/8d7efbcc-e4fa-4d21-87f8-3ad5538abc20" />
+<img width="300" height="177.71" alt="image" src="https://github.com/user-attachments/assets/8d7efbcc-e4fa-4d21-87f8-3ad5538abc20" />
 
 
 #### Factory:
@@ -68,7 +68,7 @@ I created a resource spawner factory called ResourceSpawner. It keeps track of 3
 
 When this script first runs, it will call the SpawnRandomResource 5 times in a for loop. This script also has a value called MAXRESOURCE which is set to 5 so that there can only be 5 resources on the platform at a time and never more. There is also an Update method and if there are less than the MAXRESOURCE amount of resources in the platform, it will call SpawnRandomResource every second. The currentResourceCount exists in the ResourceManager singleton because another script also has to access it so it made sense to move that variable to the singleton. 
 
-<img width="700" height="883" alt="image" src="https://github.com/user-attachments/assets/05cd6998-cd10-4ff8-9d37-226dc9d3eac6" />
+<img width="300" height="378" alt="image" src="https://github.com/user-attachments/assets/05cd6998-cd10-4ff8-9d37-226dc9d3eac6" />
 
 #### Resource:
 This script is attached to all the resources and has an Init function that sets it's position to a random position on the platform. It also has a public method called Add() which the CollectCommand script calls so that the item can be collected. The Add method also calls the AddResource method in the ResourceManager singleton and if that returns true, it will subtracts 1 from currentResourceCount in the ResourceManager singleton so that the ResourceSpawner script can spawn one more resource to fill the 5 max resource on the platform thing, and also destroy itself from the platform. 
