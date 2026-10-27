@@ -73,14 +73,23 @@ Command:
 for the command design pattern I thought that it would be nice if the player could have a chance to customize the characters skin as it was just red before. And this fits in perfectly for command because the system doesn't need to know what colour they pick the system just has to change it. So the scripts show 5 options 3 skin tones, undo and redo buttons. the player simply clicks on the button and then that in return changes the mesh of the character to said colour. the player can then click redo or undo to compare colours. 
 
 Factory:
-The game scene is very boring and dry and not very plain so to add to the vibe of the game I had created a factory design to mass produce trees in the game. so there's two types of trees and what the code does is that it spawns in trees at random sizes around the spawn points. and this gives the effect of looking like a real forest and doesn't look like a cardboard cutout. and more trees can be spawned in by pressing the "t" key. This adds a level of realism because the trees are different and random just like in real life. 
+The game scene is very boring and dry and not very plain so to add to the vibe of the game I had created a factory design to mass produce trees in the game. so there's two types of trees and what the code does is that it spawns in trees at random sizes around the spawn points. and this gives the effect of looking like a real forest and doesn't look like a cardboard cutout. and more trees can be spawned in by pressing the "t" key. This adds a level of realism because the trees are different and random just like in real life.
+
+## Plugin
+The plugin is supposed to make it easier to create resources in the future. In the current implementation, it would take a prefab and then a name and then create a new prefab inside the resources location that can be easily accessed. Right now, it just creates a prefab and names it, but in the future, we plan to add more features that makes modifying and accessing the resources much easier. I've also used this video to help me make the plugin: https://www.youtube.com/watch?v=34736DHWzaI
+
+Demonstration Link: https://youtu.be/6GrSQrZl0dc
 
 ## AI use disclosure
 
 ### Gomagan Prabagar
-I've used AI, along with youtube videos and lecture slides for better help with understanding what the patterns are and ideas on what kind of what kind of systems I can build with the patterns, though I wrote all the code and architecture for these patterns myself without relying on AI. I also used AI to help me remember how to do Raycasting on unity for the collect feature. This was faster than searching up a video to remind me how to raycast on unity and raycasting wasn't a requirement that I had to do for the project so I believe this is fine. 
+I've used AI, along with youtube videos and lecture slides for better help with understanding what the patterns are and ideas on what kind of what kind of systems I can build with the patterns, though I wrote all the code and architecture for these patterns myself without relying on AI. 
 
-I did have a second accidental AI use where copilot automatically added the name to the README updates. I only realized its doing that to the README name after updating it for a few times. This wasn't Intentional and everything I wrote in the README itself was without any AI help. 
+I also used AI to help me remember how to do Raycasting on unity for the collect feature. This was faster than searching up a video to remind me how to raycast on unity and raycasting wasn't a requirement that I had to do for the project so I believe this is fine. 
+
+I've also used AI to refresh my memory on how to access the project folder from script and also documentation on asset utilities such as Refresh(), and prefab utilities such as SaveAsPrefabAssets which I needed to make the plugin. I did not generate the script with ai, but used it to learn of various unity functions and how to access folder paths and save a prefab to a folder using script. 
+
+I did also have an accidental AI use where copilot automatically added the name to the README updates. I only realized its doing that to the README name after updating it for a few times. This wasn't Intentional and everything I wrote in the README itself was without any AI help. 
 
 ### Bilal Rehman 
 I had a few issues with fmod not properly loading the audio assets so I have used AI to help me remove the errors and debug my code since I am not familiar with fmod. AI was used for fixing errors pertaining mismatching the naming of some functions as well as the GUI layout showing errors. I also made some logic errors in my code so AI was used to help with that. AI was only used to help me with the errors. 
