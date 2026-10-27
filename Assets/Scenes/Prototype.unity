@@ -2832,6 +2832,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Male5
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f174ecdb976e0254182511fcdafab3fa, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 1115989316951589359, guid: f174ecdb976e0254182511fcdafab3fa, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -3754,11 +3758,11 @@ MonoBehaviour:
   defaultSfx: 1
   rainfall:
     Guid:
-      Data1: 983187370
-      Data2: 1253261359
-      Data3: 1815935622
-      Data4: 138602451
-    Path: event:/Ambience/Rainfall
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
 --- !u!1 &1372598020
 GameObject:
   m_ObjectHideFlags: 0

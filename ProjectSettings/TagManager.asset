@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Truck
   - Collectible
+  - Enemy
   layers:
   - Default
   - TransparentFX
