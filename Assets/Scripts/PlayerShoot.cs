@@ -47,45 +47,46 @@ public class PlayerShoot : MonoBehaviour
     }
     private void Update()
     {
-<<<<<<< Updated upstream
+
 
         if (controls.Player.Shoot.WasPressedThisFrame())
         {
 
 
-=======
-        if (Input.GetKeyUp(KeyCode.M)) //unlocks cursor for ui
-        {
-            CursorToggle(); // toggles cursor on/off
-        }
-        if (Cursor.lockState == CursorLockMode.Locked) //in game shooting
-        {
+
+            if (Input.GetKeyUp(KeyCode.M)) //unlocks cursor for ui
+            {
+                CursorToggle(); // toggles cursor on/off
+            }
+            if (Cursor.lockState == CursorLockMode.Locked) //in game shooting
+            {
+                if (Input.GetMouseButtonDown(0))
+                {
+                    Command shoot = new ShootCommand(_playershoot);
+                }
+                if (controls.Player.Reload.WasPressedThisFrame())
+                {
+                    Reload();
+                }
+            }
+            if (ammoText != null)
+            {
+                ammoText.text = currentMagAmmo.ToString();
+            }
+            //if (controls.Player.Shoot.WasPressedThisFrame())
+            //{
             if (Input.GetMouseButtonDown(0))
             {
+
                 Command shoot = new ShootCommand(_playershoot);
+                _inputInvoker.AddCommand(shoot);
             }
             if (controls.Player.Reload.WasPressedThisFrame())
             {
                 Reload();
             }
-        }
-        if (ammoText != null)
-        {
             ammoText.text = currentMagAmmo.ToString();
         }
-        //if (controls.Player.Shoot.WasPressedThisFrame())
-        //{
-        if ( Input.GetMouseButtonDown(0))
-        { 
->>>>>>> Stashed changes
-            Command shoot = new ShootCommand(_playershoot);
-            _inputInvoker.AddCommand(shoot);
-        }
-        if (controls.Player.Reload.WasPressedThisFrame())
-        {
-            Reload();
-        }
-        ammoText.text = currentMagAmmo.ToString();
     }
     private void Reload()
     {
