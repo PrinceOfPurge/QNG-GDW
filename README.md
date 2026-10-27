@@ -44,6 +44,7 @@ I built a factory that can spawn different types of zombies or enemies. I first 
 
 #### Singleton:
 I built an Inventory Manager and named it "ResourceManager". How this works is that it tracks the three resources (Bullets, Grenades, MedPacks) and it sees how much of each the player is holding. It also has a Max value for each so you can only hold a limited amount of each resource. This script has two public methods. AddResource takes in a string value and checks if the resource hit its limit, and if to it refuses to take the item but if it didn't hit the limit, it adds one to the amount of that resource you have and returns true so that the script that calls this can delete the resource from the scene. The second method is called UseResource which also takes in a string value and sees if you have atleast 1 of this resource. If so, it will return true and then subtract 1 from its count. This singleton also features a public int called currentResourceCount which tracks the amount of resources in the scene that haven't been collected yet and is used by two different scripts to add and remove the resources from the scene.
+
 <img width="973" height="1018" alt="image" src="https://github.com/user-attachments/assets/49d5bb8f-269f-4e9f-8f2f-c83656d1b05e" />
 
 
@@ -51,7 +52,8 @@ I built an Inventory Manager and named it "ResourceManager". How this works is t
 I also followed the video shared by Christopher Shin to see how exactly to implement the command design pattern in unity. I then created an interface called ICommand which has a barebones method called Execute(). I then made another script called CollectCommand and made it inherit from ICommand and has a public method called Execute which basically calls upon the spawned resource and calls .Add() which will add it to the inventory if you have space.
 
 #### Factory:
-I created a resource spawner factory called ResourceSpawner. It keeps track of 3 gameobject prefabs (bullet, grenade, and medpack) and all these prefabs also have the Resource script. The ResourceSpawner has a private method called SpawnRandomResource() which uses UnityEngine.Random to pick out of the 3 gameobjects and then Instantiate it. It also has another helper method that returns the right prefab when given in the string. 
+I created a resource spawner factory called ResourceSpawner. It keeps track of 3 gameobject prefabs (bullet, grenade, and medpack) and all these prefabs also have the Resource script. The ResourceSpawner has a private method called SpawnRandomResource() which uses UnityEngine.Random to pick out of the 3 gameobjects and then Instantiate it. It also has another helper method that returns the right prefab when given in the string.
+
 <img width="700" height="883" alt="image" src="https://github.com/user-attachments/assets/05cd6998-cd10-4ff8-9d37-226dc9d3eac6" />
 
 
