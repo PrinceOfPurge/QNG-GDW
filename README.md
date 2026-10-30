@@ -113,3 +113,9 @@ I did also have an accidental AI use where copilot automatically added the name 
 
 ### Bilal Rehman 
 I had a few issues with fmod not properly loading the audio assets so I have used AI to help me remove the errors and debug my code since I am not familiar with fmod. AI was used for fixing errors pertaining mismatching the naming of some functions as well as the GUI layout showing errors. I also made some logic errors in my code so AI was used to help with that. AI was only used to help me with the errors. 
+
+
+Additional Sources Referenced:
+https://learn.ontariotechu.ca/courses/40729/files/6485310?module_item_id=923232
+
+https://learn.ontariotechu.ca/courses/40729/files/6605717?module_item_id=931566
