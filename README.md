@@ -23,6 +23,8 @@ Awakened is a monster shooter where the player is stuck in a car. The storyline 
 ## How we created the group
 The way we created this group was by seeing who in the class is someone that we have worked with in the past or someone we know. We also decided based on the projects we are working on, such as a GDW game. 
 
+Gant Chart Progress Tracker:
+
 <img width="1629" height="847" alt="image" src="https://github.com/user-attachments/assets/bd3445f4-0489-4b14-b829-4f6f4a136f05" />
 
 
