@@ -81,12 +81,15 @@ This script is attached to all the resources and has an Init function that sets 
 
 Singleton:
 The original game uses fmod so I thought that using a audio manager that uses fmod would be perfect for this project. and because fmod creates lots of changes regarding banks and whatnot using the singleton pattern is perfect for this specific use case. This audio manager plays the ambient rainfall sounds and can be used to add even more sounds and other music.  It has the framework to be further expanded on based on the needs of the game. It has different functions and methods to mess around with the audio. 
+<img width="242" height="314" alt="Screenshot 2026-10-29 222249" src="https://github.com/user-attachments/assets/12113ed4-2488-4807-877e-ed7e5dc8c76d" />
 
 Command:
 for the command design pattern I thought that it would be nice if the player could have a chance to customize the characters skin as it was just red before. And this fits in perfectly for command because the system doesn't need to know what colour they pick the system just has to change it. So the scripts show 5 options 3 skin tones, undo and redo buttons. the player simply clicks on the button and then that in return changes the mesh of the character to said colour. the player can then click redo or undo to compare colours. 
+<img width="336" height="330" alt="Screenshot 2026-10-29 222259" src="https://github.com/user-attachments/assets/9c0a60d6-a65b-4cf6-bb83-06b88c9d8266" />
 
 Factory:
 The game scene is very boring and dry and not very plain so to add to the vibe of the game I had created a factory design to mass produce trees in the game. so there's two types of trees and what the code does is that it spawns in trees at random sizes around the spawn points. and this gives the effect of looking like a real forest and doesn't look like a cardboard cutout. and more trees can be spawned in by pressing the "t" key. This adds a level of realism because the trees are different and random just like in real life.
+<img width="515" height="534" alt="image" src="https://github.com/user-attachments/assets/2928e90c-e4d2-4f4f-9c6a-f048bd991210" />
 
 ## Plugin
 The plugin is supposed to make it easier to create resources in the future. In the current implementation, it would take a prefab and then a name and then create a new prefab inside the resources location that can be easily accessed. Right now, it just creates a prefab and names it, but in the future, we plan to add more features that makes modifying and accessing the resources much easier. I've also used this video to help me make the plugin: https://www.youtube.com/watch?v=34736DHWzaI
