@@ -19,13 +19,18 @@ public class EnemyMovement : MonoBehaviour
 
     private void Start()
     {
-        target = GameObject.FindGameObjectWithTag("Truck").transform;
+        GameObject truck = GameObject.FindGameObjectWithTag("Truck");
+
+        if (truck != null)
+        {
+            target = truck.transform;
+        }
+        else
+        {
+            Debug.LogError("Truck not found");
+        }
         player = GameObject.FindGameObjectWithTag("Player");
 
-        if (target == null)
-        {
-            Debug.LogError("Truck tag not found");
-        }
         if (player == null)
         {
             Debug.Log("Player not found");

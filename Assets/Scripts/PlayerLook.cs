@@ -18,6 +18,8 @@ public class PlayerLook : MonoBehaviour
     private float xRotation = 0f;
     private float yRotation = 0f;
 
+    private bool canLook = true;
+
     private void Awake()
     {
         controls = new PlayerControls();
@@ -35,7 +37,13 @@ public class PlayerLook : MonoBehaviour
 
     private void Update()
     {
-        Look();
+        if (canLook)
+            Look();
+    }
+
+    public void LockLook()
+    {
+        canLook = false;
     }
 
     //Handle Look movement
