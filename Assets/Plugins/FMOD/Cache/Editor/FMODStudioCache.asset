@@ -42,7 +42,7 @@ MonoBehaviour:
   Path: FMOD/Awakened/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 639292994198198206
+  lastModified: 639293069335311565
   FileSizes:
   - Name: Desktop
     Value: 510720
@@ -89,7 +89,7 @@ MonoBehaviour:
   Path: FMOD/Awakened/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639292994197809067
+  lastModified: 639268824780873972
   FileSizes:
   - Name: Desktop
     Value: 2469056
@@ -268,7 +268,7 @@ MonoBehaviour:
   - {fileID: -8124382026942744437}
   StringsBanks:
   - {fileID: 2931301845318078087}
-  cacheTime: 639292994198198206
+  cacheTime: 639293069335311565
   cacheVersion: 131635
 --- !u!114 &1740007585497536359
 MonoBehaviour:
@@ -339,7 +339,7 @@ MonoBehaviour:
   Path: FMOD/Awakened/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639292994197824085
+  lastModified: 639293069335004733
   FileSizes:
   - Name: Desktop
     Value: 1648
@@ -413,7 +413,7 @@ MonoBehaviour:
   Path: FMOD/Awakened/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 639268401229576950
+  lastModified: 639268824780933971
   FileSizes:
   - Name: Desktop
     Value: 2468064
@@ -491,8 +491,8 @@ MonoBehaviour:
     Data3: 129937846
     Data4: 1890204195
   Banks:
-  - {fileID: 3836384672801691522}
   - {fileID: -8124382026942744437}
+  - {fileID: 3836384672801691522}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -542,7 +542,7 @@ MonoBehaviour:
   Path: FMOD/Awakened/Build/Desktop/Ambience.bank
   Name: Ambience
   StudioPath: bank:/Ambience
-  lastModified: 639268401229108826
+  lastModified: 639268824780768565
   FileSizes:
   - Name: Desktop
     Value: 642976
