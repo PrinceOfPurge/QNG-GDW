@@ -7,133 +7,153 @@ ModelImporter:
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
-      name: FordTruckBody_Base_color
-    second: {fileID: 2800000, guid: 3c7aa29fa666fdc448a82aa37816029a, type: 3}
+      name: 1
+    second: {fileID: 2800000, guid: 9139f23fe796bda4c91b39b407792bc3, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
-      name: FordTruckBody_Metallic
-    second: {fileID: 2800000, guid: cca4d6544dc1e904cb748847467fe866, type: 3}
+      name: FordBroncoExterior_FordTruckBody_Albedo
+    second: {fileID: 2800000, guid: c1231d027affbfc42b493933b08d2956, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
-      name: FordTruckBody_Normal
-    second: {fileID: 2800000, guid: c74c3bc6913182343aea680f0ce5c5ff, type: 3}
+      name: FordBroncoExterior_FordTruckBody_Metallic
+    second: {fileID: 2800000, guid: ff894ab37231b024da4b901e7d85a820, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
-      name: FordTruckBody_Roughness
-    second: {fileID: 2800000, guid: c6c8b4327cf428e499d576d103d5b8b1, type: 3}
+      name: FordBroncoExterior_FordTruckBody_Normal
+    second: {fileID: 2800000, guid: b9a2b714454545a4cb589d514e66b4e1, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
-      name: FordTruckGlass_Base_color
-    second: {fileID: 2800000, guid: 4b807a4967cc76e46af394c4dd3bd7c7, type: 3}
+      name: FordBroncoExterior_FordTruckGlass_Albedo
+    second: {fileID: 2800000, guid: 7285c01146e561d43a37f2826dd34ee4, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
-      name: FordTruckGlass_Metallic
-    second: {fileID: 2800000, guid: dabf55e1d3721a64b9283c3bd836eb4c, type: 3}
+      name: FordBroncoExterior_FordTruckGlass_Metallic
+    second: {fileID: 2800000, guid: 993924f3cc9fb8240a0160ee640fef6d, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
-      name: FordTruckGlass_Normal
-    second: {fileID: 2800000, guid: 8fd29fbf381fa74409ee5a1c0688b56d, type: 3}
+      name: FordBroncoExterior_FordTruckGlass_Normal
+    second: {fileID: 2800000, guid: 6f5f743218464b84a9c12e7956ec328f, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
-      name: FordTruckGlass_Opacity
-    second: {fileID: 2800000, guid: 49797c0476b978445841be95c8aad018, type: 3}
+      name: FordBroncoExterior_FordTruckLights_Albedo
+    second: {fileID: 2800000, guid: 4cea97ef553455248823509eebd14bf3, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
-      name: FordTruckGlass_Roughness
-    second: {fileID: 2800000, guid: f014725ebbb2af8489b65380ad1ce490, type: 3}
+      name: FordBroncoExterior_FordTruckLights_Emissive
+    second: {fileID: 2800000, guid: f6fbc08dffaea7e43bc435bd8f34431b, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
-      name: FordTruckInterior_Base_color
-    second: {fileID: 2800000, guid: 24988314b9395ac48935ef65e60e1b70, type: 3}
+      name: FordBroncoExterior_FordTruckLights_Metallic
+    second: {fileID: 2800000, guid: aacb2e46c4c401547824499c3c9bae12, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
-      name: FordTruckInterior_Base_metalness
-    second: {fileID: 2800000, guid: aac2c78d36040734ea542f5c77ccd09b, type: 3}
+      name: FordBroncoExterior_FordTruckLights_Normal
+    second: {fileID: 2800000, guid: e0eb6e3501796c7439a45acd60fc80e3, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
-      name: FordTruckInterior_Normal_OpenGL
-    second: {fileID: 2800000, guid: 949ef637243b0fe4aa4f9efcd7ca73af, type: 3}
+      name: FordBroncoExterior_FordTruckRimTire_Albedo
+    second: {fileID: 2800000, guid: 5f46207a3457bf54f8e0cd7699b51453, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
-      name: FordTruckInterior_Specular_roughness
-    second: {fileID: 2800000, guid: edcf0d3def0643341ac4f02db0437362, type: 3}
+      name: FordBroncoExterior_FordTruckRimTire_Metallic
+    second: {fileID: 2800000, guid: 30a32fb1002e86a46b1bb6647f713093, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
-      name: FordTruckLights_Base_color
-    second: {fileID: 2800000, guid: dab53cf0dca54cc48bed3e512a4f573c, type: 3}
+      name: FordBroncoExterior_FordTruckRimTire_Normal
+    second: {fileID: 2800000, guid: 8715a0169c9355f4da7f56bb9ae3b24a, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
-      name: FordTruckLights_Emissive
-    second: {fileID: 2800000, guid: aa61f0e4dfb087642b57ce3306865a56, type: 3}
+      name: FordBroncoExterior_Logo_Albedo
+    second: {fileID: 2800000, guid: cf825be4cc2787e42b175c6c23293ffb, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
-      name: FordTruckLights_Metallic
-    second: {fileID: 2800000, guid: f2519308e923f2c4cb6da0e79488f5d4, type: 3}
+      name: FordBroncoExterior_Logo_Metallic
+    second: {fileID: 2800000, guid: c379a6c456cad114eb3f5caf6127b738, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
-      name: FordTruckLights_Normal
-    second: {fileID: 2800000, guid: c501bac30adb77649be82e48445c9bed, type: 3}
+      name: FordBroncoExterior_Logo_Normal
+    second: {fileID: 2800000, guid: 9f1facd18aa5fc44e894b29cc06c1ed1, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
-      name: FordTruckLights_Opacity
-    second: {fileID: 2800000, guid: e754a401b4990b940a2f506c2fd2f716, type: 3}
+      name: FordBroncoInterior_InteriorFloor_Albedo
+    second: {fileID: 2800000, guid: cb622dd3743d56449b04bbbf7003c70e, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
-      name: FordTruckLights_Roughness
-    second: {fileID: 2800000, guid: cf89facc55927f24892ab19213bec9ea, type: 3}
+      name: FordBroncoInterior_InteriorFloor_Metallic
+    second: {fileID: 2800000, guid: fd8c4db49d08eca49ba7e33e2ac9eb1a, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
-      name: FordTruckRimTire_Base_color
-    second: {fileID: 2800000, guid: 1de2a4786b98fe741916d694432e067c, type: 3}
+      name: FordBroncoInterior_InteriorFloor_Normal
+    second: {fileID: 2800000, guid: 00cbe7d2f885cbc4aa0c10cd0a0bc439, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
-      name: FordTruckRimTire_Metallic
-    second: {fileID: 2800000, guid: 582fb9a288a956844b4b1964ac63a8f9, type: 3}
+      name: FordBroncoInterior_MenuRadioButtons_Albedo
+    second: {fileID: 2800000, guid: e9af19320deba73478b86643a8cb2e1b, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
-      name: FordTruckRimTire_Normal_OpenGL
-    second: {fileID: 2800000, guid: 990fe978b9111b541b93af0e3754475c, type: 3}
+      name: FordBroncoInterior_MenuRadioButtons_Metallic
+    second: {fileID: 2800000, guid: 7df856c5e8b872b40b13033c2bafae9e, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
-      name: Logo_Base_color
-    second: {fileID: 2800000, guid: 53babab7e9b59ea48b493bf8c8ea3eab, type: 3}
+      name: FordBroncoInterior_MenuRadioButtons_Normal
+    second: {fileID: 2800000, guid: 5228eb8f53cce0e409f1e29c2e22e90f, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
-      name: Logo_Metallic
-    second: {fileID: 2800000, guid: f82d198520944364da94aa8ed0055701, type: 3}
+      name: FordBroncoInterior_SW,Pedals,RM_Albedo
+    second: {fileID: 2800000, guid: 27b0c70984353654baf048d12ac2045a, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
-      name: Logo_Normal
-    second: {fileID: 2800000, guid: 4cfecd29d1bf8cd4a8af530fbe34e014, type: 3}
+      name: FordBroncoInterior_SW,Pedals,RM_Metallic
+    second: {fileID: 2800000, guid: 5aeb71fb572d2ae4791f4f1dbf4d74d0, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
-      name: Logo_Roughness
-    second: {fileID: 2800000, guid: 2c8afbefdda43724392e620050a2bdef, type: 3}
+      name: FordBroncoInterior_SW,Pedals,RM_Normal
+    second: {fileID: 2800000, guid: a2e4d480e359ee74fbf47413e99f9756, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: FordBroncoInterior_Seats,GB_Albedo
+    second: {fileID: 2800000, guid: 7e37a3c125339c44d9b64acfba0f43ac, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: FordBroncoInterior_Seats,GB_Metallic
+    second: {fileID: 2800000, guid: 5d7c93c40f47dd14cabcf1c03d9ceac6, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: FordBroncoInterior_Seats,GB_Normal
+    second: {fileID: 2800000, guid: 4e47838eba7337240a11dcfcd2a9ddd9, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Speedometer
+    second: {fileID: 2800000, guid: 786e17e2d96aeb946845039d6a19453f, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0

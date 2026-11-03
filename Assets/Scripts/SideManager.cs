@@ -20,15 +20,6 @@ public class SideManager : MonoBehaviour
         Door
     }
 
-    [Header("Left Positions")]
-    public Transform leftSeatPosition;
-    public Transform leftWindowPosition;
-    public Transform leftDoorPosition;
-
-    [Header("Right Positions")]
-    public Transform rightSeatPosition;
-    public Transform rightWindowPosition;
-    public Transform rightDoorPosition;
 
     [Header("States")]
     public PlayerSide currentSide = PlayerSide.Left;
@@ -38,12 +29,32 @@ public class SideManager : MonoBehaviour
     public float switchDuration = 0.75f;
     public float positionTransitionDuration = 0.25f;
 
+    [Header("Animation Setup")]
+    public Animator playerAnimator;
+    public string slideLeftToRightTrigger = "SlideLeftToRight";
+    public string slideRightToLeftTrigger = "SlideRightToLeft";
+
+    //Truck Movement Positions
+    private Transform leftSeatPosition;
+    private Transform leftWindowPosition;
+    private Transform leftDoorPosition;
+    private Transform rightSeatPosition;
+    private Transform rightWindowPosition;
+    private Transform rightDoorPosition;
+
     private PlayerControls controls;
     private Coroutine movementCoroutine;
+
+    private GameObject truck;
 
     private void Awake()
     {
         controls = new PlayerControls();
+
+        if (playerAnimator == null)
+        {
+            playerAnimator = GetComponentInChildren<Animator>();
+        }
     }
 
     //Disable and enable control scheme
@@ -55,6 +66,18 @@ public class SideManager : MonoBehaviour
     private void OnDisable()
     {
         controls.Disable();
+    }
+
+    private void Start()
+    {
+        //Finding the truck movement positions through code
+        truck = GameObject.FindGameObjectWithTag("Truck");
+        leftSeatPosition = truck.transform.Find("SeatPosLeft");
+        leftDoorPosition = truck.transform.Find("DoorPosLeft");
+        leftWindowPosition = truck.transform.Find("WindowPosLeft");
+        rightSeatPosition = truck.transform.Find("SeatPosRight");
+        rightDoorPosition = truck.transform.Find("DoorPosRight");
+        rightWindowPosition = truck.transform.Find("WindowPosRight");
     }
 
     private void Update()
@@ -107,6 +130,12 @@ public class SideManager : MonoBehaviour
 
         currentSide = PlayerSide.Switching;
 
+        // Play seat shifting sound effect
+        if (FMODEvents.instance != null && AudioManager.instance != null)
+        {
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.SeatSwitch, transform.position);
+        }
+
         float elapsedTime = 0f;
         Vector3 startPosition = transform.position;
         Vector3 targetPosition;
@@ -114,12 +143,14 @@ public class SideManager : MonoBehaviour
         if (previousSide == PlayerSide.Left)
         {
             targetPosition = rightSeatPosition.position;
+            if (playerAnimator != null) playerAnimator.SetTrigger(slideLeftToRightTrigger);
         }
         else
         {
             targetPosition = leftSeatPosition.position;
+            if (playerAnimator != null) playerAnimator.SetTrigger(slideRightToLeftTrigger);
         }
-        
+
         while (elapsedTime < switchDuration)
         {
             transform.position = Vector3.Lerp(startPosition, targetPosition, elapsedTime / switchDuration);
@@ -128,7 +159,7 @@ public class SideManager : MonoBehaviour
         }
 
         transform.position = targetPosition;
-        
+
         currentSide = (previousSide == PlayerSide.Left) ? PlayerSide.Right : PlayerSide.Left;
         currentPosition = PlayerPosition.Seat;
     }

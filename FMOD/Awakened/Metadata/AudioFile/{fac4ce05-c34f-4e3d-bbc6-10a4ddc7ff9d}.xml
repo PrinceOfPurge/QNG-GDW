@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{fac4ce05-c34f-4e3d-bbc6-10a4ddc7ff9d}">
+		<property name="assetPath">
+			<value>juliush-rain-on-a-car-roof-nature-sounds-8448.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>48.457142857142856</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{43a5e28a-c83c-463b-8857-7464804fc772}</destination>
+		</relationship>
+	</object>
+</objects>

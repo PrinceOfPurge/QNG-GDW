@@ -34,15 +34,15 @@ Shader "CamGradient"{
             fixed4 frag (v2f i) : SV_Target{
                 float maxColor = COLORS - 1.0; //Values of the number of colors -1
                 fixed4 col = saturate(tex2D(_MainTex, i.uv)); //get the scenes color saturated so that values <1 and >0
-                float halfColX = 0.5 / _LUT_TexelSize.z; //>
+                float halfColX = 0.5 / _LUT_TexelSize.z;
                 float halfColY = 0.5 / _LUT_TexelSize.w; // add precision to the sampling to avoid going beyond the LUT limits
-                float threshold = maxColor / COLORS; //^
-                float xOffset = halfColX + col.r * threshold / COLORS;//>
-                float yOffset = halfColY + col.g * threshold;//>
+                float threshold = maxColor / COLORS; 
+                float xOffset = halfColX + col.r * threshold / COLORS;
+                float yOffset = halfColY + col.g * threshold;
                 float cell = floor(col.b * maxColor);//Calculates the offsets to map the image to the LUT
-                float2 lutPos = float2(cell / COLORS + xOffset, yOffset);//^
-                float4 gradedCol = tex2D(_LUT, lutPos);//^
-                return lerp(col, gradedCol, _Contribution);//^
+                float2 lutPos = float2(cell / COLORS + xOffset, yOffset);
+                float4 gradedCol = tex2Dlod(_LUT, float4(lutPos, 0, 0));
+                return lerp(col, gradedCol, _Contribution);
             }
             ENDCG
         }

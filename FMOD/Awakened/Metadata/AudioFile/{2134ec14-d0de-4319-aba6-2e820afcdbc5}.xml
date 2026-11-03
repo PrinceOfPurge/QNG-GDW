@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{2134ec14-d0de-4319-aba6-2e820afcdbc5}">
+		<property name="assetPath">
+			<value>Morgan3.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>2.8734693877551019</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{43a5e28a-c83c-463b-8857-7464804fc772}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{0c3a9283-827a-4a59-b5d7-cd68d35c63e1}">
+		<property name="assetPath">
+			<value>Jackson1.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>3.8639999999999999</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{43a5e28a-c83c-463b-8857-7464804fc772}</destination>
+		</relationship>
+	</object>
+</objects>

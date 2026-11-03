@@ -1,0 +1,214 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &364139051952539429
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1980837375246515226}
+  - component: {fileID: 7346253736496124653}
+  m_Layer: 0
+  m_Name: FMOD Events
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1980837375246515226
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 364139051952539429}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2833743790919050014}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7346253736496124653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 364139051952539429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c6072753ae7a8b4c865bc588c855c77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <ambience>k__BackingField:
+    Guid:
+      Data1: -1383227945
+      Data2: 1127813028
+      Data3: -1152623200
+      Data4: -1903149686
+    Path: event:/Ambience/Ambience
+  <KidsPlaying>k__BackingField:
+    Guid:
+      Data1: -1245322231
+      Data2: 1147426741
+      Data3: 1013287599
+      Data4: 319991147
+    Path: event:/SFX/World/Kids
+  <music>k__BackingField:
+    Guid:
+      Data1: 1914682498
+      Data2: 1202156875
+      Data3: 269492901
+      Data4: -1460312549
+    Path: event:/Music/925ThemeMusic
+  <playerFootsteps>k__BackingField:
+    Guid:
+      Data1: -587327604
+      Data2: 1085913727
+      Data3: 1228627361
+      Data4: 676502900
+    Path: event:/SFX/Player/Footsteps
+  <Done>k__BackingField:
+    Guid:
+      Data1: -649998364
+      Data2: 1229062774
+      Data3: -1199257975
+      Data4: 2108407429
+    Path: event:/SFX/World/Done
+  <Swish>k__BackingField:
+    Guid:
+      Data1: -1784708592
+      Data2: 1164781343
+      Data3: 1087085959
+      Data4: 1659617426
+    Path: event:/SFX/World/Splash
+  <Jump>k__BackingField:
+    Guid:
+      Data1: -1377954965
+      Data2: 1197124941
+      Data3: 893462206
+      Data4: 1695684446
+    Path: event:/SFX/Player/Jump
+  <Land>k__BackingField:
+    Guid:
+      Data1: -1456267198
+      Data2: 1241111516
+      Data3: -431728220
+      Data4: -2115141244
+    Path: event:/SFX/Player/Land
+  <GymTeacherGreet>k__BackingField:
+    Guid:
+      Data1: -1255675727
+      Data2: 1143231981
+      Data3: 1705454780
+      Data4: 885073542
+    Path: event:/SFX/NPCs/GymTeacherGreet
+  <GymTeacherHit>k__BackingField:
+    Guid:
+      Data1: -1892791432
+      Data2: 1271637449
+      Data3: -1476380797
+      Data4: 639134444
+    Path: event:/SFX/NPCs/GymTeacherHit
+  <Broom>k__BackingField:
+    Guid:
+      Data1: 1191062496
+      Data2: 1101852206
+      Data3: 51330456
+      Data4: 193090023
+    Path: event:/SFX/World/Broom
+  <Splash>k__BackingField:
+    Guid:
+      Data1: -1784708592
+      Data2: 1164781343
+      Data3: 1087085959
+      Data4: 1659617426
+    Path: event:/SFX/World/Splash
+  <SprayBottle>k__BackingField:
+    Guid:
+      Data1: -305552945
+      Data2: 1331168427
+      Data3: 1400421554
+      Data4: -667775747
+    Path: event:/SFX/World/SprayBottle
+  <DoorOpen>k__BackingField:
+    Guid:
+      Data1: -2118322898
+      Data2: 1319040205
+      Data3: 832309944
+      Data4: -845578662
+    Path: event:/SFX/World/DoorOpen
+  <DoorClose>k__BackingField:
+    Guid:
+      Data1: 1623309614
+      Data2: 1302504267
+      Data3: -2054346576
+      Data4: -2111411207
+    Path: event:/SFX/World/DoorClose
+  <buttonClick>k__BackingField:
+    Guid:
+      Data1: -1784708592
+      Data2: 1164781343
+      Data3: 1087085959
+      Data4: 1659617426
+    Path: event:/SFX/World/Splash
+  <sliderMove>k__BackingField:
+    Guid:
+      Data1: 999481675
+      Data2: 1160318950
+      Data3: -335718498
+      Data4: 312071303
+    Path: event:/SFX/World/SliderSponge
+--- !u!1 &8093717414090421701
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2833743790919050014}
+  - component: {fileID: 3408540140039436163}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2833743790919050014
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8093717414090421701}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1980837375246515226}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3408540140039436163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8093717414090421701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37519309acd228c4cb4640b255ba22ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  masterVolume: 1
+  musicVolume: 1
+  ambienceVolume: 1
+  SFXVolume: 1

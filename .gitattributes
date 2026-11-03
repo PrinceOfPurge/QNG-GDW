@@ -1,2 +1,6 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# Treat FMOD macOS native bundles as binary, not text
+Assets/Plugins/FMOD/**/*.bundle binary
+Assets/Plugins/FMOD/**/Info.plist text eol=lf

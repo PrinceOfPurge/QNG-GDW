@@ -8,13 +8,18 @@ public class PlayerLook : MonoBehaviour
     [SerializeField] private Transform playerBody;
 
     [SerializeField] private float mouseSensitivity = 0.1f;
-    [SerializeField] private float maxLookAngle = 80f;
+    [SerializeField] private float maxLookUpAngle = 50f;
+    [SerializeField] private float maxLookDownAngle = 80f;
     [SerializeField] private float maxLookHorizontal = 90f;
+
+    public SideManager sideManager;
 
     private PlayerControls controls;
 
     private float xRotation = 0f;
     private float yRotation = 0f;
+
+    private bool canLook = true;
 
     private void Awake()
     {
@@ -33,7 +38,13 @@ public class PlayerLook : MonoBehaviour
 
     private void Update()
     {
-        Look();
+        if (canLook)
+            Look();
+    }
+
+    public void LockLook()
+    {
+        canLook = false;
     }
 
     //Handle Look movement
@@ -48,19 +59,31 @@ public class PlayerLook : MonoBehaviour
         xRotation -= mouseY;
         xRotation = Mathf.Clamp(
             xRotation,
-            -maxLookAngle,
-            maxLookAngle
+            -maxLookUpAngle,
+            maxLookDownAngle
         );
 
-        // Horizontal rotation
+        //horizontal rotation
         yRotation += mouseX;
-        yRotation = Mathf.Clamp(
-            yRotation,
-            -maxLookHorizontal,
-            maxLookHorizontal
-        );
+        if(sideManager.currentPosition == SideManager.PlayerPosition.Door)
+        {
+            if(sideManager.currentSide == SideManager.PlayerSide.Right)
+            {
+                yRotation = Mathf.Clamp(yRotation, (180f + -maxLookHorizontal), (90f + maxLookHorizontal));
+            }
+            if (sideManager.currentSide == SideManager.PlayerSide.Left)
+            {
+                yRotation = Mathf.Clamp(yRotation, (-90f + -maxLookHorizontal), (-180f + maxLookHorizontal));
+            }
 
-        // Apply both rotations
+        }
+        else
+        {
+            yRotation = Mathf.Clamp(yRotation, -maxLookHorizontal, maxLookHorizontal);
+        }
+        
+
+        //both rotations
         transform.localRotation = Quaternion.Euler(
             xRotation,
             yRotation,
