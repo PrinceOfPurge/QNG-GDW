@@ -8,7 +8,8 @@ public class PlayerLook : MonoBehaviour
     [SerializeField] private Transform playerBody;
 
     [SerializeField] private float mouseSensitivity = 0.1f;
-    [SerializeField] private float maxLookAngle = 80f;
+    [SerializeField] private float maxLookUpAngle = 50f;
+    [SerializeField] private float maxLookDownAngle = 80f;
     [SerializeField] private float maxLookHorizontal = 90f;
 
     public SideManager sideManager;
@@ -58,8 +59,8 @@ public class PlayerLook : MonoBehaviour
         xRotation -= mouseY;
         xRotation = Mathf.Clamp(
             xRotation,
-            -maxLookAngle,
-            maxLookAngle
+            -maxLookUpAngle,
+            maxLookDownAngle
         );
 
         //horizontal rotation
