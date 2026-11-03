@@ -29,6 +29,11 @@ public class SideManager : MonoBehaviour
     public float switchDuration = 0.75f;
     public float positionTransitionDuration = 0.25f;
 
+    [Header("Animation Setup")]
+    public Animator playerAnimator;
+    public string slideLeftToRightTrigger = "SlideLeftToRight";
+    public string slideRightToLeftTrigger = "SlideRightToLeft";
+
     //Truck Movement Positions
     private Transform leftSeatPosition;
     private Transform leftWindowPosition;
@@ -45,6 +50,11 @@ public class SideManager : MonoBehaviour
     private void Awake()
     {
         controls = new PlayerControls();
+
+        if (playerAnimator == null)
+        {
+            playerAnimator = GetComponentInChildren<Animator>();
+        }
     }
 
     //Disable and enable control scheme
@@ -120,6 +130,12 @@ public class SideManager : MonoBehaviour
 
         currentSide = PlayerSide.Switching;
 
+        // Play seat shifting sound effect
+        if (FMODEvents.instance != null && AudioManager.instance != null)
+        {
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.SeatSwitch, transform.position);
+        }
+
         float elapsedTime = 0f;
         Vector3 startPosition = transform.position;
         Vector3 targetPosition;
@@ -127,12 +143,14 @@ public class SideManager : MonoBehaviour
         if (previousSide == PlayerSide.Left)
         {
             targetPosition = rightSeatPosition.position;
+            if (playerAnimator != null) playerAnimator.SetTrigger(slideLeftToRightTrigger);
         }
         else
         {
             targetPosition = leftSeatPosition.position;
+            if (playerAnimator != null) playerAnimator.SetTrigger(slideRightToLeftTrigger);
         }
-        
+
         while (elapsedTime < switchDuration)
         {
             transform.position = Vector3.Lerp(startPosition, targetPosition, elapsedTime / switchDuration);
@@ -141,7 +159,7 @@ public class SideManager : MonoBehaviour
         }
 
         transform.position = targetPosition;
-        
+
         currentSide = (previousSide == PlayerSide.Left) ? PlayerSide.Right : PlayerSide.Left;
         currentPosition = PlayerPosition.Seat;
     }

@@ -102,9 +102,15 @@ public class PlayerShoot : MonoBehaviour
         if (Time.time < nextTimeToFire)
             return;
 
-        // if out of ammo
+        // If out of magazine ammo
         if (currentMagAmmo <= 0)
         {
+            // Play dry fire sound effect
+            if (FMODEvents.instance != null && AudioManager.instance != null)
+            {
+                AudioManager.instance.PlayOneShot(FMODEvents.instance.dryFire, transform.position);
+            }
+
             if (currentAmmo > 0)
             {
                 Debug.Log("Reloading");
@@ -114,10 +120,18 @@ public class PlayerShoot : MonoBehaviour
             {
                 Debug.Log("Out of ammo");
             }
+
+            nextTimeToFire = Time.time + fireRate;
             return;
         }
 
         Debug.Log("Shoot");
+
+        // Play shooting sound effect
+        if (FMODEvents.instance != null && AudioManager.instance != null)
+        {
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.Shoot, transform.position);
+        }
 
         nextTimeToFire = Time.time + fireRate;
 
@@ -137,7 +151,7 @@ public class PlayerShoot : MonoBehaviour
         {
             Debug.Log("Shot hit: " + hit.collider.name);
 
-            // lkook for something that uses IDamageable
+            // look for something that uses IDamageable
             IDamageable damageable = hit.collider.GetComponent<IDamageable>();
 
             if (damageable != null)
