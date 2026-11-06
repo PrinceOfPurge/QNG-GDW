@@ -42,10 +42,10 @@ MonoBehaviour:
   Path: FMOD/Awakened/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 639293219695278963
+  lastModified: 639295823530663027
   FileSizes:
   - Name: Desktop
-    Value: 510720
+    Value: 543456
   Exists: 1
 --- !u!114 &-8291745357692589752
 MonoBehaviour:
@@ -89,7 +89,7 @@ MonoBehaviour:
   Path: FMOD/Awakened/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639293219695138930
+  lastModified: 639295823528082128
   FileSizes:
   - Name: Desktop
     Value: 2469056
@@ -263,12 +263,13 @@ MonoBehaviour:
   - {fileID: -8291745357692589752}
   - {fileID: 3046086153188407205}
   - {fileID: 5195143898041786389}
+  - {fileID: 3812582009363353475}
   EditorParameters: []
   MasterBanks:
   - {fileID: -8124382026942744437}
   StringsBanks:
   - {fileID: 2931301845318078087}
-  cacheTime: 639293219695278963
+  cacheTime: 639295823530663027
   cacheVersion: 131635
 --- !u!114 &1740007585497536359
 MonoBehaviour:
@@ -339,10 +340,10 @@ MonoBehaviour:
   Path: FMOD/Awakened/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639293219695138930
+  lastModified: 639295823528102130
   FileSizes:
   - Name: Desktop
-    Value: 1648
+    Value: 1694
   Exists: 1
 --- !u!114 &3046086153188407205
 MonoBehaviour:
@@ -354,9 +355,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/Revolver Shooting Sound
+  m_Name: event:/SFX/revolver Shooting Sound
   m_EditorClassIdentifier: 
-  Path: event:/SFX/Revolver Shooting Sound
+  Path: event:/SFX/revolver Shooting Sound
   Guid:
     Data1: -257104663
     Data2: 1136851121
@@ -398,6 +399,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &3812582009363353475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/reload
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/reload
+  Guid:
+    Data1: -1719843247
+    Data2: 1141982273
+    Data3: -502402408
+    Data4: 701954909
+  Banks:
+  - {fileID: -8530785228203913213}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &3836384672801691522
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -413,7 +441,7 @@ MonoBehaviour:
   Path: FMOD/Awakened/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 639293219695268961
+  lastModified: 639295823528361085
   FileSizes:
   - Name: Desktop
     Value: 2468064
@@ -542,7 +570,7 @@ MonoBehaviour:
   Path: FMOD/Awakened/Build/Desktop/Ambience.bank
   Name: Ambience
   StudioPath: bank:/Ambience
-  lastModified: 639293219694990121
+  lastModified: 639295823504469523
   FileSizes:
   - Name: Desktop
     Value: 642976

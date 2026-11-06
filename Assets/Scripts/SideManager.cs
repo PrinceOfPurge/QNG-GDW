@@ -25,6 +25,9 @@ public class SideManager : MonoBehaviour
     public PlayerSide currentSide = PlayerSide.Left;
     public PlayerPosition currentPosition = PlayerPosition.Seat;
 
+    [Header("Tutorial UI")]
+    [SerializeField] private GameObject tutorialPrompt; // Drag your tutorial UI GameObject here in the Inspector
+
     [Header("Settings")]
     public float switchDuration = 0.75f;
     public float positionTransitionDuration = 0.25f;
@@ -46,6 +49,12 @@ public class SideManager : MonoBehaviour
     private Coroutine movementCoroutine;
 
     private GameObject truck;
+
+    // Track input presses for tutorial completion
+    private bool pressedSpace = false;
+    private bool pressedQ = false;
+    private bool pressedE = false;
+    private bool tutorialCompleted = false;
 
     private void Awake()
     {
@@ -70,7 +79,7 @@ public class SideManager : MonoBehaviour
 
     private void Start()
     {
-        //Finding the truck movement positions through code
+        // Finding the truck movement positions through code
         truck = GameObject.FindGameObjectWithTag("Truck");
         leftSeatPosition = truck.transform.Find("SeatPosLeft");
         leftDoorPosition = truck.transform.Find("DoorPosLeft");
@@ -78,19 +87,30 @@ public class SideManager : MonoBehaviour
         rightSeatPosition = truck.transform.Find("SeatPosRight");
         rightDoorPosition = truck.transform.Find("DoorPosRight");
         rightWindowPosition = truck.transform.Find("WindowPosRight");
+
+        // Ensure tutorial prompt is active when game starts
+        if (tutorialPrompt != null)
+        {
+            tutorialPrompt.SetActive(true);
+        }
     }
 
     private void Update()
     {
-        //Handling controls
+        // Handling controls
         if (controls.Player.SwitchSide.WasPressedThisFrame())
         {
+            pressedSpace = true;
+            CheckTutorialCompletion();
             SwitchSide();
         }
 
         // Q Key (Leftward Input)
-        if(controls.Player.Window.WasPressedThisFrame())
+        if (controls.Player.Window.WasPressedThisFrame())
         {
+            pressedQ = true;
+            CheckTutorialCompletion();
+
             if (currentSide == PlayerSide.Left)
                 MoveToPosition(PlayerPosition.Window); // Window is on the left
             else
@@ -105,6 +125,9 @@ public class SideManager : MonoBehaviour
         // E Key (Rightward Input)
         if (controls.Player.Door.WasPressedThisFrame())
         {
+            pressedE = true;
+            CheckTutorialCompletion();
+
             if (currentSide == PlayerSide.Left)
                 MoveToPosition(PlayerPosition.Door);   // Door/Center is on the right
             else
@@ -117,7 +140,23 @@ public class SideManager : MonoBehaviour
         }
     }
 
+    private void CheckTutorialCompletion()
+    {
+        if (tutorialCompleted)
+            return;
 
+        if (pressedSpace && pressedQ && pressedE)
+        {
+            tutorialCompleted = true;
+
+            if (tutorialPrompt != null)
+            {
+                tutorialPrompt.SetActive(false);
+            }
+
+            Debug.Log("Tutorial completed! Disabling prompt.");
+        }
+    }
 
     //Switching from left and right seats 
     public void SwitchSide()
@@ -264,8 +303,7 @@ public class SideManager : MonoBehaviour
             StopCoroutine(movementCoroutine);
         }
 
-        movementCoroutine = StartCoroutine(MoveToPositionCoroutine(targetPosition)
-        );
+        movementCoroutine = StartCoroutine(MoveToPositionCoroutine(targetPosition));
     }
 
     //Coroutine for moving between positions
@@ -277,7 +315,7 @@ public class SideManager : MonoBehaviour
 
         while (elapsedTime < positionTransitionDuration)
         {
-            transform.position = Vector3.Lerp(startPosition,targetPosition,elapsedTime / positionTransitionDuration);
+            transform.position = Vector3.Lerp(startPosition, targetPosition, elapsedTime / positionTransitionDuration);
 
             elapsedTime += Time.deltaTime;
 

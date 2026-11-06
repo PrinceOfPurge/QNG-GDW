@@ -5,7 +5,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c71e8065-9e1e-411c-be29-80b3034969a6" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.QNG-GDW/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.QNG-GDW/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Audio/FMODEvents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Audio/FMODEvents.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Prototype.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Prototype.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerHealth.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerShoot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerShoot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SideManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SideManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UI/WesternBangBang-Regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/WesternBangBang-Regular SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FMOD/Awakened/.cache/buildrecords/Desktop/Ambience.br" beforeDir="false" afterPath="$PROJECT_DIR$/FMOD/Awakened/.cache/buildrecords/Desktop/Ambience.br" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FMOD/Awakened/.cache/buildrecords/Desktop/Master.br" beforeDir="false" afterPath="$PROJECT_DIR$/FMOD/Awakened/.cache/buildrecords/Desktop/Master.br" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FMOD/Awakened/.cache/buildrecords/Desktop/Music.br" beforeDir="false" afterPath="$PROJECT_DIR$/FMOD/Awakened/.cache/buildrecords/Desktop/Music.br" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FMOD/Awakened/.cache/buildrecords/Desktop/SFX.br" beforeDir="false" afterPath="$PROJECT_DIR$/FMOD/Awakened/.cache/buildrecords/Desktop/SFX.br" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FMOD/Awakened/.cache/fsbcache/Desktop/0F7EF30B.fobj" beforeDir="false" afterPath="$PROJECT_DIR$/FMOD/Awakened/.cache/fsbcache/Desktop/0F7EF30B.fobj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FMOD/Awakened/.cache/fsbcache/Desktop/17F6670A.fobj" beforeDir="false" afterPath="$PROJECT_DIR$/FMOD/Awakened/.cache/fsbcache/Desktop/17F6670A.fobj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FMOD/Awakened/.cache/fsbcache/Desktop/2744E346.fobj" beforeDir="false" afterPath="$PROJECT_DIR$/FMOD/Awakened/.cache/fsbcache/Desktop/2744E346.fobj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FMOD/Awakened/.cache/fsbcache/Desktop/3E8F6A36.fobj" beforeDir="false" afterPath="$PROJECT_DIR$/FMOD/Awakened/.cache/fsbcache/Desktop/3E8F6A36.fobj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FMOD/Awakened/.cache/fsbcache/Desktop/4647EBBB.fobj" beforeDir="false" afterPath="$PROJECT_DIR$/FMOD/Awakened/.cache/fsbcache/Desktop/4647EBBB.fobj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FMOD/Awakened/.cache/fsbcache/Desktop/66DF81BD.fobj" beforeDir="false" afterPath="$PROJECT_DIR$/FMOD/Awakened/.cache/fsbcache/Desktop/66DF81BD.fobj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FMOD/Awakened/.cache/fsbcache/Desktop/6EA5B1C8.fobj" beforeDir="false" afterPath="$PROJECT_DIR$/FMOD/Awakened/.cache/fsbcache/Desktop/6EA5B1C8.fobj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FMOD/Awakened/.cache/fsbcache/Desktop/769CFEAF.fobj" beforeDir="false" afterPath="$PROJECT_DIR$/FMOD/Awakened/.cache/fsbcache/Desktop/769CFEAF.fobj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FMOD/Awakened/.cache/fsbcache/Desktop/82EA5DDB.fobj" beforeDir="false" afterPath="$PROJECT_DIR$/FMOD/Awakened/.cache/fsbcache/Desktop/82EA5DDB.fobj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FMOD/Awakened/.cache/fsbcache/Desktop/877D5D3D.fobj" beforeDir="false" afterPath="$PROJECT_DIR$/FMOD/Awakened/.cache/fsbcache/Desktop/877D5D3D.fobj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FMOD/Awakened/.cache/fsbcache/Desktop/882E8B34.fobj" beforeDir="false" afterPath="$PROJECT_DIR$/FMOD/Awakened/.cache/fsbcache/Desktop/882E8B34.fobj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FMOD/Awakened/.cache/fsbcache/Desktop/89B326C4.fobj" beforeDir="false" afterPath="$PROJECT_DIR$/FMOD/Awakened/.cache/fsbcache/Desktop/89B326C4.fobj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FMOD/Awakened/.cache/fsbcache/Desktop/B2167D03.fobj" beforeDir="false" afterPath="$PROJECT_DIR$/FMOD/Awakened/.cache/fsbcache/Desktop/B2167D03.fobj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FMOD/Awakened/.cache/fsbcache/Desktop/C07D09B5.fobj" beforeDir="false" afterPath="$PROJECT_DIR$/FMOD/Awakened/.cache/fsbcache/Desktop/C07D09B5.fobj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FMOD/Awakened/.cache/fsbcache/Desktop/EB5AB55C.fobj" beforeDir="false" afterPath="$PROJECT_DIR$/FMOD/Awakened/.cache/fsbcache/Desktop/EB5AB55C.fobj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FMOD/Awakened/.cache/{dc64073a-80c3-4528-8a24-7c8273078af4}.pdc" beforeDir="false" afterPath="$PROJECT_DIR$/FMOD/Awakened/.cache/{dc64073a-80c3-4528-8a24-7c8273078af4}.pdc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FMOD/Awakened/.cache/{ff522813-db8b-4ff4-afbb-0bb52aa3a64d}.pdc" beforeDir="false" afterPath="$PROJECT_DIR$/FMOD/Awakened/.cache/{ff522813-db8b-4ff4-afbb-0bb52aa3a64d}.pdc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FMOD/Awakened/Build/Desktop/Master.strings.bank" beforeDir="false" afterPath="$PROJECT_DIR$/FMOD/Awakened/Build/Desktop/Master.strings.bank" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FMOD/Awakened/Build/Desktop/SFX.bank" beforeDir="false" afterPath="$PROJECT_DIR$/FMOD/Awakened/Build/Desktop/SFX.bank" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,6 +128,7 @@
       <workItem from="1793736442781" duration="2937000" />
       <workItem from="1793980367544" duration="2075000" />
       <workItem from="1793988238229" duration="269000" />
+      <workItem from="1794000643353" duration="3059000" />
     </task>
     <servers />
   </component>

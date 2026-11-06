@@ -16,6 +16,7 @@ public class FMODEvents : MonoBehaviour
     [field: SerializeField] public EventReference SeatSwitch { get; private set; }
     [field: SerializeField] public EventReference Shoot { get; private set; }
     [field: SerializeField] public EventReference dryFire { get; private set; }
+    [field: SerializeField] public EventReference Reload { get; private set; }
     
     [field: Header("World SFX")]
     //[field: SerializeField] public EventReference grinding { get; private set; }

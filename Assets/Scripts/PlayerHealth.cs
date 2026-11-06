@@ -5,13 +5,18 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour, IDamageable
 {
-    [SerializeField] private float health = 100f;
-    [SerializeField] private float maxHealth = 100f;
-
+    [Header("References")]
     [SerializeField] private PlayerLook playerLook;
+    [SerializeField] private Image healthBarFill;       // Drag your filled health bar Image here
+    [SerializeField] private RawImage bloodSplatter;    // Drag your blood splatter RawImage here
+    [SerializeField] private GameObject deathScreen;    // Drag your DeathScreen GameObject here
 
-    private RawImage bloodSplatter;
-    private GameObject deathScreen;
+    [Header("Health Settings")]
+    [SerializeField] private float maxHealth = 100f;
+    [SerializeField] private float health = 100f;
+
+    [Header("Low Health Settings")]
+    [SerializeField] private float lowHealthThreshold = 30f; // Health level where the blood screen starts appearing
 
     private bool isDead = false;
 
@@ -22,32 +27,12 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 
         health = maxHealth;
 
-        //find the playerHUD tag
-        GameObject playerHUD = GameObject.FindWithTag("PlayerHUD");
-
-        if (playerHUD != null)
+        if (deathScreen != null)
         {
-            //get the blood scatter texture
-            bloodSplatter = playerHUD.GetComponentInChildren<RawImage>();
-
-            Transform deathScreenTransform = playerHUD.transform.Find("DeathScreen");
-
-            if (deathScreenTransform != null)
-            {
-                deathScreen = deathScreenTransform.gameObject;
-                deathScreen.SetActive(false);
-            }
-            else
-            {
-                Debug.LogWarning("DeathScreen not found!");
-            }
-        }
-        else
-        {
-            Debug.LogWarning("PlayerHUD not found!");
+            deathScreen.SetActive(false);
         }
 
-        UpdateBloodEffect();
+        UpdateHealthUI();
     }
 
     public void TakeDamage(float damage)
@@ -56,8 +41,9 @@ public class PlayerHealth : MonoBehaviour, IDamageable
             return;
 
         health -= damage;
+        health = Mathf.Clamp(health, 0f, maxHealth);
 
-        UpdateBloodEffect();
+        UpdateHealthUI();
 
         if (health <= 0f)
         {
@@ -65,14 +51,31 @@ public class PlayerHealth : MonoBehaviour, IDamageable
         }
     }
 
-    private void UpdateBloodEffect()
+    private void UpdateHealthUI()
     {
+        // 1. Update the Health Fill Bar
+        if (healthBarFill != null)
+        {
+            healthBarFill.fillAmount = health / maxHealth;
+        }
+
+        // 2. Update the Blood Effect (Only active when health is super low)
         if (bloodSplatter != null)
         {
-            float damagePercent = Mathf.Clamp01(1f - (health / maxHealth));
-            float alpha = Mathf.Pow(damagePercent, 2f);
             Color color = bloodSplatter.color;
-            color.a = alpha;
+
+            if (health <= lowHealthThreshold)
+            {
+                // Calculate how close to 0 health the player is below the threshold
+                float dangerPercent = 1f - (health / lowHealthThreshold);
+                color.a = Mathf.Pow(dangerPercent, 1.5f); // Scales up intensity as health gets lower
+            }
+            else
+            {
+                // Completely hide the blood screen when health is above the low threshold
+                color.a = 0f;
+            }
+
             bloodSplatter.color = color;
         }
     }
@@ -94,10 +97,10 @@ public class PlayerHealth : MonoBehaviour, IDamageable
         if (playerLook != null)
             playerLook.LockLook();
 
-        //pause the game
+        // Pause the game
         Time.timeScale = 0f;
 
-        //show mouse cursor
+        // Show mouse cursor
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }
