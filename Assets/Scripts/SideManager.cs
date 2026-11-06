@@ -88,9 +88,13 @@ public class SideManager : MonoBehaviour
             SwitchSide();
         }
 
+        // Q Key (Leftward Input)
         if(controls.Player.Window.WasPressedThisFrame())
         {
-            MoveToPosition(PlayerPosition.Window);
+            if (currentSide == PlayerSide.Left)
+                MoveToPosition(PlayerPosition.Window); // Window is on the left
+            else
+                MoveToPosition(PlayerPosition.Door);   // Door/Center is on the left
         }
 
         if (controls.Player.Window.WasReleasedThisFrame())
@@ -98,9 +102,13 @@ public class SideManager : MonoBehaviour
             ReturnToSeat();
         }
 
+        // E Key (Rightward Input)
         if (controls.Player.Door.WasPressedThisFrame())
         {
-            MoveToPosition(PlayerPosition.Door);
+            if (currentSide == PlayerSide.Left)
+                MoveToPosition(PlayerPosition.Door);   // Door/Center is on the right
+            else
+                MoveToPosition(PlayerPosition.Window); // Window is on the right
         }
 
         if (controls.Player.Door.WasReleasedThisFrame())
