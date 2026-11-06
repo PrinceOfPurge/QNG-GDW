@@ -102,8 +102,3 @@ fmod_editor.log
 # Ignore local FMOD Studio Cache asset
 **/FMODStudioCache.asset
 **/FMODStudioCache.asset.meta
-Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset
-Assets/Textures.meta
-Assets/Textures/textures props.meta
-Assets/Textures/textures props/trashcan.spp.meta
-ProjectSettings/ShaderGraphSettings.asset
