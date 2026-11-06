@@ -7504,12 +7504,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1538253253}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -15, y: -2.9, z: 93.9}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -52.420746, y: -0.5158502, z: 27.982708}
+  m_LocalScale: {x: 0.28818443, y: 0.28818443, z: 0.28818443}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1565015884}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1538253255
 MonoBehaviour:
@@ -7928,6 +7928,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7299416145649809247, guid: d0668717a243fc24a82cbcc382cf12e4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4898849367996181331}
+    - targetCorrespondingSourceObject: {fileID: 7299416145649809247, guid: d0668717a243fc24a82cbcc382cf12e4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1538253254}
     - targetCorrespondingSourceObject: {fileID: 5896589807777875779, guid: d0668717a243fc24a82cbcc382cf12e4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1549197060}
@@ -9317,6 +9320,22 @@ PrefabInstance:
       propertyPath: m_ApplyRootMotion
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1308382404380273380, guid: 43e079c4327172049bb78fa3595103a0, type: 3}
+      propertyPath: m_ClearFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1308382404380273380, guid: 43e079c4327172049bb78fa3595103a0, type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1308382404380273380, guid: 43e079c4327172049bb78fa3595103a0, type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1308382404380273380, guid: 43e079c4327172049bb78fa3595103a0, type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1367100080489062778, guid: 43e079c4327172049bb78fa3595103a0, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -9444,13 +9463,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1799105355}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: -0.033, z: 1.665}
+  m_LocalRotation: {x: -0, y: 0.99981725, z: -0, w: -0.019116575}
+  m_LocalPosition: {x: -0.00000019073485, y: -0.03299999, z: 1.6649997}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 662144323654037242}
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 182.191, z: 0}
 --- !u!199 &1799105357
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -9533,7 +9552,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1799105355}
   serializedVersion: 8
-  lengthInSec: 1
+  lengthInSec: 2
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -10800,8 +10819,8 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 1, g: 1, b: 1, a: 1}
-        key1: {r: 1, g: 1, b: 1, a: 0.39215687}
+        key0: {r: 0.4339623, g: 0.4339623, b: 0.4339623, a: 1}
+        key1: {r: 0.5471698, g: 0.5471698, b: 0.5471698, a: 0}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
@@ -16388,7 +16407,6 @@ SceneRoots:
   - {fileID: 717346317}
   - {fileID: 1565015883}
   - {fileID: 1522041931}
-  - {fileID: 1538253254}
   - {fileID: 2033602807}
   - {fileID: 1390972905}
   - {fileID: 1299834148}
