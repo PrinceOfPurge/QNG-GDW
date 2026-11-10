@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class SideManager : MonoBehaviour
 {
-    //States for player side
     public enum PlayerSide
     {
         Left,
@@ -12,7 +11,6 @@ public class SideManager : MonoBehaviour
         Switching
     }
 
-    //States for player position
     public enum PlayerPosition
     {
         Seat,
@@ -20,24 +18,40 @@ public class SideManager : MonoBehaviour
         Door
     }
 
-
     [Header("States")]
     public PlayerSide currentSide = PlayerSide.Left;
     public PlayerPosition currentPosition = PlayerPosition.Seat;
 
     [Header("Tutorial UI")]
-    [SerializeField] private GameObject tutorialPrompt; // Drag your tutorial UI GameObject here in the Inspector
+    [SerializeField] private GameObject tutorialPrompt;
 
     [Header("Settings")]
     public float switchDuration = 0.75f;
     public float positionTransitionDuration = 0.25f;
+
+    [Header("Truck Door Objects & Settings")]
+    [SerializeField] private Transform leftDoorTransform;
+    [SerializeField] private Transform rightDoorTransform;
+    [SerializeField] private float doorOpenAngle = 55f; // Rotation angle when door opens
+    [SerializeField] private float doorRotationSpeed = 4f;
+
+    private Quaternion leftDoorClosedRot;
+    private Quaternion rightDoorClosedRot;
+    private Coroutine leftDoorCoroutine;
+    private Coroutine rightDoorCoroutine;
 
     [Header("Animation Setup")]
     public Animator playerAnimator;
     public string slideLeftToRightTrigger = "SlideLeftToRight";
     public string slideRightToLeftTrigger = "SlideRightToLeft";
 
-    //Truck Movement Positions
+    [Header("Door Animation Triggers")]
+    public string openLeftDoorTrigger = "OpenLeftDoor";
+    public string closeLeftDoorTrigger = "CloseLeftDoor";
+    public string openRightDoorTrigger = "OpenRightDoor";
+    public string closeRightDoorTrigger = "CloseRightDoor";
+
+    // Truck Movement Positions
     private Transform leftSeatPosition;
     private Transform leftWindowPosition;
     private Transform leftDoorPosition;
@@ -66,7 +80,6 @@ public class SideManager : MonoBehaviour
         }
     }
 
-    //Disable and enable control scheme
     private void OnEnable()
     {
         controls.Enable();
@@ -79,7 +92,6 @@ public class SideManager : MonoBehaviour
 
     private void Start()
     {
-        // Finding the truck movement positions through code
         truck = GameObject.FindGameObjectWithTag("Truck");
         leftSeatPosition = truck.transform.Find("SeatPosLeft");
         leftDoorPosition = truck.transform.Find("DoorPosLeft");
@@ -88,7 +100,10 @@ public class SideManager : MonoBehaviour
         rightDoorPosition = truck.transform.Find("DoorPosRight");
         rightWindowPosition = truck.transform.Find("WindowPosRight");
 
-        // Ensure tutorial prompt is active when game starts
+        // Cache initial door rotations
+        if (leftDoorTransform != null) leftDoorClosedRot = leftDoorTransform.localRotation;
+        if (rightDoorTransform != null) rightDoorClosedRot = rightDoorTransform.localRotation;
+
         if (tutorialPrompt != null)
         {
             tutorialPrompt.SetActive(true);
@@ -105,16 +120,16 @@ public class SideManager : MonoBehaviour
             SwitchSide();
         }
 
-        // Q Key (Leftward Input)
+        // Q Key (Leftward Leaning Input)
         if (controls.Player.Window.WasPressedThisFrame())
         {
             pressedQ = true;
             CheckTutorialCompletion();
 
             if (currentSide == PlayerSide.Left)
-                MoveToPosition(PlayerPosition.Window); // Window is on the left
+                MoveToPosition(PlayerPosition.Window);
             else
-                MoveToPosition(PlayerPosition.Door);   // Door/Center is on the left
+                MoveToPosition(PlayerPosition.Door);
         }
 
         if (controls.Player.Window.WasReleasedThisFrame())
@@ -122,16 +137,16 @@ public class SideManager : MonoBehaviour
             ReturnToSeat();
         }
 
-        // E Key (Rightward Input)
+        // E Key (Rightward Leaning Input)
         if (controls.Player.Door.WasPressedThisFrame())
         {
             pressedE = true;
             CheckTutorialCompletion();
 
             if (currentSide == PlayerSide.Left)
-                MoveToPosition(PlayerPosition.Door);   // Door/Center is on the right
+                MoveToPosition(PlayerPosition.Door);
             else
-                MoveToPosition(PlayerPosition.Window); // Window is on the right
+                MoveToPosition(PlayerPosition.Window);
         }
 
         if (controls.Player.Door.WasReleasedThisFrame())
@@ -158,7 +173,6 @@ public class SideManager : MonoBehaviour
         }
     }
 
-    //Switching from left and right seats 
     public void SwitchSide()
     {
         if (currentSide == PlayerSide.Switching)
@@ -170,14 +184,11 @@ public class SideManager : MonoBehaviour
         StartCoroutine(SwitchSideCoroutine());
     }
 
-    //Coroutine for switching seats
     IEnumerator SwitchSideCoroutine()
     {
         PlayerSide previousSide = currentSide;
-
         currentSide = PlayerSide.Switching;
 
-        // Play seat shifting sound effect
         if (FMODEvents.instance != null && AudioManager.instance != null)
         {
             AudioManager.instance.PlayOneShot(FMODEvents.instance.SeatSwitch, transform.position);
@@ -211,91 +222,107 @@ public class SideManager : MonoBehaviour
         currentPosition = PlayerPosition.Seat;
     }
 
-    //moving from positions (door or window)
     private void MoveToPosition(PlayerPosition targetPositionType)
     {
-        if (currentSide == PlayerSide.Switching)
-            return;
-
-        if (currentPosition != PlayerPosition.Seat)
+        if (currentSide == PlayerSide.Switching || currentPosition != PlayerPosition.Seat)
             return;
 
         Transform targetPosition = GetPositionTransform(targetPositionType);
-
         if (targetPosition == null)
             return;
 
-        currentPosition = targetPositionType;
+        // Trigger character animation & rotate truck door based on which side the player is on
+        if (currentSide == PlayerSide.Left)
+        {
+            if (playerAnimator != null) playerAnimator.SetTrigger(openLeftDoorTrigger);
+            // Positive Y rotation (+1f) for Left Door
+            SetDoorState(leftDoorTransform, leftDoorClosedRot, true, 1f, ref leftDoorCoroutine);
+        }
+        else if (currentSide == PlayerSide.Right)
+        {
+            if (playerAnimator != null) playerAnimator.SetTrigger(openRightDoorTrigger);
+            // Inverted sign (-1f) for Right Door so it opens outward
+            SetDoorState(rightDoorTransform, rightDoorClosedRot, true, -1f, ref rightDoorCoroutine);
+        }
 
+        currentPosition = targetPositionType;
         MoveTo(targetPosition.position);
     }
 
-    //Moving from a position (door or window) back to seat
     private void ReturnToSeat()
     {
-        if (currentSide == PlayerSide.Switching)
-            return;
-
-        if (currentPosition == PlayerPosition.Seat)
+        if (currentSide == PlayerSide.Switching || currentPosition == PlayerPosition.Seat)
             return;
 
         Transform seatPosition = GetSeatTransform();
-
         if (seatPosition == null)
             return;
 
-        currentPosition = PlayerPosition.Seat;
+        // Return character animation to idle & close the physical truck door
+        if (currentSide == PlayerSide.Left)
+        {
+            if (playerAnimator != null) playerAnimator.SetTrigger(closeLeftDoorTrigger);
+            SetDoorState(leftDoorTransform, leftDoorClosedRot, false, 1f, ref leftDoorCoroutine);
+        }
+        else if (currentSide == PlayerSide.Right)
+        {
+            if (playerAnimator != null) playerAnimator.SetTrigger(closeRightDoorTrigger);
+            SetDoorState(rightDoorTransform, rightDoorClosedRot, false, -1f, ref rightDoorCoroutine);
+        }
 
+        currentPosition = PlayerPosition.Seat;
         MoveTo(seatPosition.position);
     }
 
-    //Get the position transform to move the player to
+    // Smoothly rotates the physical truck doors on the LOCAL Y-AXIS open or closed
+    private void SetDoorState(Transform doorTransform, Quaternion closedRot, bool open, float directionSign, ref Coroutine doorCoroutine)
+    {
+        if (doorTransform == null) return;
+
+        if (doorCoroutine != null)
+            StopCoroutine(doorCoroutine);
+
+        // Explicitly force rotation around the local Y-axis ONLY
+        Quaternion targetRot = open ? closedRot * Quaternion.Euler(0f, doorOpenAngle * directionSign, 0f) : closedRot;
+        doorCoroutine = StartCoroutine(RotateDoorCoroutine(doorTransform, targetRot));
+    }
+
+    private IEnumerator RotateDoorCoroutine(Transform doorTransform, Quaternion targetRotation)
+    {
+        while (Quaternion.Angle(doorTransform.localRotation, targetRotation) > 0.5f)
+        {
+            doorTransform.localRotation = Quaternion.Slerp(doorTransform.localRotation, targetRotation, Time.deltaTime * doorRotationSpeed);
+            yield return null;
+        }
+        doorTransform.localRotation = targetRotation;
+    }
+
     private Transform GetPositionTransform(PlayerPosition positionType)
     {
         if (currentSide == PlayerSide.Left)
         {
             switch (positionType)
             {
-                case PlayerPosition.Window:
-                    return leftWindowPosition;
-
-                case PlayerPosition.Door:
-                    return leftDoorPosition;
+                case PlayerPosition.Window: return leftWindowPosition;
+                case PlayerPosition.Door: return leftDoorPosition;
             }
         }
-
         else if (currentSide == PlayerSide.Right)
         {
             switch (positionType)
             {
-                case PlayerPosition.Window:
-                    return rightWindowPosition;
-
-                case PlayerPosition.Door:
-                    return rightDoorPosition;
+                case PlayerPosition.Window: return rightWindowPosition;
+                case PlayerPosition.Door: return rightDoorPosition;
             }
         }
-
         return null;
     }
 
-    //Get the transform for the seat the player is going to
     private Transform GetSeatTransform()
     {
-        if (currentSide == PlayerSide.Left)
-        {
-            return leftSeatPosition;
-        }
-
-        if (currentSide == PlayerSide.Right)
-        {
-            return rightSeatPosition;
-        }
-
-        return null;
+        return (currentSide == PlayerSide.Left) ? leftSeatPosition : rightSeatPosition;
     }
 
-    //check if we should start the corourine for moving positions
     private void MoveTo(Vector3 targetPosition)
     {
         if (movementCoroutine != null)
@@ -306,24 +333,19 @@ public class SideManager : MonoBehaviour
         movementCoroutine = StartCoroutine(MoveToPositionCoroutine(targetPosition));
     }
 
-    //Coroutine for moving between positions
     private IEnumerator MoveToPositionCoroutine(Vector3 targetPosition)
     {
         float elapsedTime = 0f;
-
         Vector3 startPosition = transform.position;
 
         while (elapsedTime < positionTransitionDuration)
         {
             transform.position = Vector3.Lerp(startPosition, targetPosition, elapsedTime / positionTransitionDuration);
-
             elapsedTime += Time.deltaTime;
-
             yield return null;
         }
 
         transform.position = targetPosition;
-
         movementCoroutine = null;
     }
 }
