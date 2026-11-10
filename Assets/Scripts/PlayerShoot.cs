@@ -9,12 +9,18 @@ public class PlayerShoot : MonoBehaviour
     [Header("References")]
     [SerializeField] private Camera playerCamera;
     [SerializeField] private TMP_Text ammoText;
+    [SerializeField] private Animator playerAnimator;
+
+    [Header("Animation Triggers")]
+    [SerializeField] private string shootTriggerName = "Shoot";
+    [SerializeField] private string reloadTriggerName = "Reload";
+    [SerializeField] private string equipTriggerName = "Equip";
 
     [Header("Settings")]
     [SerializeField] private float shootRange = 100f;
     [SerializeField] private float damage = 25f;
     [SerializeField] private float fireRate = 0.5f;
-    [SerializeField] private float reloadTime = 1.5f; // Total duration of the reload
+    [SerializeField] private float reloadTime = 1.5f; // Total duration of the reload animation/sequence
 
     [Header("Ammo")]
     [SerializeField] private int currentAmmo = 6;
@@ -30,6 +36,11 @@ public class PlayerShoot : MonoBehaviour
     {
         controls = new PlayerControls();
 
+        if (playerAnimator == null)
+        {
+            playerAnimator = GetComponentInChildren<Animator>();
+        }
+
         if (ammoText == null)
         {
             Debug.LogWarning("Ammo Text reference is not assigned on PlayerShoot!");
@@ -41,6 +52,12 @@ public class PlayerShoot : MonoBehaviour
     private void OnEnable()
     {
         controls.Enable();
+
+        // Trigger Equip animation whenever player control is enabled
+        if (playerAnimator != null && !string.IsNullOrEmpty(equipTriggerName))
+        {
+            playerAnimator.SetTrigger(equipTriggerName);
+        }
     }
 
     private void OnDisable()
@@ -84,7 +101,13 @@ public class PlayerShoot : MonoBehaviour
 
         isReloading = true;
 
-        // Play reload sound effect once at the start
+        // 1. Play Reload animation on UpperBody Layer
+        if (playerAnimator != null && !string.IsNullOrEmpty(reloadTriggerName))
+        {
+            playerAnimator.SetTrigger(reloadTriggerName);
+        }
+
+        // 2. Play reload sound effect once at the start
         if (FMODEvents.instance != null && AudioManager.instance != null)
         {
             AudioManager.instance.PlayOneShot(FMODEvents.instance.Reload, transform.position);
@@ -94,10 +117,10 @@ public class PlayerShoot : MonoBehaviour
         int bulletsNeeded = magSize - currentMagAmmo;
         int bulletsToReload = Mathf.Min(bulletsNeeded, currentAmmo);
 
-        // Divide the total reload time evenly across the number of bullets being loaded
+        // Divide total reload animation time evenly across bullets being loaded
         float timePerBullet = reloadTime / bulletsToReload;
 
-        // Increment bullets one by one over the course of the reload time
+        // Increment bullets one by one over the duration of the reload animation
         for (int i = 0; i < bulletsToReload; i++)
         {
             yield return new WaitForSeconds(timePerBullet);
@@ -105,7 +128,7 @@ public class PlayerShoot : MonoBehaviour
             currentMagAmmo++;
             currentAmmo--;
 
-            UpdateAmmoText(); // Updates the UI text dynamically as each bullet is loaded
+            UpdateAmmoText(); // Updates UI dynamically as each bullet is loaded into mag
         }
 
         isReloading = false;
@@ -142,9 +165,13 @@ public class PlayerShoot : MonoBehaviour
             return;
         }
 
-        Debug.Log("Shoot");
+        // 1. Play Shooting Animation
+        if (playerAnimator != null && !string.IsNullOrEmpty(shootTriggerName))
+        {
+            playerAnimator.SetTrigger(shootTriggerName);
+        }
 
-        // Play shooting sound effect
+        // 2. Play shooting sound effect
         if (FMODEvents.instance != null && AudioManager.instance != null)
         {
             AudioManager.instance.PlayOneShot(FMODEvents.instance.Shoot, transform.position);
@@ -156,21 +183,17 @@ public class PlayerShoot : MonoBehaviour
 
         UpdateAmmoText();
 
-        // Shoot from the center of camera
+        // Raycast shooting logic
         Ray ray = playerCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
-
         RaycastHit[] hits = Physics.RaycastAll(ray, shootRange);
 
-        // Hit in order of distance
         System.Array.Sort(hits, (hit1, hit2) => hit1.distance.CompareTo(hit2.distance));
 
         foreach (RaycastHit hit in hits)
         {
             Debug.Log("Shot hit: " + hit.collider.name);
 
-            // Look for something that uses IDamageable
             IDamageable damageable = hit.collider.GetComponent<IDamageable>();
-
             if (damageable != null)
             {
                 damageable.TakeDamage(damage);
