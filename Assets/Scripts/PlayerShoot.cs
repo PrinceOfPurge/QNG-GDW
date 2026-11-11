@@ -27,6 +27,9 @@ public class PlayerShoot : MonoBehaviour
     [SerializeField] private int magSize = 6;
     [SerializeField] private int currentMagAmmo = 6;
 
+    [Header("Muzzle Flash")]
+    [SerializeField] private ParticleSystem muzzleFlash; // muzzle flash for the gun must be placed manually
+
     private PlayerControls controls;
 
     private float nextTimeToFire;
@@ -199,5 +202,6 @@ public class PlayerShoot : MonoBehaviour
                 damageable.TakeDamage(damage);
             }
         }
+        muzzleFlash.Play(); //Plays the muzzle flash
     }
 }

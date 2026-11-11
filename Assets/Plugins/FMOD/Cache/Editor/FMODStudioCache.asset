@@ -42,7 +42,7 @@ MonoBehaviour:
   Path: FMOD/Awakened/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 639299071694877206
+  lastModified: 639299120042440861
   FileSizes:
   - Name: Desktop
     Value: 543456
@@ -74,6 +74,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-8279043680857115416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Dry Fire
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Dry Fire
+  Guid:
+    Data1: -1462166760
+    Data2: 1324812909
+    Data3: -195559032
+    Data4: 874301074
+  Banks:
+  - {fileID: -8530785228203913213}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-8124382026942744437
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -89,7 +116,7 @@ MonoBehaviour:
   Path: FMOD/Awakened/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639276668428825675
+  lastModified: 639268731993671540
   FileSizes:
   - Name: Desktop
     Value: 2469056
@@ -166,6 +193,33 @@ MonoBehaviour:
     Data2: 1300585067
     Data3: -1354293334
     Data4: -1413699056
+  Banks:
+  - {fileID: -8530785228203913213}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-376589788902905207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/SeatSwitch
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/SeatSwitch
+  Guid:
+    Data1: -669744822
+    Data2: 1266083728
+    Data3: 2065483708
+    Data4: 1209131899
   Banks:
   - {fileID: -8530785228203913213}
   IsStream: 0
@@ -260,16 +314,16 @@ MonoBehaviour:
   - {fileID: 1902335169577953847}
   - {fileID: -8531718210017966971}
   - {fileID: 1740007585497536359}
-  - {fileID: -8291745357692589752}
-  - {fileID: 3046086153188407205}
-  - {fileID: 5195143898041786389}
-  - {fileID: 3812582009363353475}
+  - {fileID: -8279043680857115416}
+  - {fileID: -376589788902905207}
+  - {fileID: 9122827408216784900}
+  - {fileID: 7326478875235312452}
   EditorParameters: []
   MasterBanks:
   - {fileID: -8124382026942744437}
   StringsBanks:
   - {fileID: 2931301845318078087}
-  cacheTime: 639299071694877206
+  cacheTime: 639299120042440861
   cacheVersion: 131635
 --- !u!114 &1740007585497536359
 MonoBehaviour:
@@ -340,7 +394,7 @@ MonoBehaviour:
   Path: FMOD/Awakened/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639299071694877206
+  lastModified: 639299120042420875
   FileSizes:
   - Name: Desktop
     Value: 1694
@@ -441,7 +495,7 @@ MonoBehaviour:
   Path: FMOD/Awakened/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 639276668428992158
+  lastModified: 639268731993671540
   FileSizes:
   - Name: Desktop
     Value: 2468064
@@ -500,6 +554,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &7326478875235312452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/revolver Shooting Sound
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/revolver Shooting Sound
+  Guid:
+    Data1: -257104663
+    Data2: 1136851121
+    Data3: 112377773
+    Data4: 265629696
+  Banks:
+  - {fileID: -8530785228203913213}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &7549705952763478879
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -519,8 +600,8 @@ MonoBehaviour:
     Data3: 129937846
     Data4: 1890204195
   Banks:
-  - {fileID: -8124382026942744437}
   - {fileID: 3836384672801691522}
+  - {fileID: -8124382026942744437}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -570,8 +651,35 @@ MonoBehaviour:
   Path: FMOD/Awakened/Build/Desktop/Ambience.bank
   Name: Ambience
   StudioPath: bank:/Ambience
-  lastModified: 639276668428816742
+  lastModified: 639268731993508623
   FileSizes:
   - Name: Desktop
     Value: 642976
   Exists: 1
+--- !u!114 &9122827408216784900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/reload
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/reload
+  Guid:
+    Data1: -1719843247
+    Data2: 1141982273
+    Data3: -502402408
+    Data4: 701954909
+  Banks:
+  - {fileID: -8530785228203913213}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
