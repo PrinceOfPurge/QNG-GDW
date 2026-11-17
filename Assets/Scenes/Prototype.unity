@@ -1196,7 +1196,7 @@ Transform:
   m_GameObject: {fileID: 276081803}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.592, y: 1.5196, z: 1.424}
+  m_LocalPosition: {x: 0.932, y: 1.08, z: 0.315}
   m_LocalScale: {x: 1.5999999, y: 1.5999999, z: 1.5999999}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1272,7 +1272,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6f8f4695b7ce7a04a9c8a4d92ecb3962, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7656,7 +7656,7 @@ MonoBehaviour:
   upperSpineBone: {fileID: 8164707922010388748}
   mouseSensitivity: 0.2
   maxLookUpAngle: 2.35
-  maxLookDownAngle: 40
+  maxLookDownAngle: 25
   maxLookHorizontal: 90
   maxSpineTwistAngle: 350
   sideManager: {fileID: 1966854531}
@@ -9171,7 +9171,7 @@ Transform:
   m_GameObject: {fileID: 804560781}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.28, y: 1.051, z: 0.657}
+  m_LocalPosition: {x: -2.28, y: 1.051, z: 0.185}
   m_LocalScale: {x: 1.5999999, y: 1.5999999, z: 1.5999999}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10637,6 +10637,20 @@ MonoBehaviour:
       Data3: -502402408
       Data4: 701954909
     Path: event:/SFX/reload
+  <DoorOpen>k__BackingField:
+    Guid:
+      Data1: -273044872
+      Data2: 1239477688
+      Data3: -128548727
+      Data4: -1766365926
+    Path: event:/SFX/DoorOpen
+  <DoorClose>k__BackingField:
+    Guid:
+      Data1: -743057351
+      Data2: 1317736920
+      Data3: 837181082
+      Data4: -1765434160
+    Path: event:/SFX/DoorClose
   narrativeLines: []
 --- !u!1 &1037510888
 GameObject:
@@ -12134,7 +12148,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1299834147
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15989,6 +16003,10 @@ PrefabInstance:
       propertyPath: playerAnimator
       value: 
       objectReference: {fileID: 1270802809}
+    - target: {fileID: 4553621335918302894, guid: 43e079c4327172049bb78fa3595103a0, type: 3}
+      propertyPath: playerLook
+      value: 
+      objectReference: {fileID: 439510981}
     - target: {fileID: 4553621335918302894, guid: 43e079c4327172049bb78fa3595103a0, type: 3}
       propertyPath: deathScreen
       value: 

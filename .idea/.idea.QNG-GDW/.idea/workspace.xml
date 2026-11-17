@@ -6,8 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="c71e8065-9e1e-411c-be29-80b3034969a6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.QNG-GDW/.idea/projectSettingsUpdater.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.QNG-GDW/.idea/projectSettingsUpdater.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.QNG-GDW/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.QNG-GDW/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SideManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SideManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Audio/FMODEvents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Audio/FMODEvents.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Characters/Monsters/FlyingMonster.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Characters/Monsters/FlyingMonster.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Prototype.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Prototype.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Shaders/Materials/Plastic.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/Materials/Plastic.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FMOD/Awakened/.cache/buildrecords/Desktop/Master.br" beforeDir="false" afterPath="$PROJECT_DIR$/FMOD/Awakened/.cache/buildrecords/Desktop/Master.br" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FMOD/Awakened/.cache/buildrecords/Desktop/SFX.br" beforeDir="false" afterPath="$PROJECT_DIR$/FMOD/Awakened/.cache/buildrecords/Desktop/SFX.br" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FMOD/Awakened/.cache/{b29f9032-da32-4b22-a12b-fb013d2622eb}.pdc" beforeDir="false" afterPath="$PROJECT_DIR$/FMOD/Awakened/.cache/{b29f9032-da32-4b22-a12b-fb013d2622eb}.pdc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FMOD/Awakened/Build/Desktop/Master.strings.bank" beforeDir="false" afterPath="$PROJECT_DIR$/FMOD/Awakened/Build/Desktop/Master.strings.bank" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FMOD/Awakened/Build/Desktop/SFX.bank" beforeDir="false" afterPath="$PROJECT_DIR$/FMOD/Awakened/Build/Desktop/SFX.bank" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,13 +49,6 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
-  },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "C:\\Users\\3dsom\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\DecompilerCache",
-      "C:\\Users\\3dsom\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\SourcesCache",
-      "C:\\Users\\3dsom\\AppData\\Local\\Symbols\\src"
-    ]
   }
 }]]></component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
@@ -110,6 +111,7 @@
       <workItem from="1794000643353" duration="3059000" />
       <workItem from="1794275641741" duration="2835000" />
       <workItem from="1794329669570" duration="2644000" />
+      <workItem from="1794930314007" duration="326000" />
     </task>
     <servers />
   </component>
@@ -124,6 +126,7 @@
   </component>
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
   <component name="VcsManagerConfiguration">
+    <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
 </project>

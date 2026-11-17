@@ -42,10 +42,10 @@ MonoBehaviour:
   Path: FMOD/Awakened/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 639305010795921833
+  lastModified: 639305092324283573
   FileSizes:
   - Name: Desktop
-    Value: 543456
+    Value: 557760
   Exists: 1
 --- !u!114 &-8291745357692589752
 MonoBehaviour:
@@ -116,11 +116,38 @@ MonoBehaviour:
   Path: FMOD/Awakened/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639268731993671540
+  lastModified: 639305092323164547
   FileSizes:
   - Name: Desktop
     Value: 2469056
   Exists: 1
+--- !u!114 &-5464788761529884248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/DoorOpen
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/DoorOpen
+  Guid:
+    Data1: -273044872
+    Data2: 1239477688
+    Data3: -128548727
+    Data4: -1766365926
+  Banks:
+  - {fileID: -8530785228203913213}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-2834562534456615796
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -318,12 +345,14 @@ MonoBehaviour:
   - {fileID: -376589788902905207}
   - {fileID: 9122827408216784900}
   - {fileID: 7326478875235312452}
+  - {fileID: 5894673048300854335}
+  - {fileID: -5464788761529884248}
   EditorParameters: []
   MasterBanks:
   - {fileID: -8124382026942744437}
   StringsBanks:
   - {fileID: 2931301845318078087}
-  cacheTime: 639305010795921833
+  cacheTime: 639305092324283573
   cacheVersion: 131635
 --- !u!114 &1740007585497536359
 MonoBehaviour:
@@ -394,10 +423,10 @@ MonoBehaviour:
   Path: FMOD/Awakened/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639305010795893042
+  lastModified: 639305092323195018
   FileSizes:
   - Name: Desktop
-    Value: 1694
+    Value: 1792
   Exists: 1
 --- !u!114 &3046086153188407205
 MonoBehaviour:
@@ -495,7 +524,7 @@ MonoBehaviour:
   Path: FMOD/Awakened/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 639268731993671540
+  lastModified: 639295823528361085
   FileSizes:
   - Name: Desktop
     Value: 2468064
@@ -518,6 +547,33 @@ MonoBehaviour:
     Data2: 1324812909
     Data3: -195559032
     Data4: 874301074
+  Banks:
+  - {fileID: -8530785228203913213}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &5894673048300854335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/DoorClose
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/DoorClose
+  Guid:
+    Data1: -743057351
+    Data2: 1317736920
+    Data3: 837181082
+    Data4: -1765434160
   Banks:
   - {fileID: -8530785228203913213}
   IsStream: 0
@@ -600,8 +656,8 @@ MonoBehaviour:
     Data3: 129937846
     Data4: 1890204195
   Banks:
-  - {fileID: -8124382026942744437}
   - {fileID: 3836384672801691522}
+  - {fileID: -8124382026942744437}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -651,7 +707,7 @@ MonoBehaviour:
   Path: FMOD/Awakened/Build/Desktop/Ambience.bank
   Name: Ambience
   StudioPath: bank:/Ambience
-  lastModified: 639268731993508623
+  lastModified: 639295823504469523
   FileSizes:
   - Name: Desktop
     Value: 642976

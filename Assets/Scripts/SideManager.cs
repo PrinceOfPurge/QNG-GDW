@@ -231,6 +231,16 @@ public class SideManager : MonoBehaviour
         if (targetPosition == null)
             return;
 
+        // Play FMOD Door Open sound
+        if (FMODEvents.instance != null && AudioManager.instance != null)
+        {
+            Vector3 doorPos = (currentSide == PlayerSide.Left && leftDoorTransform != null)
+                ? leftDoorTransform.position
+                : (currentSide == PlayerSide.Right && rightDoorTransform != null ? rightDoorTransform.position : transform.position);
+
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.DoorOpen, doorPos);
+        }
+
         // Trigger character animation & rotate truck door based on which side the player is on
         if (currentSide == PlayerSide.Left)
         {
@@ -257,6 +267,16 @@ public class SideManager : MonoBehaviour
         Transform seatPosition = GetSeatTransform();
         if (seatPosition == null)
             return;
+
+        // Play FMOD Door Close sound
+        if (FMODEvents.instance != null && AudioManager.instance != null)
+        {
+            Vector3 doorPos = (currentSide == PlayerSide.Left && leftDoorTransform != null)
+                ? leftDoorTransform.position
+                : (currentSide == PlayerSide.Right && rightDoorTransform != null ? rightDoorTransform.position : transform.position);
+
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.DoorClose, doorPos);
+        }
 
         // Return character animation to idle & close the physical truck door
         if (currentSide == PlayerSide.Left)
