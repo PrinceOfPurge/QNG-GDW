@@ -194,12 +194,31 @@ public class PlayerShoot : MonoBehaviour
 
         foreach (RaycastHit hit in hits)
         {
+            // Ignore the player's own colliders or truck trigger zones
+            if (hit.collider.CompareTag("Player"))
+                continue;
+
             Debug.Log("Shot hit: " + hit.collider.name);
 
-            IDamageable damageable = hit.collider.GetComponent<IDamageable>();
+            // Check the hit bone AND all parent objects up to the root
+            Zombie zombie = hit.collider.GetComponentInParent<Zombie>();
+            if (zombie != null)
+            {
+                zombie.TakeDamageWithForce(damage, ray.direction * 15f, hit.point);
+                break; // Stop raycast so bullet doesn't hit multiple bones behind it
+            }
+
+            IDamageable damageable = hit.collider.GetComponentInParent<IDamageable>();
             if (damageable != null)
             {
                 damageable.TakeDamage(damage);
+                break;
+            }
+
+            // Stop raycast if it hits a solid wall/barricade/truck
+            if (!hit.collider.isTrigger)
+            {
+                break;
             }
         }
         muzzleFlash.Play(); //Plays the muzzle flash
