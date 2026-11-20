@@ -5,17 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c71e8065-9e1e-411c-be29-80b3034969a6" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.QNG-GDW/.idea/projectSettingsUpdater.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.QNG-GDW/.idea/projectSettingsUpdater.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/FMODEvents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Audio/FMODEvents.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Characters/Monsters/FlyingMonster.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Characters/Monsters/FlyingMonster.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Characters/Monsters/scourn (2)_43052_autosave.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Models/Characters/Monsters/scourn (2)_43052_autosave.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Shaders/Shader/DamageVFX.shadergraph" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Shaders/Shader/DamageVFX.shadergraph.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Shaders/Shader/Shader Graphs_DamageVFX.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Shaders/Shader/Shader Graphs_DamageVFX.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.QNG-GDW/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.QNG-GDW/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Prototype.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Prototype.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shaders/Materials/Plastic.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/Materials/Plastic.mat.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FMOD/Awakened/.cache/buildrecords/Desktop/Master.br" beforeDir="false" afterPath="$PROJECT_DIR$/FMOD/Awakened/.cache/buildrecords/Desktop/Master.br" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FMOD/Awakened/.cache/buildrecords/Desktop/SFX.br" beforeDir="false" afterPath="$PROJECT_DIR$/FMOD/Awakened/.cache/buildrecords/Desktop/SFX.br" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FMOD/Awakened/.cache/{b29f9032-da32-4b22-a12b-fb013d2622eb}.pdc" beforeDir="false" afterPath="$PROJECT_DIR$/FMOD/Awakened/.cache/{b29f9032-da32-4b22-a12b-fb013d2622eb}.pdc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FMOD/Awakened/Build/Desktop/Master.strings.bank" beforeDir="false" afterPath="$PROJECT_DIR$/FMOD/Awakened/Build/Desktop/Master.strings.bank" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FMOD/Awakened/Build/Desktop/SFX.bank" beforeDir="false" afterPath="$PROJECT_DIR$/FMOD/Awakened/Build/Desktop/SFX.bank" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Shaders/MirrorMaterials/Materials/LeftMirror 1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/MirrorMaterials/Materials/LeftMirror 1.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Shaders/MirrorMaterials/Materials/RearViewMirror 2.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/MirrorMaterials/Materials/RearViewMirror 2.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Shaders/MirrorMaterials/Materials/RightMirror 1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/MirrorMaterials/Materials/RightMirror 1.mat" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +42,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "Merging main",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -112,6 +112,8 @@
       <workItem from="1794275641741" duration="2835000" />
       <workItem from="1794329669570" duration="2644000" />
       <workItem from="1794930314007" duration="326000" />
+      <workItem from="1795127093274" duration="197000" />
+      <workItem from="1795127321703" duration="15000" />
     </task>
     <servers />
   </component>
