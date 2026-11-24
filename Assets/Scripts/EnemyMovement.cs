@@ -9,16 +9,24 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] private float stoppingDistance = 0.5f;
 
     [Header("Attack Settings")]
-    [SerializeField] private float attackRange = 1.8f;
     [SerializeField] private float attackDamage = 10f;
     [SerializeField] private float attackCooldown = 1f;
 
+    [Header("Roaming Settings")]
+    [SerializeField] private float roamRadius = 10f;
+    [SerializeField] private float roamInterval = 2f;
+
     private NavMeshAgent agent;
     private Animator animator;
+
     private Transform target;
-    private Collider targetCollider;
+    private TruckAttackPointManager attackPointManager;
+    private Transform currentAttackPoint;
+
     private IDamageable playerDamageable;
+
     private float nextAttackTime;
+    private float nextRoamTime;
 
     private void Awake()
     {
@@ -31,60 +39,103 @@ public class EnemyMovement : MonoBehaviour
         agent.speed = moveSpeed;
         agent.stoppingDistance = stoppingDistance;
 
+        //zombie has to be on the navmesh
         if (!agent.isOnNavMesh)
         {
-            if (NavMesh.SamplePosition(transform.position, out NavMeshHit hit, 5f, NavMesh.AllAreas))
+            if (NavMesh.SamplePosition(
+                transform.position,
+                out NavMeshHit hit,
+                5f,
+                NavMesh.AllAreas))
             {
                 agent.Warp(hit.position);
             }
         }
 
         GameObject truck = GameObject.FindGameObjectWithTag("Truck");
+
         if (truck != null)
         {
             target = truck.transform;
 
-            // Find the SOLID (non-trigger) collider on the truck so triggers don't trick distance checks
-            Collider[] truckColliders = truck.GetComponentsInChildren<Collider>();
-            foreach (Collider col in truckColliders)
+            attackPointManager =
+                truck.GetComponent<TruckAttackPointManager>();
+
+            if (attackPointManager == null)
             {
-                if (!col.isTrigger)
-                {
-                    targetCollider = col;
-                    break;
-                }
+                Debug.LogError(
+                    "missing TruckAttackPointManager"
+                );
             }
         }
         else
         {
-            Debug.LogError("Truck not found! Make sure the truck has the 'Truck' tag.");
+            Debug.LogError(
+                "truck not found"
+            );
         }
 
         GameObject player = GameObject.FindGameObjectWithTag("Player");
+
         if (player != null)
         {
             playerDamageable = player.GetComponent<IDamageable>();
         }
     }
-    
+
     private void Update()
     {
-        if (target == null || !agent.enabled || !agent.isOnNavMesh)
-            return;
-
-        Vector3 rawTarget = targetCollider != null
-            ? targetCollider.ClosestPoint(transform.position)
-            : target.position;
-
-        Vector3 targetPoint = rawTarget;
-        if (NavMesh.SamplePosition(rawTarget, out NavMeshHit hit, 3.0f, NavMesh.AllAreas))
+        if (target == null ||
+            attackPointManager == null ||
+            !agent.enabled ||
+            !agent.isOnNavMesh)
         {
-            targetPoint = hit.position;
+            return;
         }
 
-        float distance = Vector3.Distance(transform.position, targetPoint);
+        //claim attakc pos
+        if (currentAttackPoint == null)
+        {
+            TryClaimAttackPoint();
 
-        if (distance <= attackRange)
+            //roam if not attacking
+            if (currentAttackPoint == null)
+            {
+                Roam();
+            }
+        }
+        else
+        {
+            MoveToAttackPoint();
+        }
+
+        if (animator != null)
+        {
+            animator.SetFloat("Speed", agent.velocity.magnitude);
+        }
+    }
+
+    private void TryClaimAttackPoint()
+    {
+        if (attackPointManager.TryClaimNearest(
+            agent,
+            this,
+            out Transform point))
+        {
+            currentAttackPoint = point;
+
+            agent.isStopped = false;
+            agent.SetDestination(currentAttackPoint.position);
+        }
+    }
+
+    private void MoveToAttackPoint()
+    {
+        if (agent.pathPending)
+            return;
+
+        // The zombie has reached its assigned position.
+        if (agent.remainingDistance <= agent.stoppingDistance + 0.15f)
         {
             agent.isStopped = true;
             Attack();
@@ -92,12 +143,45 @@ public class EnemyMovement : MonoBehaviour
         else
         {
             agent.isStopped = false;
-            agent.SetDestination(targetPoint);
         }
+    }
 
-        if (animator != null)
+    private void Roam()
+    {
+        agent.isStopped = false;
+
+        //change roaming position periodically
+        if (Time.time < nextRoamTime)
+            return;
+
+        nextRoamTime = Time.time + roamInterval;
+
+        Vector3 randomPosition =
+            target.position +
+            new Vector3(
+                Random.Range(-roamRadius, roamRadius),
+                0f,
+                Random.Range(-roamRadius, roamRadius)
+            );
+
+        if (NavMesh.SamplePosition(
+            randomPosition,
+            out NavMeshHit hit,
+            roamRadius,
+            NavMesh.AllAreas))
         {
-            animator.SetFloat("Speed", agent.velocity.magnitude);
+            NavMeshPath path = new NavMeshPath();
+
+            bool pathFound = agent.CalculatePath(
+                hit.position,
+                path
+            );
+
+            if (pathFound &&
+                path.status == NavMeshPathStatus.PathComplete)
+            {
+                agent.SetDestination(hit.position);
+            }
         }
     }
 
@@ -118,7 +202,21 @@ public class EnemyMovement : MonoBehaviour
 
     private void FaceTarget()
     {
-        Vector3 lookPos = new Vector3(target.position.x, transform.position.y, target.position.z);
-        transform.LookAt(lookPos);
+        Vector3 lookPosition = new Vector3(
+            target.position.x,
+            transform.position.y,
+            target.position.z
+        );
+
+        transform.LookAt(lookPosition);
+    }
+
+    private void OnDisable()
+    {
+        //free attack pos on death
+        if (attackPointManager != null)
+        {
+            attackPointManager.ReleasePoint(this);
+        }
     }
 }
