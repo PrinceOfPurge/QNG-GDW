@@ -2,23 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Zombie : BaseEnemy, IDamageable
+public class Zombie : BaseEnemy
 {
-
-
-    public void TakeDamage(float damage)
-    {
-        health -= damage;
-        if (health <= 0f)
-        {
-            Die();
-        }
-    }
-
-    private void Die()
-    {
-        Destroy(gameObject);
-    }
 
     public override void attack()
     {

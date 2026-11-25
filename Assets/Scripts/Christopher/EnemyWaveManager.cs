@@ -8,75 +8,63 @@ using UnityEngine.SceneManagement;
 public class EnemyWaveManager : Singleton<EnemyWaveManager>
 {
 
-    private Array EnemyList;
-    public int maxEnemyCount = 5;
-    private int currentEnemyCount;
+    public GameObject player; 
+
+    public GameObject EnemyPrefab;
+    public int poolSize = 100;
+    private Queue<GameObject> pool = new Queue<GameObject>();
 
 
-    [SerializeField]
-    private float MaxZombieTimer = 5;
-    private float zombietimer = 0;
-
-
-    [SerializeField]
-    GameObject player;
-
-
-
-    [SerializeField]
-    GameObject basicZombieSpawnerPrefab;
-    GameObject basicZombieSP;
-
-    [SerializeField]
-    GameObject largeZombieSpawnerPrefab;
-    GameObject largeZombieSP;
+    public float spawnTimerMax = 5f;
+    float spawnTimer;
 
     void Start()
     {
-        if (player)
+
+        for (int i = 0; i < poolSize; i++)
         {
-            basicZombieSP = Instantiate(basicZombieSpawnerPrefab,transform);
-
-
-            largeZombieSP = Instantiate(largeZombieSpawnerPrefab, transform);
-
+            GameObject enemy = Instantiate(EnemyPrefab);
+            enemy.SetActive(false);  
+            pool.Enqueue(enemy);      // Add to queue
         }
-        
-
     }
 
-    // Update is called once per frame
-    void Update()
+
+
+    private void Update()
     {
-        zombietimer -= Time.deltaTime;
+        spawnTimer -= Time.deltaTime;
 
-        basicZombieSP.transform.position = player.transform.position + new Vector3(15,0,10);
-        largeZombieSP.transform.position = player.transform.position + new Vector3(-15, 0, 10);
-        currentEnemyCount = GameObject.FindGameObjectsWithTag("Enemy").Length;
 
-        if (currentEnemyCount < maxEnemyCount)
+        if(spawnTimer<=0)
         {
-            if (zombietimer <= 0)
-            {
-                BaseEnemy enemy = basicZombieSP.GetComponent<EnemySpawner>().SpawnEnemy();
-                BaseEnemy largeEnemy = largeZombieSP.GetComponent<EnemySpawner>().SpawnEnemy();
-                enemy.attack();
-                largeEnemy.attack();
+            GameObject enemy = GetEnemy();
+            enemy.transform.position = player.transform.position + new Vector3(0, 0, 10);
 
-
-                
-                EnemyList = GameObject.FindGameObjectsWithTag("Enemy");
-
-
-
-                zombietimer = MaxZombieTimer;
-            }
+            spawnTimer = spawnTimerMax;
         }
-
-
-
-            
     }
 
-    
+
+
+    public GameObject GetEnemy()
+    {
+        if (pool.Count > 0)
+        {
+            GameObject enemy = pool.Dequeue();
+            enemy.SetActive(true);
+            return enemy;
+        }
+        else
+        {
+            return Instantiate(EnemyPrefab);
+        }
+    }
+    public void ReturnEnemy(GameObject enemy)
+    {
+        enemy.SetActive(false);
+        pool.Enqueue(enemy);
+    }
+
+
 }
