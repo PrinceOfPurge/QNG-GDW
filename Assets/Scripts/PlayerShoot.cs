@@ -19,6 +19,7 @@ public class PlayerShoot : MonoBehaviour
     [Header("Settings")]
     [SerializeField] private float shootRange = 100f;
     [SerializeField] private float damage = 25f;
+    [SerializeField] private float headshotMultiplier = 2.5f;
     [SerializeField] private float fireRate = 0.5f;
     [SerializeField] private float reloadTime = 1.5f; // Total duration of the reload animation/sequence
 
@@ -27,8 +28,11 @@ public class PlayerShoot : MonoBehaviour
     [SerializeField] private int magSize = 6;
     [SerializeField] private int currentMagAmmo = 6;
 
-    [Header("Muzzle Flash")]
+    [Header("Muzzle Flash & Blood VFX")]
     [SerializeField] private ParticleSystem muzzleFlash; // muzzle flash for the gun must be placed manually
+    [SerializeField] private GameObject bodyBloodVfxPrefab;
+    [SerializeField] private GameObject headshotChunkVfxPrefab;
+    [SerializeField] private float vfxLifetime = 3f;
 
     private PlayerControls controls;
 
@@ -194,7 +198,7 @@ public class PlayerShoot : MonoBehaviour
 
         foreach (RaycastHit hit in hits)
         {
-            // Ignore the player's own colliders or truck trigger zones
+            // Ignore the player's own colliders
             if (hit.collider.CompareTag("Player"))
                 continue;
 
@@ -204,7 +208,33 @@ public class PlayerShoot : MonoBehaviour
             Zombie zombie = hit.collider.GetComponentInParent<Zombie>();
             if (zombie != null)
             {
-                zombie.TakeDamageWithForce(damage, ray.direction * 15f, hit.point);
+                bool isHeadshot = hit.collider.CompareTag("Head") ||
+                                  hit.collider.name.ToLower().Contains("head");
+
+                float finalDamage = isHeadshot ? damage * headshotMultiplier : damage;
+                float knockbackForce = isHeadshot ? 28f : 15f;
+
+                // Spawn headshot chunk/volumetric VFX or standard body blood VFX
+                if (isHeadshot && headshotChunkVfxPrefab != null)
+                {
+                    GameObject vfx = Instantiate(
+                        headshotChunkVfxPrefab,
+                        hit.point,
+                        Quaternion.LookRotation(ray.direction)
+                    );
+                    Destroy(vfx, vfxLifetime);
+                }
+                else if (bodyBloodVfxPrefab != null)
+                {
+                    GameObject vfx = Instantiate(
+                        bodyBloodVfxPrefab,
+                        hit.point,
+                        Quaternion.LookRotation(hit.normal)
+                    );
+                    Destroy(vfx, vfxLifetime);
+                }
+
+                zombie.TakeDamageWithForce(finalDamage, ray.direction * knockbackForce, hit.point);
                 break; // Stop raycast so bullet doesn't hit multiple bones behind it
             }
 
@@ -221,6 +251,10 @@ public class PlayerShoot : MonoBehaviour
                 break;
             }
         }
-        muzzleFlash.Play(); //Plays the muzzle flash
+
+        if (muzzleFlash != null)
+        {
+            muzzleFlash.Play(); // Plays the muzzle flash
+        }
     }
 }

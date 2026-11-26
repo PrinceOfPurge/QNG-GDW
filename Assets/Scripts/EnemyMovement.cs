@@ -39,7 +39,7 @@ public class EnemyMovement : MonoBehaviour
         agent.speed = moveSpeed;
         agent.stoppingDistance = stoppingDistance;
 
-        //zombie has to be on the navmesh
+        // Zombie has to be on the NavMesh
         if (!agent.isOnNavMesh)
         {
             if (NavMesh.SamplePosition(
@@ -93,12 +93,12 @@ public class EnemyMovement : MonoBehaviour
             return;
         }
 
-        //claim attakc pos
+        // Claim attack pos
         if (currentAttackPoint == null)
         {
             TryClaimAttackPoint();
 
-            //roam if not attacking
+            // Roam if not attacking
             if (currentAttackPoint == null)
             {
                 Roam();
@@ -150,7 +150,7 @@ public class EnemyMovement : MonoBehaviour
     {
         agent.isStopped = false;
 
-        //change roaming position periodically
+        // Change roaming position periodically
         if (Time.time < nextRoamTime)
             return;
 
@@ -198,6 +198,18 @@ public class EnemyMovement : MonoBehaviour
         {
             playerDamageable.TakeDamage(attackDamage);
         }
+
+        // Pulse the directional screen-edge glow relative to the player's camera
+        if (ScreenEdgeAttackGlow.Instance != null)
+        {
+            ScreenEdgeAttackGlow.Instance.TriggerEdgeGlow(transform.position);
+        }
+
+        // Rock/shake the truck from the side the zombie hit
+        if (TruckShake.Instance != null)
+        {
+            TruckShake.Instance.TriggerHitShake(transform.position);
+        }
     }
 
     private void FaceTarget()
@@ -213,7 +225,7 @@ public class EnemyMovement : MonoBehaviour
 
     private void OnDisable()
     {
-        //free attack pos on death
+        // Free attack pos on death
         if (attackPointManager != null)
         {
             attackPointManager.ReleasePoint(this);
