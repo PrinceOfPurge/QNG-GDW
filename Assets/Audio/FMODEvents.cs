@@ -18,6 +18,12 @@ public class FMODEvents : MonoBehaviour
     [field: SerializeField] public EventReference dryFire { get; private set; }
     [field: SerializeField] public EventReference Reload { get; private set; }
     
+    [field: Header("Zombie SFX")]
+    [field: SerializeField] public EventReference ScornGrowl { get; private set; }
+    [field: SerializeField] public EventReference Headshot { get; private set; }
+    [field: SerializeField] public EventReference Bodyshot { get; private set; }
+    [field: SerializeField] public EventReference TruckHit { get; private set; }
+    
     [field: Header("World SFX")]
     [field: SerializeField] public EventReference DoorOpen { get; private set; }
     [field: SerializeField] public EventReference DoorClose { get; private set; }

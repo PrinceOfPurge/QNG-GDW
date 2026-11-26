@@ -214,6 +214,19 @@ public class PlayerShoot : MonoBehaviour
                 float finalDamage = isHeadshot ? damage * headshotMultiplier : damage;
                 float knockbackForce = isHeadshot ? 28f : 15f;
 
+                // Play 3D headshot or body shot impact audio at hit.point
+                if (FMODEvents.instance != null && AudioManager.instance != null)
+                {
+                    if (isHeadshot)
+                    {
+                        AudioManager.instance.PlayOneShot(FMODEvents.instance.Headshot, hit.point);
+                    }
+                    else
+                    {
+                        AudioManager.instance.PlayOneShot(FMODEvents.instance.Bodyshot, hit.point);
+                    }
+                }
+
                 // Spawn headshot chunk/volumetric VFX or standard body blood VFX
                 if (isHeadshot && headshotChunkVfxPrefab != null)
                 {

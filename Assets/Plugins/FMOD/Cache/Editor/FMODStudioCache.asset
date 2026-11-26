@@ -42,10 +42,10 @@ MonoBehaviour:
   Path: FMOD/Awakened/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 639305092324283573
+  lastModified: 639313146465806016
   FileSizes:
   - Name: Desktop
-    Value: 557760
+    Value: 640288
   Exists: 1
 --- !u!114 &-8291745357692589752
 MonoBehaviour:
@@ -116,11 +116,38 @@ MonoBehaviour:
   Path: FMOD/Awakened/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639305092323164547
+  lastModified: 639313147870399328
   FileSizes:
   - Name: Desktop
-    Value: 2469056
+    Value: 4397376
   Exists: 1
+--- !u!114 &-6427284631367347600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Headshot
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Headshot
+  Guid:
+    Data1: 1431865770
+    Data2: 1238054139
+    Data3: 1420856983
+    Data4: -2063400611
+  Banks:
+  - {fileID: -8530785228203913213}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-5464788761529884248
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -347,13 +374,46 @@ MonoBehaviour:
   - {fileID: 7326478875235312452}
   - {fileID: 5894673048300854335}
   - {fileID: -5464788761529884248}
+  - {fileID: 8743686508909405228}
+  - {fileID: -6427284631367347600}
+  - {fileID: 2677300475388283777}
+  - {fileID: 4126115804492588460}
+  - {fileID: 1496252169250204024}
   EditorParameters: []
   MasterBanks:
   - {fileID: -8124382026942744437}
   StringsBanks:
   - {fileID: 2931301845318078087}
-  cacheTime: 639305092324283573
+  cacheTime: 639313147870672602
   cacheVersion: 131635
+--- !u!114 &1496252169250204024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/UnsettlingMusic
+  m_EditorClassIdentifier: 
+  Path: event:/Music/UnsettlingMusic
+  Guid:
+    Data1: 267526717
+    Data2: 1335016345
+    Data3: 1477116289
+    Data4: -940936692
+  Banks:
+  - {fileID: -8124382026942744437}
+  - {fileID: 3836384672801691522}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 142058
 --- !u!114 &1740007585497536359
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -408,6 +468,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &2677300475388283777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Truckpush
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Truckpush
+  Guid:
+    Data1: -1646081566
+    Data2: 1234133801
+    Data3: -1141496419
+    Data4: 1138023836
+  Banks:
+  - {fileID: -8530785228203913213}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &2931301845318078087
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -423,10 +510,10 @@ MonoBehaviour:
   Path: FMOD/Awakened/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639305092323195018
+  lastModified: 639313147870409336
   FileSizes:
   - Name: Desktop
-    Value: 1792
+    Value: 2014
   Exists: 1
 --- !u!114 &3046086153188407205
 MonoBehaviour:
@@ -524,11 +611,38 @@ MonoBehaviour:
   Path: FMOD/Awakened/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 639295823528361085
+  lastModified: 639313147870672602
   FileSizes:
   - Name: Desktop
-    Value: 2468064
+    Value: 4396416
   Exists: 1
+--- !u!114 &4126115804492588460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Bodyshot
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Bodyshot
+  Guid:
+    Data1: 1752958994
+    Data2: 1265462299
+    Data3: -501060429
+    Data4: -1651334139
+  Banks:
+  - {fileID: -8530785228203913213}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &5195143898041786389
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -687,6 +801,33 @@ MonoBehaviour:
   - {fileID: -8530785228203913213}
   IsStream: 0
   Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &8743686508909405228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/ZombieGrowlzzz
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/ZombieGrowlzzz
+  Guid:
+    Data1: -1963374383
+    Data2: 1274497453
+    Data3: 932514229
+    Data4: 1628451394
+  Banks:
+  - {fileID: -8530785228203913213}
+  IsStream: 0
+  Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 1

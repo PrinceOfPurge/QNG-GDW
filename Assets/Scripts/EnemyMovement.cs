@@ -16,6 +16,10 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] private float roamRadius = 10f;
     [SerializeField] private float roamInterval = 2f;
 
+    [Header("Audio Settings")]
+    [SerializeField] private float minGrowlInterval = 4f;
+    [SerializeField] private float maxGrowlInterval = 9f;
+
     private NavMeshAgent agent;
     private Animator animator;
 
@@ -27,6 +31,7 @@ public class EnemyMovement : MonoBehaviour
 
     private float nextAttackTime;
     private float nextRoamTime;
+    private float nextGrowlTime;
 
     private void Awake()
     {
@@ -38,6 +43,9 @@ public class EnemyMovement : MonoBehaviour
     {
         agent.speed = moveSpeed;
         agent.stoppingDistance = stoppingDistance;
+
+        // Stagger initial growl so spawned zombies don't all growl at the exact same second
+        nextGrowlTime = Time.time + Random.Range(1f, maxGrowlInterval);
 
         // Zombie has to be on the NavMesh
         if (!agent.isOnNavMesh)
@@ -91,6 +99,17 @@ public class EnemyMovement : MonoBehaviour
             !agent.isOnNavMesh)
         {
             return;
+        }
+
+        // Play periodic 3D zombie growls so players can hear their direction
+        if (Time.time >= nextGrowlTime)
+        {
+            nextGrowlTime = Time.time + Random.Range(minGrowlInterval, maxGrowlInterval);
+
+            if (FMODEvents.instance != null && AudioManager.instance != null)
+            {
+                AudioManager.instance.PlayOneShot(FMODEvents.instance.ScornGrowl, transform.position);
+            }
         }
 
         // Claim attack pos
@@ -209,6 +228,12 @@ public class EnemyMovement : MonoBehaviour
         if (TruckShake.Instance != null)
         {
             TruckShake.Instance.TriggerHitShake(transform.position);
+        }
+
+        // Play 3D car slam / shake sound at the zombie's attack position
+        if (FMODEvents.instance != null && AudioManager.instance != null)
+        {
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.TruckHit, transform.position);
         }
     }
 

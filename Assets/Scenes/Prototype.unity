@@ -3017,19 +3017,19 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1454002551}
     m_Modifications:
     - target: {fileID: 3055925924615545059, guid: 9da2559def8ca504380cc44b2cbfa706, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.6792345
+      value: -15.783258
       objectReference: {fileID: 0}
     - target: {fileID: 3055925924615545059, guid: 9da2559def8ca504380cc44b2cbfa706, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 53.00291
+      value: 49.809925
       objectReference: {fileID: 0}
     - target: {fileID: 3055925924615545059, guid: 9da2559def8ca504380cc44b2cbfa706, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 15
+      value: 16.595102
       objectReference: {fileID: 0}
     - target: {fileID: 3055925924615545059, guid: 9da2559def8ca504380cc44b2cbfa706, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3041,11 +3041,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3055925924615545059, guid: 9da2559def8ca504380cc44b2cbfa706, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3055925924615545059, guid: 9da2559def8ca504380cc44b2cbfa706, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3055925924615545059, guid: 9da2559def8ca504380cc44b2cbfa706, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -4119,11 +4119,11 @@ MonoBehaviour:
     Path: event:/Ambience/Rainfall
   <music>k__BackingField:
     Guid:
-      Data1: 50503138
-      Data2: 1263413215
-      Data3: 129937846
-      Data4: 1890204195
-    Path: event:/Music/MainMenu
+      Data1: 267526717
+      Data2: 1335016345
+      Data3: 1477116289
+      Data4: -940936692
+    Path: event:/Music/UnsettlingMusic
   <SeatSwitch>k__BackingField:
     Guid:
       Data1: -669744822
@@ -4152,6 +4152,34 @@ MonoBehaviour:
       Data3: -502402408
       Data4: 701954909
     Path: event:/SFX/reload
+  <ScornGrowl>k__BackingField:
+    Guid:
+      Data1: -1963374383
+      Data2: 1274497453
+      Data3: 932514229
+      Data4: 1628451394
+    Path: event:/SFX/ZombieGrowlzzz
+  <Headshot>k__BackingField:
+    Guid:
+      Data1: 1431865770
+      Data2: 1238054139
+      Data3: 1420856983
+      Data4: -2063400611
+    Path: event:/SFX/Headshot
+  <Bodyshot>k__BackingField:
+    Guid:
+      Data1: 1752958994
+      Data2: 1265462299
+      Data3: -501060429
+      Data4: -1651334139
+    Path: event:/SFX/Bodyshot
+  <TruckHit>k__BackingField:
+    Guid:
+      Data1: -1646081566
+      Data2: 1234133801
+      Data3: -1141496419
+      Data4: 1138023836
+    Path: event:/SFX/Truckpush
   <DoorOpen>k__BackingField:
     Guid:
       Data1: -273044872
@@ -5217,6 +5245,11 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!4 &1285379376 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3055925924615545059, guid: 9da2559def8ca504380cc44b2cbfa706, type: 3}
+  m_PrefabInstance: {fileID: 717346317}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1298416663 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9164614413143583726, guid: d0668717a243fc24a82cbcc382cf12e4, type: 3}
@@ -5957,6 +5990,8 @@ Transform:
   m_Children:
   - {fileID: 2097167406}
   - {fileID: 919923463}
+  - {fileID: 1285379376}
+  - {fileID: 1880437826}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1456571883
@@ -13591,8 +13626,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1880437825}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 136.6, z: 64}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -4.104024, y: 133.40701, z: 65.5951}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -13600,7 +13635,7 @@ Transform:
   - {fileID: 968923355}
   - {fileID: 1998158534}
   - {fileID: 1743422967}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1454002551}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1881589358
 GameObject:
@@ -35124,13 +35159,11 @@ SceneRoots:
   - {fileID: 1724416177}
   - {fileID: 1796330599}
   - {fileID: 543450653147315295}
-  - {fileID: 717346317}
   - {fileID: 1565015883}
   - {fileID: 1522041931}
   - {fileID: 2033602807}
   - {fileID: 1390972905}
   - {fileID: 356942182}
-  - {fileID: 1880437826}
   - {fileID: 1158391055}
   - {fileID: 1454002551}
   - {fileID: 1334027530}
