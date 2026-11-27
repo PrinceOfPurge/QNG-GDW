@@ -6,18 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="c71e8065-9e1e-411c-be29-80b3034969a6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.QNG-GDW/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.QNG-GDW/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/FMODEvents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Audio/FMODEvents.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemyMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EnemyMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Prototype.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Prototype.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerHealth.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerShoot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerShoot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FMOD/Awakened/.cache/buildrecords/Desktop/Master.br" beforeDir="false" afterPath="$PROJECT_DIR$/FMOD/Awakened/.cache/buildrecords/Desktop/Master.br" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FMOD/Awakened/.cache/buildrecords/Desktop/Music.br" beforeDir="false" afterPath="$PROJECT_DIR$/FMOD/Awakened/.cache/buildrecords/Desktop/Music.br" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FMOD/Awakened/.cache/buildrecords/Desktop/SFX.br" beforeDir="false" afterPath="$PROJECT_DIR$/FMOD/Awakened/.cache/buildrecords/Desktop/SFX.br" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FMOD/Awakened/.cache/{37550860-cb4b-4649-8aa5-f35bc48def64}.pdc" beforeDir="false" afterPath="$PROJECT_DIR$/FMOD/Awakened/.cache/{37550860-cb4b-4649-8aa5-f35bc48def64}.pdc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FMOD/Awakened/Build/Desktop/Master.bank" beforeDir="false" afterPath="$PROJECT_DIR$/FMOD/Awakened/Build/Desktop/Master.bank" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FMOD/Awakened/Build/Desktop/Master.strings.bank" beforeDir="false" afterPath="$PROJECT_DIR$/FMOD/Awakened/Build/Desktop/Master.strings.bank" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FMOD/Awakened/Build/Desktop/Music.bank" beforeDir="false" afterPath="$PROJECT_DIR$/FMOD/Awakened/Build/Desktop/Music.bank" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FMOD/Awakened/Build/Desktop/SFX.bank" beforeDir="false" afterPath="$PROJECT_DIR$/FMOD/Awakened/Build/Desktop/SFX.bank" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,6 +109,7 @@
       <workItem from="1795127321703" duration="15000" />
       <workItem from="1795197033719" duration="2082000" />
       <workItem from="1795725008683" duration="5810000" />
+      <workItem from="1795751229315" duration="2548000" />
     </task>
     <servers />
   </component>

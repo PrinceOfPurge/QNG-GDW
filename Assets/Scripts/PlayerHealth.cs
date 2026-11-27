@@ -7,9 +7,10 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 {
     [Header("References")]
     [SerializeField] private PlayerLook playerLook;
-    [SerializeField] private Image healthBarFill;       // Drag your filled health bar Image here
-    [SerializeField] private RawImage bloodSplatter;    // Drag your blood splatter RawImage here
-    [SerializeField] private GameObject deathScreen;    // Drag your DeathScreen GameObject here
+    [SerializeField] private Image healthBarFill;                   // Drag your filled health bar Image here
+    [SerializeField] private RawImage bloodSplatter;                // Drag your blood splatter RawImage here
+    [SerializeField] private GameObject deathScreen;                // Drag your DeathScreen GameObject here
+    [SerializeField] private PlayerPortraitAnimator portraitAnimator; // Drag your PlayerPortraitAnimator here
 
     [Header("Health Settings")]
     [SerializeField] private float maxHealth = 100f;
@@ -43,6 +44,12 @@ public class PlayerHealth : MonoBehaviour, IDamageable
         health -= damage;
         health = Mathf.Clamp(health, 0f, maxHealth);
 
+        // Trigger the Red -> White -> Clear struggle expression animation
+        if (portraitAnimator != null)
+        {
+            portraitAnimator.PlayHitExpression();
+        }
+
         UpdateHealthUI();
 
         if (health <= 0f)
@@ -59,12 +66,19 @@ public class PlayerHealth : MonoBehaviour, IDamageable
             healthBarFill.fillAmount = health / maxHealth;
         }
 
-        // 2. Update the Blood Effect (Only active when health is super low)
+        // 2. Update Low Health Portrait State
+        bool isLow = health <= lowHealthThreshold;
+        if (portraitAnimator != null)
+        {
+            portraitAnimator.SetLowHealthState(isLow);
+        }
+
+        // 3. Update the Blood Effect (Only active when health is super low)
         if (bloodSplatter != null)
         {
             Color color = bloodSplatter.color;
 
-            if (health <= lowHealthThreshold)
+            if (isLow)
             {
                 // Calculate how close to 0 health the player is below the threshold
                 float dangerPercent = 1f - (health / lowHealthThreshold);
@@ -88,6 +102,11 @@ public class PlayerHealth : MonoBehaviour, IDamageable
         isDead = true;
 
         Debug.Log("Player Dead!");
+
+        if (portraitAnimator != null)
+        {
+            portraitAnimator.SetDeadState();
+        }
 
         if (deathScreen != null)
         {

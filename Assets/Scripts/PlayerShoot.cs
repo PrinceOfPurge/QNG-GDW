@@ -3,13 +3,29 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using TMPro;
+using UnityEngine.UI;
 
 public class PlayerShoot : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private Camera playerCamera;
-    [SerializeField] private TMP_Text ammoText;
+    [SerializeField] private TMP_Text magAmmoText;      // Displays current bullets in magazine
+    [SerializeField] private TMP_Text reserveAmmoText;  // Displays remaining reserve ammo
     [SerializeField] private Animator playerAnimator;
+
+    [Header("Crosshair & Reload Prompt")]
+    [SerializeField] private Image crosshairImage;
+    [SerializeField] private TMP_Text reloadPromptText; // Drag a center-screen TMP_Text (e.g. "RELOAD") here
+    [SerializeField] private string reloadMessage = "RELOAD";
+    [SerializeField] private string outOfAmmoMessage = "NO AMMO";
+    [SerializeField] private Color defaultCrosshairColor = Color.white;
+    [SerializeField] private Color enemyCrosshairColor = Color.red;
+
+    [Header("Bullet UI Icons")]
+    [Tooltip("Drag your 6 bullet UI Image objects here in order (Bullet 1 to Bullet 6)")]
+    [SerializeField] private Image[] bulletIcons;
+    [SerializeField] private bool dimEmptyBulletsInsteadOfHiding = false;
+    [SerializeField] private Color emptyBulletColor = new Color(1f, 1f, 1f, 0.2f);
 
     [Header("Animation Triggers")]
     [SerializeField] private string shootTriggerName = "Shoot";
@@ -48,12 +64,7 @@ public class PlayerShoot : MonoBehaviour
             playerAnimator = GetComponentInChildren<Animator>();
         }
 
-        if (ammoText == null)
-        {
-            Debug.LogWarning("Ammo Text reference is not assigned on PlayerShoot!");
-        }
-
-        UpdateAmmoText();
+        UpdateAmmoUI();
     }
 
     private void OnEnable()
@@ -75,6 +86,8 @@ public class PlayerShoot : MonoBehaviour
 
     private void Update()
     {
+        UpdateCrosshairUI();
+
         // Don't accept inputs if currently reloading
         if (isReloading)
             return;
@@ -89,11 +102,102 @@ public class PlayerShoot : MonoBehaviour
         }
     }
 
-    private void UpdateAmmoText()
+    private void UpdateCrosshairUI()
     {
-        if (ammoText != null)
+        if (playerCamera == null)
+            return;
+
+        // Show RELOAD / NO AMMO text instead of crosshair when magazine is empty or reloading
+        bool showReloadText = currentMagAmmo <= 0 || isReloading;
+
+        if (reloadPromptText != null)
         {
-            ammoText.text = currentMagAmmo + " / " + currentAmmo;
+            reloadPromptText.gameObject.SetActive(showReloadText);
+            if (showReloadText)
+            {
+                reloadPromptText.text = (currentAmmo <= 0 && !isReloading) ? outOfAmmoMessage : reloadMessage;
+            }
+        }
+
+        if (crosshairImage != null)
+        {
+            crosshairImage.enabled = !showReloadText;
+
+            if (showReloadText)
+                return;
+        }
+        else
+        {
+            return;
+        }
+
+        // Raycast to tint crosshair red when aiming at a living zombie
+        Ray ray = playerCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
+        RaycastHit[] hits = Physics.RaycastAll(ray, shootRange);
+        System.Array.Sort(hits, (hit1, hit2) => hit1.distance.CompareTo(hit2.distance));
+
+        bool aimingAtZombie = false;
+
+        foreach (RaycastHit hit in hits)
+        {
+            // Ignore the player's own colliders
+            if (hit.collider.CompareTag("Player"))
+                continue;
+
+            // Check if aiming at a living zombie (EnemyMovement gets disabled when Zombie dies)
+            Zombie zombie = hit.collider.GetComponentInParent<Zombie>();
+            if (zombie != null)
+            {
+                EnemyMovement movement = zombie.GetComponent<EnemyMovement>();
+                if (movement == null || movement.enabled)
+                {
+                    aimingAtZombie = true;
+                }
+                break;
+            }
+
+            // Stop raycast if blocked by the truck, window frame, or a wall
+            if (!hit.collider.isTrigger)
+            {
+                break;
+            }
+        }
+
+        crosshairImage.color = aimingAtZombie ? enemyCrosshairColor : defaultCrosshairColor;
+    }
+
+    private void UpdateAmmoUI()
+    {
+        // 1. Update separate magazine and reserve textboxes
+        if (magAmmoText != null)
+        {
+            magAmmoText.text = currentMagAmmo.ToString();
+        }
+
+        if (reserveAmmoText != null)
+        {
+            reserveAmmoText.text = currentAmmo.ToString();
+        }
+
+        // 2. Sync visual bullet UI icons with currentMagAmmo
+        if (bulletIcons != null)
+        {
+            for (int i = 0; i < bulletIcons.Length; i++)
+            {
+                if (bulletIcons[i] == null) continue;
+
+                bool hasBullet = i < currentMagAmmo;
+
+                if (dimEmptyBulletsInsteadOfHiding)
+                {
+                    bulletIcons[i].enabled = true;
+                    bulletIcons[i].color = hasBullet ? Color.white : emptyBulletColor;
+                }
+                else
+                {
+                    bulletIcons[i].enabled = hasBullet;
+                }
+            }
         }
     }
 
@@ -135,7 +239,7 @@ public class PlayerShoot : MonoBehaviour
             currentMagAmmo++;
             currentAmmo--;
 
-            UpdateAmmoText(); // Updates UI dynamically as each bullet is loaded into mag
+            UpdateAmmoUI(); // Updates textboxes AND pops each bullet icon back in one by one
         }
 
         isReloading = false;
@@ -188,7 +292,7 @@ public class PlayerShoot : MonoBehaviour
 
         currentMagAmmo--;
 
-        UpdateAmmoText();
+        UpdateAmmoUI();
 
         // Raycast shooting logic
         Ray ray = playerCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
