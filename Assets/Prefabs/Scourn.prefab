@@ -819,7 +819,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3145bb4c51ba48469880f886178dbd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 25
+  health: 50
   despawnDelay: 5
 --- !u!114 &3045076963261723869
 MonoBehaviour:
@@ -835,9 +835,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 2
   stoppingDistance: 0.5
-  attackRange: 0.5
   attackDamage: 1
   attackCooldown: 1
+  roamRadius: 10
+  roamInterval: 2
+  minGrowlInterval: 4
+  maxGrowlInterval: 9
 --- !u!195 &2516867353659528668
 NavMeshAgent:
   m_ObjectHideFlags: 0
